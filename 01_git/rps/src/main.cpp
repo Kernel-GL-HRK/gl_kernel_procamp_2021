@@ -12,7 +12,25 @@
 using namespace rps;
 
 int main() {
-    std::cout << "bye" << std::endl;
+    char user_option = ' ';
+
+    while (user_option != EXIT_OPTION) {
+        UserInterface::printInviteMessage(std::cout);
+        std::cin >> user_option;
+        if (user_option != EXIT_OPTION) {
+            auto user = PlayerMove(user_option);
+            if (user.isValid()) {
+                auto pc = PlayerMove();
+                pc.print("I choose ");
+                user.print("Your option is ");
+                UserInterface::printGameResult(std::cout, pc == user);
+            } else {
+                UserInterface::printInvalidInputMessage(std::cout);
+            }
+        }
+    }
+    UserInterface::printExitMessage(std::cout);
+
     return 0;
 }
 
