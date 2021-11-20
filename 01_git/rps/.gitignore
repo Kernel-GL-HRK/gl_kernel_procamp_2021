@@ -1,0 +1,12 @@
+*.cmake
+*.swp
+*.cbp
+
+rock_paper_scissors
+Makefile
+CMakeCache.txt
+CMakeFiles
+Testing
+
+.idea
+
