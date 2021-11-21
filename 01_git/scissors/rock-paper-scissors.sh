@@ -97,12 +97,12 @@ fight() {
 
 # Game flow
 echo "Please choose: ${WEAPON_ROCK} (${WEAPON_ROCK:0:1}) - ${WEAPON_PAPER} (${WEAPON_PAPER:0:1}) - ${WEAPON_SCISSORS} (${WEAPON_SCISSORS:0:1})"
+my_choice=$(pc_choice)
 user_choice=$(read_user_choice) || {
     echo ""
     echo "You choose illegal weapon!"
     exit 1
     }
-my_choice=$(pc_choice)
 echo ""
 echo "You choose ${user_choice}, I choose ${my_choice}"
 fight "${user_choice}" "${my_choice}"
