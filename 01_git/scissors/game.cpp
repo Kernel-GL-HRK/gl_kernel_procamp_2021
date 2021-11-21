@@ -1,5 +1,8 @@
 #include <cstdlib>
+#include <cstring>
 #include <iostream>
+
+#include <openssl/md5.h>
 
 // Not using enum class since too lazy to
 // do explicit casts to size_t everywhere.
@@ -80,6 +83,33 @@ Choice decodeChoice(int rdRawChoice)
     }
 }
 
+void getAndPrintMd5Sum(const char* rpChoiceString)
+{
+    if (rpChoiceString == nullptr)
+    {
+        perror("Null CPU choice input!");
+        return;
+    }
+
+    const auto dChoiceLength = std::strlen(rpChoiceString);
+    if (dChoiceLength == 0)
+    {
+        perror("Empty input.");
+        return;
+    }
+
+    unsigned char aDigest[MD5_DIGEST_LENGTH] {};
+    const auto pDigest = MD5(reinterpret_cast<const unsigned char*>(rpChoiceString),
+                             dChoiceLength, aDigest);
+    std::cout << "MD5(\"" << rpChoiceString << "\"): 0x";
+    for (size_t i = 0; i < sizeof(aDigest); ++i)
+    {
+        std::cout << std::hex << short(pDigest[i]);
+    }
+
+    std::cout << std::endl;
+}
+
 Choice makeCpuChoice()
 {
     while (true)
@@ -87,7 +117,9 @@ Choice makeCpuChoice()
         const auto dRand = rand() % CHOICE_LAST;
         if (dRand < CHOICE_LAST)
         {
-            return Choice(dRand);
+            const auto eChoice = Choice(dRand);
+            getAndPrintMd5Sum(gaItemsStrRepr[eChoice]);
+            return eChoice;
         }
     }
 }
