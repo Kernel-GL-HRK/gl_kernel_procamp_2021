@@ -95,9 +95,16 @@ fight() {
     return ${ret_code}
 }
 
+print_md5 () {
+    local md5
+    md5=$(echo "${1}" | md5sum)
+    echo "Computer's choice md5 checksum: ${md5::-2}"
+}
+
 # Game flow
 echo "Please choose: ${WEAPON_ROCK} (${WEAPON_ROCK:0:1}) - ${WEAPON_PAPER} (${WEAPON_PAPER:0:1}) - ${WEAPON_SCISSORS} (${WEAPON_SCISSORS:0:1})"
 my_choice=$(pc_choice)
+print_md5 "${my_choice}"
 user_choice=$(read_user_choice) || {
     echo ""
     echo "You choose illegal weapon!"
