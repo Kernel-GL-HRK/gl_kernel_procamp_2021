@@ -10,6 +10,7 @@ while quit == 0:
     x = input('Please choose: rock (r) - paper (p) - scissors (s), quit(q)')
     player_choice = x.strip()
     my_choice = random.choice(things_short)
+    print(hashlib.md5(my_choice.encode('utf-8')).hexdigest())
     if player_choice == 'q':
         break
     if player_choice in things_short:
