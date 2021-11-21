@@ -36,7 +36,8 @@ const char* gaGameResStrRepr[]
     "Draw!"    // DRAW
 };
 
-GameResult gaResolveTbl[][CHOICE_LAST] {
+const GameResult gaResolveTbl[][CHOICE_LAST]
+{
     //   SCISSORS    |     PAPER     |     ROCK      <- Player's choice
     //
     //                                                  CPU's choice
@@ -123,6 +124,9 @@ int main()
             continue;
         }
 
+        // Make CPU's move first, we need to play fair.
+        const auto eCpuChoice = makeCpuChoice();
+
         const auto ePlayerChoice = decodeChoice(cInput);
         if (ePlayerChoice == CHOICE_LAST)
         {
@@ -136,9 +140,6 @@ int main()
             std::cout << "!" << std::endl << "Press 'q' or '^D' to exit" << std::endl;
             continue;
         }
-
-        // Make CPU's move.
-        const auto eCpuChoice = makeCpuChoice();
 
         std::cout << "You chose " << gaItemsStrRepr[ePlayerChoice];
         std::cout << ", I chose " << gaItemsStrRepr[eCpuChoice] << std::endl;
