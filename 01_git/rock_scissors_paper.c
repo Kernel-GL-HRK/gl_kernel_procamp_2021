@@ -1,8 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <openssl/md5.h>
 
 enum GameValue {Rock, Scissors, Paper};
 enum GameResult {Win, Draw, Lose};
+
+void printf_md5(const char* const message, const enum GameValue value)
+{
+    unsigned char digest[MD5_DIGEST_LENGTH];
+
+    MD5((unsigned char*)&value, sizeof(value), (unsigned char*)&digest);
+
+    char mdString[33];
+
+    for(int i = 0; i < 16; ++i)
+    {
+        sprintf(&mdString[i*2], "%02x", (unsigned int)digest[i]);
+    }
+
+    printf(message, mdString);
+}
 
 const char* const to_string(const enum GameValue value)
 {

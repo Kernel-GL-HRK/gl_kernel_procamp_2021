@@ -12,6 +12,8 @@ int main()
 
     enum GameValue computer_move = generate_computer_move();
 
+    printf_md5("MD5 of computer move: %s\n", computer_move);
+
     char user_input = getchar();
     enum GameValue user_move = Scissors;
     switch(user_input)
