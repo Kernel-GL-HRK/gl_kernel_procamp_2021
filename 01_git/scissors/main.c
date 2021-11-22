@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <time.h>
 
 int main()
 {
@@ -10,7 +11,7 @@ int main()
         PAPER,
         SCISSORS,
         VARS_NUM
-    } vars;
+    };
     char input[16];
     int player, ai;
     const char* option[] = {"rock", "paper", "scissors"};
@@ -36,6 +37,7 @@ int main()
                 continue;
         }
         
+	    srand(time(NULL));
         ai = rand() % VARS_NUM;
         printf("You choose %s, I choose %s\n", option[player], option[ai]);
         
