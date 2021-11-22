@@ -7,7 +7,7 @@
 # Currently we listen to addition/removal of:
 # 1) USB pendrives/SD/MMC cards: mmc and block
 # 2) USB-HID devices (and generic HID devices, like PS/2? I tested with yubikey & mice only): hid
-# 3) USB-to-UART converters: usb-setial (also tty may be added)
+# 3) USB-to-UART converters: usb-serial (also tty may be added)
 monitored_subsys=(block hid usb-serial mmc)
 
 temp_buf=`mktemp`
