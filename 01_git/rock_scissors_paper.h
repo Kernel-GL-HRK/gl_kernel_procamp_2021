@@ -1,6 +1,6 @@
 
 
-enum GameValue {Rock, Scissors, Paper};
+enum GameValue {Rock, Scissors, Paper, GameValue_Last};
 enum GameResult {Win, Draw, Lose};
 
 void printf_md5(const char* const message, const enum GameValue value);

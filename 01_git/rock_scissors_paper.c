@@ -1,9 +1,7 @@
+#include "rock_scissors_paper.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <openssl/md5.h>
-
-enum GameValue {Rock, Scissors, Paper};
-enum GameResult {Win, Draw, Lose};
 
 void printf_md5(const char* const message, const enum GameValue value)
 {
@@ -50,5 +48,5 @@ enum GameResult get_game_result(const enum GameValue player, const enum GameValu
 
 enum GameValue generate_computer_move()
 {
-    return (enum GameValue) rand() % (Paper + 1);
+    return (enum GameValue) rand() % (GameValue_Last);
 }

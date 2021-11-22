@@ -27,8 +27,8 @@ int main()
     case 'p':
         user_move = Paper;
         break;
-    defualt:
-        printf("Invalid input");
+    default:
+        printf("Invalid input\n");
         return -1;
     }
         
