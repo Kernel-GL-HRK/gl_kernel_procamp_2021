@@ -15,7 +15,7 @@ int main()
     printf_md5("MD5 of computer move: %s\n", computer_move);
 
     char user_input = getchar();
-    enum GameValue user_move = Scissors;
+    enum GameValue user_move = GameValue_Undefined;
     switch(user_input)
     {
     case 'r':
@@ -31,8 +31,6 @@ int main()
         printf("Invalid input\n");
         return -1;
     }
-        
-    
     
     printf("You choose %s, I choose %s\n", to_string(user_move), to_string(computer_move));
 

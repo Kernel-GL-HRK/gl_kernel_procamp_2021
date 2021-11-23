@@ -48,5 +48,5 @@ enum GameResult get_game_result(const enum GameValue player, const enum GameValu
 
 enum GameValue generate_computer_move()
 {
-    return (enum GameValue) rand() % (GameValue_Last);
+    return (enum GameValue) GameValue_First + (rand() % (GameValue_Last - GameValue_First + 1));
 }
