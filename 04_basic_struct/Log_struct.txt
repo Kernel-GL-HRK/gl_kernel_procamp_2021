@@ -1,0 +1,29 @@
+# insmod struct4.ko
+struct4: loading out-of-tree module taints kernel.
+struct4: module load
+# echo '1' > /sys/kernel/hello/list
+struct4: adding report size: 2 to the list: '1
+'
+# echo -n "2" > /sys/kernel/hello/list
+struct4: adding report size: 1 to the list: '2'
+# echo -n "45" > /sys/kernel/hello/list
+struct4: adding report size: 2 to the list: '45'
+# echo -n "27" > /sys/kernel/hello/list
+struct4: adding report size: 2 to the list: '27'
+# cat /sys/kernel/hello/list
+struct4: report #0 size: 2 '1
+'
+struct4: report #1 size: 1 '2'
+struct4: report #2 size: 2 '45'
+struct4: report #3 size: 2 '27'
+1
+24527# 
+# 
+# rmmod struct4.ko
+struct4: freeing log size: 2 from the list: '27'
+struct4: freeing log size: 2 from the list: '45'
+struct4: freeing log size: 1 from the list: '2'
+struct4: freeing log size: 2 from the list: '1
+'
+struct4: list is empty: 1
+struct4: module exited
