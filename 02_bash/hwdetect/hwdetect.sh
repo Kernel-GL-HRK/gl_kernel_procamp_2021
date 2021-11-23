@@ -86,6 +86,26 @@ show_flash_drives() {
     lsblk -S -o NAME,MODEL,SIZE,TRAN | grep usb
 }
 
+show_i2c_devices() {
+    for i2c_bus in ${1}
+    do
+        echo -n "Devices on the bus ${i2c_bus}:"
+        # bus name is i2c-0
+        sudo i2cdetect -y "${i2c_bus:4:1}" | while read -r line
+        do
+            for element in ${line}
+            do
+                if [[ "${element}" == "--" ]] || [[ "${element:2:1}" == ":" ]] || [ ${#element} -eq 1 ]; then
+                    continue
+                else
+                    echo -n " 0x${element}"
+                fi
+            done
+        done
+        echo ""
+    done
+}
+
 # Argument parsing
 update_delay=${1}
 [ -z "${update_delay}" ] && update_delay=1
@@ -95,6 +115,7 @@ DEV_USB_TTL=
 
 all_devices=$(get_devices)
 DEV_USB_TTL=$(echo "${all_devices}" | grep "ttyUSB")
+DEV_I2C_DEV=$(echo "${all_devices}" | grep "i2c")
 
 while true
 do
@@ -110,6 +131,8 @@ do
     echo "${DEV_USB_TTL}"
     echo "Flash drives and uSD cards:"
     show_flash_drives
+    echo "I2C devices:"
+    show_i2c_devices "${DEV_I2C_DEV}"
 
     sleep ${update_delay}
 done
