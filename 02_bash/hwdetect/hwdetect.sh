@@ -82,6 +82,10 @@ detect_disconnect() {
     fi
 }
 
+show_flash_drives() {
+    lsblk -S -o NAME,MODEL,SIZE,TRAN | grep usb
+}
+
 # Argument parsing
 update_delay=${1}
 [ -z "${update_delay}" ] && update_delay=1
@@ -104,7 +108,8 @@ do
 
     echo "USB to TTL convertors:"
     echo "${DEV_USB_TTL}"
-    echo ""
+    echo "Flash drives and uSD cards:"
+    show_flash_drives
 
     sleep ${update_delay}
 done
