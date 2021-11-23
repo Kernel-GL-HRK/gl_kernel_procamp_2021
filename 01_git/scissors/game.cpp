@@ -1,180 +1,77 @@
-#include <cstdlib>
-#include <cstring>
+#include "choice.h"
+
 #include <iostream>
 
-#include <openssl/md5.h>
-
-// Not using enum class since too lazy to
-// do explicit casts to size_t everywhere.
-enum Choice
-{
-    SCISSORS = 0,
-    PAPER,
-    ROCK,
-    CHOICE_LAST
-};
-
-enum GameResult
+enum class Result : int
 {
     PLAYER_WINS = 0,
     CPU_WINS,
-    DRAW,
-    GR_LAST
+    DRAW
 };
+
+using namespace game;
 
 namespace
 {
 
-const char* gaItemsStrRepr[]
-{
-    "scissors", // SCISSORS
-    "paper",    // PAPER
-    "rock"      // ROCK
-};
-
-const char* gaGameResStrRepr[]
+const char* const gaGameResStrRepr[]
 {
     "You win", // PLAYER_WINS
     "I win",   // CPU_WINS
     "Draw!"    // DRAW
 };
 
-const GameResult gaResolveTbl[][CHOICE_LAST]
+const Result gaResolveTbl[][Choice::ToInt(CVal::CHOICE_LAST)]
 {
-    //   SCISSORS    |     PAPER     |     ROCK      <- Player's choice
+    //      SCISSORS        |        PAPER         |     ROCK           <- Player's choice
     //
-    //                                                  CPU's choice
-    //                                                     |
-    //                                                     V
-    {    DRAW,          PLAYER_WINS,     CPU_WINS    },  // SCISSORS
-    {  CPU_WINS,           DRAW,        PLAYER_WINS  },  // PAPER
-    {  PLAYER_WINS,      CPU_WINS,         DRAW      }   // ROCK
+    //                                                                       CPU's choice
+    //                                                                             |
+    //                                                                             V
+    {    Result::DRAW,        Result::PLAYER_WINS,     Result::CPU_WINS    },  // SCISSORS
+    {  Result::CPU_WINS,         Result::DRAW,        Result::PLAYER_WINS  },  // PAPER
+    {  Result::PLAYER_WINS,    Result::CPU_WINS,         Result::DRAW      }   // ROCK
 };
 
-void resolveGame(Choice rePlayerChoice, Choice reCpuChoice)
+void resolveGame(CVal rePlayerChoice, CVal reCpuChoice)
 {
-    const auto eResult = gaResolveTbl[rePlayerChoice][reCpuChoice];
-    std::cout << gaGameResStrRepr[eResult];
+    const auto eResult = gaResolveTbl
+        [Choice::ToInt(rePlayerChoice)]
+        [Choice::ToInt(reCpuChoice)];
 
-    if (eResult != DRAW)
+    std::cout << gaGameResStrRepr[static_cast<int>(eResult)];
+
+    if (eResult != Result::DRAW)
     {
-        const auto eFirstNoun = (eResult == CPU_WINS) ? reCpuChoice : rePlayerChoice;
+        const auto eFirstNoun = (eResult == Result::CPU_WINS) ? reCpuChoice : rePlayerChoice;
         const auto eSecondNoun = (eFirstNoun == reCpuChoice) ? rePlayerChoice : reCpuChoice;
-        std::cout << ": " << gaItemsStrRepr[eFirstNoun];
-        std::cout << " beat" << (eFirstNoun != SCISSORS ? "s" : "");
-        std::cout << " " << gaItemsStrRepr[eSecondNoun];
+        std::cout << ": " << Choice::ToString(eFirstNoun);
+        std::cout << " beat" << (eFirstNoun != CVal::SCISSORS ? "s" : "");
+        std::cout << " " << Choice::ToString(eSecondNoun);
     }
 
     std::cout << std::endl;
-}
-
-Choice decodeChoice(int rdRawChoice)
-{
-    switch (rdRawChoice)
-    {
-    case 's':
-        return SCISSORS;
-    case 'p':
-        return PAPER;
-    case 'r':
-        return ROCK;
-    default:
-        return CHOICE_LAST;
-    }
-}
-
-void getAndPrintMd5Sum(const char* rpChoiceString)
-{
-    if (rpChoiceString == nullptr)
-    {
-        perror("Null CPU choice input!");
-        return;
-    }
-
-    const auto dChoiceLength = std::strlen(rpChoiceString);
-    if (dChoiceLength == 0)
-    {
-        perror("Empty input.");
-        return;
-    }
-
-    unsigned char aDigest[MD5_DIGEST_LENGTH] {};
-    const auto pDigest = MD5(reinterpret_cast<const unsigned char*>(rpChoiceString),
-                             dChoiceLength, aDigest);
-    std::cout << "MD5(\"" << rpChoiceString << "\"): 0x";
-    for (size_t i = 0; i < sizeof(aDigest); ++i)
-    {
-        std::cout << std::hex << short(pDigest[i]);
-    }
-
-    std::cout << std::endl;
-}
-
-Choice makeCpuChoice()
-{
-    while (true)
-    {
-        const auto dRand = rand() % CHOICE_LAST;
-        if (dRand < CHOICE_LAST)
-        {
-            const auto eChoice = Choice(dRand);
-            getAndPrintMd5Sum(gaItemsStrRepr[eChoice]);
-            return eChoice;
-        }
-    }
 }
 } // namespace
 
 int main()
 {
-    std::srand(time(nullptr));
-
-    int cInput = 0;
-    bool bSkipHeading = false;
+    ChoiceStdin tPlayerInput;
+    ChoiceRandom tCpuInput;
 
     while (true)
     {
-        if (not bSkipHeading)
-        {
-            std::cout << "Please choose: rock (r) - paper (p) - scissors (s)" << std::endl;
-        }
-        else
-        {
-            bSkipHeading = false;
-        }
 
-        cInput = std::tolower(std::getchar());
-        if (cInput == 'q' or cInput == EOF)
+        // Make CPU's move first, we need to play fair.
+        const auto eCpuChoice = tCpuInput.Get();
+        const auto ePlayerChoice = tPlayerInput.Get();
+        if (ePlayerChoice == CVal::QUIT)
         {
             break;
         }
 
-        // Eat up LFs and CRs, do not repeat the prompt above.
-        if (cInput == '\n' or cInput == '\r')
-        {
-            bSkipHeading = true;
-            continue;
-        }
-
-        // Make CPU's move first, we need to play fair.
-        const auto eCpuChoice = makeCpuChoice();
-
-        const auto ePlayerChoice = decodeChoice(cInput);
-        if (ePlayerChoice == CHOICE_LAST)
-        {
-            std::cout << "Wrong input";
-            if (std::isalnum(cInput))
-            {
-                // Check letters & numbers only, do not overcomplicate things.
-                std::cout << ": " << char(cInput);
-            }
-
-            std::cout << "!" << std::endl << "Press 'q' or '^D' to exit" << std::endl;
-            continue;
-        }
-
-        std::cout << "You chose " << gaItemsStrRepr[ePlayerChoice];
-        std::cout << ", I chose " << gaItemsStrRepr[eCpuChoice] << std::endl;
+        std::cout << "You chose " << Choice::ToString(ePlayerChoice);
+        std::cout << ", I chose " << Choice::ToString(eCpuChoice) << std::endl;
         resolveGame(ePlayerChoice, eCpuChoice);
     }
 

@@ -1,8 +1,9 @@
 CXX=g++
 CXX_FLAGS=-std=c++11 -O3 -Wall -Werror -Wpedantic
+INC=-I.
 LDFLAGS=-lcrypto
 
-CXX_SOURCES=game.cpp
+CXX_SOURCES=choice.cpp game.cpp
 OUT_NAME=game
 
 RM=rm -rf
@@ -11,7 +12,7 @@ RM=rm -rf
 # to suppress $TARGET is up to date" in case we're
 # updating the module.
 game: clean
-	$(CXX) $(CXX_FLAGS) $(CXX_SOURCES) -o$@ $(LDFLAGS)
+	$(CXX) $(CXX_FLAGS) $(INC) $(CXX_SOURCES) -o$@ $(LDFLAGS)
 
 all: game
 
