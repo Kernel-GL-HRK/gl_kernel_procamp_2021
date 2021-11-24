@@ -3,6 +3,7 @@
 	echo "Game scissors"
 	echo "Please doing your choice"
 	echo "for choice: rock- press(r), paper- press(p), scissors- press (s)"
+	
 
 move=$1
 read moves
