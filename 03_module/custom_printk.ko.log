@@ -1,0 +1,22 @@
+Welcome to QEMU
+QEMU_5_15 login: random: crng init done
+
+Welcome to QEMU
+QEMU_5_15 login: root
+Password: 
+# cd /tmp
+# insmod custom_printk.ko 
+custom_printk: loading out-of-tree module taints kernel.
+custom_printk: kernel params sum.
+custom_printk: 1 + 1 = 2.
+# rmmod custom_printk.ko 
+custom_printk: kernel params diff.
+custom_printk: 1 - 1 = 0.
+# rmmod custom_printk.ko param_one=23 param_two=11
+rmmod: can't unload module 'custom_printk': No such file or directory
+# insmod custom_printk.ko param_one=23 param_two=11
+custom_printk: kernel params sum.
+custom_printk: 23 + 11 = 34.
+# rmmod custom_printk.ko
+custom_printk: kernel params diff.
+custom_printk: 23 - 11 = 12.
