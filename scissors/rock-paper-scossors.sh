@@ -40,6 +40,10 @@ play_game()
     #lets play this game
     ./my_random.sh
     ret_code=$? #analize ret code
+
+    MD5=`echo -n ${CHOICES[$1]} | md5sum`
+    echo "md5sum = $MD5"
+
     echo you chose ${CHOICES[$1]}
     echo i choice ${CHOICES[$ret_code]}
 
