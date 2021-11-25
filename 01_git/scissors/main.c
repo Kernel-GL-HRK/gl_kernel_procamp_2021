@@ -12,17 +12,18 @@ int main()
         SCISSORS,
         VARS_NUM
     };
-    char input[16];
-    int player, ai;
-    const char* option[] = {"rock", "paper", "scissors"};
+    const uint8_t buf_lenght = 16;
+    char buf[buf_lenght];
+    int player, ai, game_active = 1;
+    const char* const option[] = {"rock", "paper", "scissors"};
 
-    while(1) {
+    while(game_active) {
         
         printf("Please choose: rock (r) - paper (p) - scissors (s) and press \"Enter\"\n");
         
-        fgets(input, sizeof(input), stdin);
+        fgets(buf, sizeof(buf), stdin);
         
-        switch((char)input[0]) {
+        switch((char)buf[0]) {
             case 'r':
                 player = ROCK;
                 break;
@@ -37,13 +38,12 @@ int main()
                 continue;
         }
         
-	    srand(time(NULL));
+        srand(time(NULL));
         ai = rand() % VARS_NUM;
         printf("You choose %s, I choose %s\n", option[player], option[ai]);
         
         if(player == ai) {
             printf("Draw... Try again!\n\n");
-            continue;
         }
         
         if((player==ROCK && ai==SCISSORS) || (player==PAPER && ai==ROCK) || (player==SCISSORS && ai==PAPER)) {
@@ -51,6 +51,7 @@ int main()
         } else {
             printf("I win: %s beats %s\n\n", option[ai], option[player]);
         }
-        return 0;
+        game_active = 0;
     }
+	return 0;
 }
