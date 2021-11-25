@@ -22,12 +22,12 @@ disclean: clean
 	@rm -f *.ko
 
 test:
-	sudo dmesg -C
-	-sudo insmod $(TARGET).ko val1=5 val2=3
-	#sudo dmesg
+	#sudo dmesg -C
+	sudo insmod $(TARGET).ko val1=5 val2=3
+	sudo rmmod $(TARGET)
 
 remove:
-	#sudo rmmod $(TARGET)
+	sudo rmmod $(TARGET)
 	sudo dmesg
 
 check:

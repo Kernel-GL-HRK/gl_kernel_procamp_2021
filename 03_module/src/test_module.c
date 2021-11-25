@@ -20,12 +20,12 @@ module_param( val2, int, S_IRUGO | S_IWUSR );
 static int __init mod_init( void )
 {
     printk(KERN_INFO "module: (val1: %d + val2: %d) = %d", val1, val2, val1+val2 );
-    return -1;
+    return 0;
 }
 
 static void __exit mod_exit(void)
 {
-
+    printk(KERN_INFO "module: (val1: %d - val2: %d) = %d", val1, val2, val1-val2 );
 }
 
 module_init( mod_init );

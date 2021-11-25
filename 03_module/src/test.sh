@@ -1,8 +1,16 @@
 #/bin/bash
+lsmod | grep test_module
+if [ $? == 0 ]; then
+    make remove
+fi
+
 sudo dmesg -C
-make remove
+sleep 1
+echo -e "start test" | sudo tee /dev/msg
 make clean
 make
 make test
-dmesg -w
-make remove
+echo -e "start test" | sudo tee /dev/msg
+echo -e "" | sudo tee /dev/msg
+sleep 1
+dmesg
