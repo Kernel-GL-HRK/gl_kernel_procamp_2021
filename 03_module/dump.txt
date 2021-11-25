@@ -1,0 +1,18 @@
+# cd /home/user
+# insmod prmmod.ko fprm=10 sprm=20
+prmmod: loading out-of-tree module taints kernel.
+prmmod: module license 'unspecified' taints kernel.
+Disabling lock debugging due to kernel taint
+Module with parameters fprm=10 sprm=20 initialisation!
+The sum of parameters fprm and sprm is 30
+# rmmod prmmod.ko
+Module with parameters fprm=10 sprm=20 initialisation!
+The substraction of parameters fprm and sprm is -10
+Bye Bye...
+# insmod prmmod.ko
+Module with parameters fprm=1 sprm=2 initialisation!
+The sum of parameters fprm and sprm is 3
+# rmmod prmmod.ko
+Module with parameters fprm=1 sprm=2 initialisation!
+The substraction of parameters fprm and sprm is -1
+Bye Bye...
