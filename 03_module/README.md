@@ -1,9 +1,12 @@
-## simple module home work:  create the simplest kernel loadable module
+Create a loadadle kernel module which should accept two integer parameters and provide:
+ - A sum of parameters upon driver load
+ - A substration of parameters upon driver unload
 
-1. Create a simple kernel module (C source and makefile).
-2. Add some debug prints.
-3. Check your source with the checkpatch.pl
-4. Add module parameter and implement different module_init return codes 
-   dependent on this parameter (OK/Error).
-5. Get kernel logs for both cases.
-Please add your sources and makefile into folder '03_module'
+Info about module parameters can be found at: https://devarea.com/linux-kernel-development-kernel-module-parameters/#.YZfWcpFByV4
+
+Task should be performed using buildroot+qemu approach
+
+The task results should contain:
+- The module code
+- The Makefile
+- Dump of the kernel logs from the target system 
