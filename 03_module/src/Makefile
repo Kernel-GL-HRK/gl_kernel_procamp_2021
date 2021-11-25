@@ -1,7 +1,20 @@
 CURRENT = $(shell uname -r)
+BUILD_KERNEL=/lib/modules/$(CURRENT)/build
 KDIR = /lib/modules/$(CURRENT)/build
 PWD = $(shell pwd)
 KDIR_SRC = /usr/src/$(CURRENT)/
+
+
+ifneq ($(QUEMU),)
+
+BUILD_KERNEL := ~/projects/LinuxKernelCoursePro/kernel/linux-stable/my01
+
+else
+
+BUILD_KERNEL=/lib/modules/$(shell uname -r)/build
+
+endif
+
 
 TARGET = test_module
 
