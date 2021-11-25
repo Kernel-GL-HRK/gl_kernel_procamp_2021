@@ -1,0 +1,30 @@
+# insmod /home/user/my_module.ko
+# cat /sys/kernel/my_module/list
+# echo HELLO1 > /sys/kernel/my_module/list
+my_module: ADD entry: 00000000e4791c16 HELLO1
+# echo HELLO2 > /sys/kernel/my_module/list
+my_module: ADD entry: 000000007074b031 HELLO2
+# echo HELLO3 > /sys/kernel/my_module/list
+my_module: ADD entry: 000000004bbd39aa HELLO3
+# cat /sys/kernel/my_module/list
+my_module: entry: 00000000e4791c16 HELLO1
+my_module: entry: 000000007074b031 HELLO2
+my_module: entry: 000000004bbd39aa HELLO3
+[HELLO1]->[HELLO2]->[HELLO3]
+# rmmod my_module
+my_module: DEL entry: 000000004bbd39aa HELLO3
+my_module: DEL entry: 000000007074b031 HELLO2
+my_module: DEL entry: 00000000e4791c16 HELLO1
+my_module: module exited
+#
+# dmesg
+my_module: ADD entry: 00000000e4791c16 HELLO1
+my_module: ADD entry: 000000007074b031 HELLO2
+my_module: ADD entry: 000000004bbd39aa HELLO3
+my_module: entry: 00000000e4791c16 HELLO1
+my_module: entry: 000000007074b031 HELLO2
+my_module: entry: 000000004bbd39aa HELLO3
+my_module: DEL entry: 000000004bbd39aa HELLO3
+my_module: DEL entry: 000000007074b031 HELLO2
+my_module: DEL entry: 00000000e4791c16 HELLO1
+my_module: module exited
