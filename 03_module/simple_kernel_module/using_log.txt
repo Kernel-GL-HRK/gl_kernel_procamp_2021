@@ -1,0 +1,16 @@
+# insmod my_module.ko
+param_1 + param_2 = 0
+# rmmod my_module
+param_1 - param_2 = 0
+#
+# insmod my_module.ko param_1=1 param_2=2
+param_1 + param_2 = 3
+# rmmod my_module
+param_1 - param_2 = -1
+#
+# dmesg
+param_1 + param_2 = 0
+param_1 - param_2 = 0
+param_1 + param_2 = 3
+param_1 - param_2 = -1
+#
