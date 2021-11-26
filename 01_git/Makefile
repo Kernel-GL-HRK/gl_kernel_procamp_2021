@@ -2,11 +2,13 @@ CC=gcc
 CC_FLAGS=-std=c99 -Wall
 
 CC_SOURCES=main.c
+TARGET_NAME=rock_paper_scissors
 
-rock_paper_scissors:
-	$(CC) $(CC_FLAGS) $(CC_SOURCES) -o$@
+$(TARGET_NAME):
+	$(CC) $(CC_FLAGS) -o $@ $(CC_SOURCES)
 
-all: rock_paper_scissors
+all: clean $(TARGET_NAME)
 
 clean:
-	rm rock_paper_scissors
+	-$(RM) -rf *.o $(TARGET_NAME)
+
