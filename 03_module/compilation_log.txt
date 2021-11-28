@@ -1,0 +1,13 @@
+victor@orion5491  ~/work/gl_kernel_procamp_2021/03_module   task03  make
+~/work/buildroot-2021.02.7/output/build/linux-5.10.7/scripts/checkpatch.pl -f argsmod.c || exit 1
+total: 0 errors, 0 warnings, 34 lines checked
+
+argsmod.c has no obvious style problems and is ready for submission.
+make -C ~/work/buildroot-2021.02.7/output/build/linux-5.10.7 M=/home/victor/work/gl_kernel_procamp_2021/03_module modules
+make[1]: Entering directory '/home/victor/work/buildroot-2021.02.7/output/build/linux-5.10.7'
+  CC [M]  /home/victor/work/gl_kernel_procamp_2021/03_module/argsmod.o
+  MODPOST /home/victor/work/gl_kernel_procamp_2021/03_module/Module.symvers
+WARNING: modpost: Symbol info of vmlinux is missing. Unresolved symbol check will be entirely skipped.
+  CC [M]  /home/victor/work/gl_kernel_procamp_2021/03_module/argsmod.mod.o
+  LD [M]  /home/victor/work/gl_kernel_procamp_2021/03_module/argsmod.ko
+make[1]: Leaving directory '/home/victor/work/buildroot-2021.02.7/output/build/linux-5.10.7'
