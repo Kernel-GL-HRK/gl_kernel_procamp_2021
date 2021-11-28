@@ -33,24 +33,24 @@ static ssize_t add_new_string_entity(const char* buffer)
     }
     p_entity->stored_string = string_buffer;
 
-    copy_from_user(string_buffer,buffer,string_buffer_mem_size);
+    strncpy(string_buffer,buffer,string_buffer_mem_size);
     p_entity->stored_string_length = string_length;
 
-    list_add_tail(&p_entity->list,string_list);
+    list_add_tail(&p_entity->list,&string_list);
 
-    return 0;
+    return string_length;
 }
 
 static void string_item_dtor(string_list_item_t* string_list_item){
     if(!string_list_item)
         return;
 
-    kfree(string_list->stored_string);
-    string_list->stored_string = NULL;
-    string_list->stored_string_length = 0;
+    kfree(string_list_item->stored_string);
+    string_list_item->stored_string = NULL;
+    string_list_item->stored_string_length = 0;
     kfree(string_list_item);
 }
-static void cleanup_storage()
+static void cleanup_storage(void)
 {
     string_list_item_t* string_it = NULL;
     struct list_head* pos, *q;
@@ -65,27 +65,27 @@ static void cleanup_storage()
 static ssize_t  list_show(struct kobject *kobj, 
                         struct kobj_attribute *attr, char *buf)
 {
-    size_t copied_data_size = 0;
-
+    char* buffer_pointer = buf;
+    ssize_t pointer_offset = 0;
     string_list_item_t* list_entity_it = NULL;
     list_for_each_entry(list_entity_it,&string_list,list)
     {
         size_t copied_data_size = list_entity_it->stored_string_length+1;
-        copy_to_user(buf,list_entity_it->stored_string,copied_data_size);
-        copied_data_size+=copied_data_size;
+        ssize_t copy_result = sprintf(buffer_pointer+ pointer_offset,"%s", list_entity_it->stored_string);
+        pointer_offset += copy_result;
     }
-    pr_debug("==BASIC_STRUCT==:Called " __func__ "with copied data size:%d", copied_data_size);
-    return copied_data_size;
+    pr_debug("==BASIC_STRUCT==:Called list_show with copied pointer_offset:%ld\n", pointer_offset);
+    return pointer_offset;
 }
 
 static ssize_t  list_store(struct kobject *kobj, 
                         struct kobj_attribute *attr,const char *buf, size_t count)
 {
-    pr_debug("==BASIC_STRUCT==:Called " __func__ "with count:%d", count);
+    pr_debug("==BASIC_STRUCT==:Called list_store with count:%d\n", count);
     ssize_t res = add_new_string_entity(buf);
     if(!res)
-        return count;
-    return res;
+        return -EFAULT;
+    return count;
 }
 
 
@@ -94,14 +94,14 @@ struct kobj_attribute list_attribute = __ATTR(list, 0660, list_show, list_store)
 static int __init simple_struct_module_init(void)
 {
     int result = 0;
-    list_obj = kobject_create_and_add("basuic_struct", kernel_kobj);
+    list_obj = kobject_create_and_add("basic_struct", kernel_kobj);
     if (!list_obj){
         pr_warn("%s:%d: kobject_create_and_add failed.\n", __func__,
 			__LINE__);
 		return -ENOMEM;
     }
     result = sysfs_create_file(list_obj, &list_attribute.attr);
-    if(res){
+    if(result){
         pr_warn("%s:%d: sysfs_create_file failed.\n", __func__,
 			__LINE__);
         kobject_put(list_obj);
@@ -109,7 +109,7 @@ static int __init simple_struct_module_init(void)
     }
     INIT_LIST_HEAD(&string_list);
 
-    pr_debug("==BASIC_STRUCT==:Module ready");
+    pr_debug("==BASIC_STRUCT==:Module ready\n");
     return result;
 }
 
@@ -119,11 +119,11 @@ static void __exit simple_struct_module_exit(void)
     cleanup_storage();
 
     kobject_put(list_obj);
-    pr_debug("==BASIC_STRUCT==:Module unloaded");
+    pr_debug("==BASIC_STRUCT==:Module unloaded\n");
 }
 
 module_init(simple_struct_module_init);
 module_exit(simple_struct_module_exit);
 
-MODULE_LICENSE("MIT");
+MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Valentyn Korniienko");
