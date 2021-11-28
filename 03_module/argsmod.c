@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-only
-//
+
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
@@ -13,10 +13,10 @@ static int first_arg;
 static int second_arg;
 
 module_param(first_arg, int, 0444); /* S_IRUGO */
-MODULE_PARM_DESC(first_arg, "The the first int arg.");
+MODULE_PARM_DESC(first_arg, "The first int arg.");
 
 module_param(second_arg, int, 0444);
-MODULE_PARM_DESC(first_arg, "The the second int arg.");
+MODULE_PARM_DESC(first_arg, "The second int arg.");
 
 static int __init args_test_init(void)
 {
