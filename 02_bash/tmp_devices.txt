@@ -1,0 +1,22 @@
+
+ttyUSB :{
+
+}
+mmcblk :{
+
+}
+i2c :{
+i2c-0
+i2c-1
+i2c-2
+i2c-3
+i2c-4
+i2c-5
+
+}
+sd :{
+sda
+sda1
+sda2
+
+}
