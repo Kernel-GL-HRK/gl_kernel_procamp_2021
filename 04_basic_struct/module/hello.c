@@ -25,35 +25,20 @@ static void add_node(char* value, struct list_head *head)
     list_add(&(nodePtr->list_member), head);
 }
 
-static void display(struct list_head *head)
-{
-    struct list_head *iter;
-    struct node *nodePtr;
-
-    list_for_each(iter, head) {
-        nodePtr = list_entry(iter, struct node, list_member);
-		printk(KERN_INFO "%s", nodePtr->value);
-    }
-}
-
 static ssize_t list_show(struct kobject *kobj, struct kobj_attribute *attr,
 	char *buf)
 {
-	// struct list_head *iter;
-    // struct node *nodePtr;
+	struct list_head *iter;
+    struct node *nodePtr;
 
-	// char outStr[] = "";
+	int bufSize = 0;
 
-    // list_for_each(iter, &nodeHead) {
-        // nodePtr = list_entry(iter, struct node, list_member);
-		// printk(KERN_INFO "Buf size: %ld", strlen(buf));
-		// sprintf(buf, "%s\n", nodePtr->value);
-		// strcat(outStr, nodePtr->value);
-    // }
-    // return sprintf(buf, "%s", outStr);
-
-	sprintf(buf, "%s", "Hello");
-    return strlen(buf);
+    list_for_each(iter, &nodeHead) {
+        nodePtr = list_entry(iter, struct node, list_member);
+		strcpy(buf + bufSize, nodePtr->value);
+		bufSize += strlen(nodePtr->value);
+    }
+	return bufSize;
 }
 
 static ssize_t list_store(struct kobject *kobj, struct kobj_attribute *attr,
