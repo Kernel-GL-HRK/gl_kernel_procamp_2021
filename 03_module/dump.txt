@@ -1,0 +1,4 @@
+# insmod hello.ko param_a=5 param_b=9
+Hi world! Sum: 14
+# rmmod hello
+Bye world! Subtraction:-4
