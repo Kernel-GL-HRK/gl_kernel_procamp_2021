@@ -1,0 +1,11 @@
+# insmod /tmp/hello.ko n1=42 n2=-10
+hello add n1: 42 and n2: -10 result: 32
+# cd /sys/module/hello/parameters/
+# ls
+n1  n2
+# cat n1
+42
+# cat n2
+-10
+# rmmod hello.ko
+Bye substract n1: 42 and n2: -10 result: 52
