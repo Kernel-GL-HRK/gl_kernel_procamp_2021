@@ -1,0 +1,16 @@
+# pwd
+/home/user
+# ls
+module_hello.ko
+# insmod ./module_hello.ko x=10 y=20
+module_hello: loading out-of-tree module taints kernel.
+module_hello: module license 'MIT' taints kernel.
+Disabling lock debugging due to kernel taint
+Loading hello module...
+x + y = 30
+# rmmod module_hello.ko
+Goodbye hello module...
+x - y = -10
+# lsmod
+Module                  Size  Used by    Tainted: P
+module_hello           16384  0
