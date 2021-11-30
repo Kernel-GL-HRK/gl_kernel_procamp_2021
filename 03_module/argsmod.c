@@ -16,7 +16,7 @@ module_param(first_arg, int, 0444); /* S_IRUGO */
 MODULE_PARM_DESC(first_arg, "The first int arg.");
 
 module_param(second_arg, int, 0444);
-MODULE_PARM_DESC(first_arg, "The second int arg.");
+MODULE_PARM_DESC(second_arg, "The second int arg.");
 
 static int __init args_test_init(void)
 {
