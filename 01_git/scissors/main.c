@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <time.h>
 
 #define CHAR_ROCK         ('r')
 #define CHAR_PAPER        ('p')
@@ -41,6 +42,7 @@ int main()
                 continue;
         }
 
+        srand(time(NULL));
         ai = rand() % VARS_NUM;
         printf("You choose %s, I choose %s\n", option[player], option[ai]);
 
