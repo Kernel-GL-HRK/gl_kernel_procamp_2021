@@ -3,15 +3,15 @@
 #include <time.h>
 
 static char *options[] = {
-    "rock\0",
-    "paper\0",
-    "scissors\0"
+    "rock",
+    "paper",
+    "scissors"
 };
 
 static char *options_user[] = {
-    ['r'] = "rock\0",
-    ['p'] = "paper\0",
-    ['s'] = "scissors\0"
+    ['r'] = "rock",
+    ['p'] = "paper",
+    ['s'] = "scissors"
 };
 
 enum {
@@ -40,8 +40,8 @@ static char *game_logic[][3] = {
 
 int main()
 {
-    int ch, ch_user;
-    char buf[100];
+    int ch;
+    char ch_user;
 
     // Use current time as seed
     srand(time(0));   
@@ -51,8 +51,7 @@ int main()
     while(1) {
 
         // wait for user choise
-        scanf("%s", buf);
-        ch_user = buf[0]; // take only first character
+        scanf("%1s", &ch_user);
 
         // quit if user requested
         if ('q' == ch_user)
