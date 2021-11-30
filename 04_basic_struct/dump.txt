@@ -1,0 +1,37 @@
+# insmod /tmp/wimbledon.ko 
+wimbledon: loading out-of-tree module taints kernel.
+# echo  "1" > /sys/kernel/wimbledon/list 
+wimbledon: adding msg size: 2 to the list: '1
+'
+# echo  -n "2" > /sys/kernel/wimbledon/list 
+wimbledon: adding msg size: 1 to the list: '2'
+# echo  -n "33" > /sys/kernel/wimbledon/list 
+wimbledon: adding msg size: 2 to the list: '33'
+# echo   "44" > /sys/kernel/wimbledon/list 
+wimbledon: adding msg size: 3 to the list: '44
+'
+# echo  -n "55" > /sys/kernel/wimbledon/list 
+wimbledon: adding msg size: 2 to the list: '55'
+# cat /sys/kernel/wimbledon/list
+wimbledon: msg #0 size: 2 '1
+'
+wimbledon: msg #1 size: 1 '2'
+wimbledon: msg #2 size: 2 '33'
+wimbledon: msg #3 size: 3 '44
+'
+wimbledon: msg #4 size: 2 '55'
+1
+23344
+55# 
+
+# rmmod wimbledon.ko
+wimbledon: freeing msg size: 2 from the list: '55'
+wimbledon: freeing msg size: 3 from the list: '44
+'
+wimbledon: freeing msg size: 2 from the list: '33'
+wimbledon: freeing msg size: 1 from the list: '2'
+wimbledon: freeing msg size: 2 from the list: '1
+'
+wimbledon: list is empty: 1
+wimbledon: Module exited
+
