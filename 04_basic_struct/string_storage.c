@@ -67,12 +67,15 @@ static ssize_t string_show(struct kobject *kobj, struct kobj_attribute *attr,
         {
             BUG();
             len = -ENOMEM;
-            pr_debug("[STR_STORAGE] String copy failed or PAGE_SIZE was reached");
+            pr_err("[STR_STORAGE] String copy failed or PAGE_SIZE was reached");
             break;
         }
 
         len += tmp;
     }
+
+    if (len > 0)
+        pr_debug("[STR_STORAGE] String storage contains:\n%s", buf);
 
     return len;
 }
