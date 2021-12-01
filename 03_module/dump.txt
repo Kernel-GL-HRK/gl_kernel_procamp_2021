@@ -1,0 +1,5 @@
+hello: loading out-of-tree module taints kernel.
+hello: module license 'unspecified' taints kernel.
+Disabling lock debugging due to kernel taint
+Hi world! Sum: 11
+Bye world! Subtraction:-1
