@@ -1,0 +1,26 @@
+# buildroot login: root
+# random: crng init done
+# insmod /home/user/clc_time.ko
+clc_time: loading out-of-tree module taints kernel.
+# cat /sys/kernel/clc_time/getclk
+First reading 
+Current time stamp      02-12-2021 23:35:54.237000775
+# cat /sys/kernel/clc_time/getclk
+Previous reading was at 02-12-2021 23:35:54.237000775
+Relative time                          0003.429394330
+Relative cycles                            3753137428
+Current time stamp      02-12-2021 23:35:57.666395105
+# cat /sys/kernel/clc_time/getclk
+Previous reading was at 02-12-2021 23:35:57.666395105
+Relative time                          0002.989310592
+Relative cycles                            3271507523
+Current time stamp      02-12-2021 23:36:00.655705697
+# cat /sys/kernel/clc_time/getclk
+Previous reading was at 02-12-2021 23:36:00.655705697
+Relative time                          0036.955127282
+Relative cycles                            40443766361
+Current time stamp      02-12-2021 23:36:37.610832979
+# rmmod /home/user/clc_time.ko
+# 
+
+
