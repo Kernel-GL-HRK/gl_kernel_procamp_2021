@@ -1,0 +1,1 @@
+cmd_/home/serh/workspace/gl_kernel_procamp_2021/04_module_interfaces/modules.order := {   echo /home/serh/workspace/gl_kernel_procamp_2021/04_module_interfaces/module_int.ko; :; } | awk '!x[$$0]++' - > /home/serh/workspace/gl_kernel_procamp_2021/04_module_interfaces/modules.order

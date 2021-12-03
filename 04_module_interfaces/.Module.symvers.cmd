@@ -1,0 +1,1 @@
+cmd_/home/serh/workspace/gl_kernel_procamp_2021/04_module_interfaces/Module.symvers := sed 's/ko$$/o/' /home/serh/workspace/gl_kernel_procamp_2021/04_module_interfaces/modules.order | scripts/mod/modpost     -o /home/serh/workspace/gl_kernel_procamp_2021/04_module_interfaces/Module.symvers -e -i Module.symvers   -T -
