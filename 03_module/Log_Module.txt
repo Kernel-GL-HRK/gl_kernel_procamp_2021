@@ -1,0 +1,12 @@
+# insmod hello_mod.ko
+Operetion summary
+Parameter1=10
+Parameter2=15
+Summ=25
+# rmmod hello_mod.ko
+Operetion substration
+Parameter1=10
+Parameter2=15
+Subst=-5
+# 
+
