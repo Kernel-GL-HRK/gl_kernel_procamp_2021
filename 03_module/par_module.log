@@ -1,0 +1,24 @@
+Hello! sum of 0 and 0: 0
+Subtruction  of 0 and 0: 0
+
+par_module: unknown parameter '2' ignored
+par_module: unknown parameter '3' ignored
+Hello! sum of 0 and 0: 0
+Subtruction  of 0 and 0: 0
+
+par_module: unknown parameter 'Ð·Ñ„Ðparam1' ignored
+par_module: unknown parameter 'param2-5' ignored
+Hello! sum of 0 and 0: 0
+Subtruction  of 0 and 0: 0
+
+par_module: unknown parameter 'Ðparam1' ignored
+Hello! sum of 0 and 5: 5
+Subtruction  of 0 and 5: -5
+
+Hello! sum of 2 and 5: 7
+Subtruction  of 2 and 5: -3
+
+Hello!
+Sum: 22 + 5 = 27
+Subtruction: 22 - 5 = 17
+Good buy!
