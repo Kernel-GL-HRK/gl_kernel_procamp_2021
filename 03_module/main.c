@@ -19,16 +19,18 @@ MODULE_PARM_DESC(user, "User name");
 
 static int __init kernel_init(void)
 {
-	if (user != NULL)
-		pr_warn("\nHello, %s!\n", user);
-	else
-		pr_info("\nOps..., I don`t know who u are?\n");
-	if (task == 3)
-		pr_info("\nHmm, yeah this is third task in this course\n");
-	else {
-		pr_info("\nYou work too much. You even don`t know what is it\n");
-		return -EINVAL;
-	}
+	//if (user != NULL)
+//		pr_warn("\nHello, %s!\n", user);
+	//else
+	//	pr_info("\nOps..., I don`t know who u are?\n");
+	//if (task == 3)
+	//	pr_info("\nHmm, yeah this is third task in this course\n");
+//	else {
+	//	pr_info("\nYou work too much. You even don`t know what is it\n");
+	
+	//	return -EINVAL;
+	//}
+	pr_info("\nHello from module\n");
 	return 0;
 }
 
