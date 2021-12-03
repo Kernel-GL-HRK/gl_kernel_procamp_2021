@@ -1,0 +1,24 @@
+module_int: Starting List object
+module_int: List obbject created: My_list , 18446744072636642176
+module_int: Adding new record: Record_1, head = 18446617939141298208, prev = 18446617939141298208, next = 18446617939141298208
+module_int: Adding new record: Record_2, head = 18446617939141297632, prev = 18446617939141298208, next = 18446617939141298208
+module_int: Adding new record: Record_3, head = 18446617939141298240, prev = 18446617939141298208, next = 18446617939141298208
+module_int: Adding new record: Record_4, head = 18446617939141298272, prev = 18446617939141298208, next = 18446617939141298208
+module_int: Adding new record: Record_5, head = 18446617939141298304, prev = 18446617939141298208, next = 18446617939141298208
+module_int: show_list 18446617939141298304
+module_int: record = Record_5 (list 18446617939141298304, prev = 18446744072636642192, next = 18446617939141298272)
+module_int: record = Record_4 (list 18446617939141298272, prev = 18446617939141298304, next = 18446617939141298240)
+module_int: record = Record_3 (list 18446617939141298240, prev = 18446617939141298272, next = 18446617939141297632)
+module_int: record = Record_2 (list 18446617939141297632, prev = 18446617939141298240, next = 18446617939141298208)
+module_int: record = Record_1 (list 18446617939141298208, prev = 18446617939141297632, next = 18446744072636642192)
+module_int: Deleting record: Record_5
+module_int: Deleting list node: 18446617939141298272
+module_int: Deleting record: Record_4
+module_int: Deleting list node: 18446617939141298240
+module_int: Deleting record: Record_3
+module_int: Deleting list node: 18446617939141297632
+module_int: Deleting record: Record_2
+module_int: Deleting list node: 18446617939141298208
+module_int: Deleting record: Record_1
+module_int: Deleting list node: 18446744072636642192
+module_int: Module exit.

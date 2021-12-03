@@ -1,10 +1,4 @@
 #! /bin/bash
-#
-
-declare -i cnter=0
-v=" "
-
-#echo $cnter
 
 ls /dev | grep ttyUSB > ttyusb.txt
 ls /dev | grep sd | grep disk > storage.txt
@@ -15,7 +9,6 @@ ls /dev | grep i2c > i2c.txt
 	  s1=$(stat -c %s $1)
 	  s2=$(stat -c %s $2)
 
-#echo $s1 $s2
   	  comm -3 $2 $1 > diff.txt
 
 
@@ -24,7 +17,7 @@ ls /dev | grep i2c > i2c.txt
 		if (( $s1 < $s2 ))
 		then
 			echo ' '
-			echo Connected: 
+			echo Connected:
 			echo '------------------'
 			cat diff.txt
 		elif (( $s1 > $s2 )); then
@@ -38,7 +31,7 @@ ls /dev | grep i2c > i2c.txt
  }
 
 
-while :  
+while :
 do
 	ls /dev | grep ttyUSB > _ttyusb.txt
 	ls /dev | grep sd > _storage.txt
