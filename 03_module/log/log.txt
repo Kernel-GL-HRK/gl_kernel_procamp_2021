@@ -1,0 +1,6 @@
+Dec  4 17:01:24 buildroot kern.info kernel: 2 + 2 = 4
+Dec  4 17:01:29 buildroot kern.info kernel: 2 - 2 = 0
+Dec  4 17:01:43 buildroot kern.info kernel: 2147483647 + 10 = 2147483657
+Dec  4 17:01:45 buildroot kern.info kernel: 2147483647 - 10 = 2147483637
+Dec  4 17:01:53 buildroot kern.info kernel: -2147483648 + 10 = -2147483638
+Dec  4 17:01:55 buildroot kern.info kernel: -2147483648 - 10 = -2147483658
