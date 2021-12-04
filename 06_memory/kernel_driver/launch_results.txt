@@ -1,0 +1,262 @@
+[17902.240718] Allocation:kmalloc, Bytes:1, order: 1, cycles for request: 178
+[17902.240724] Freeing:kmalloc, Bytes:1, order:1, cycles for request: 118
+[17902.240726] Allocation:kmalloc, Bytes:2, order: 1, cycles for request: 118
+[17902.240727] Freeing:kmalloc, Bytes:2, order:1, cycles for request: 88
+[17902.240728] Allocation:kmalloc, Bytes:4, order: 1, cycles for request: 79
+[17902.240729] Freeing:kmalloc, Bytes:4, order:1, cycles for request: 42
+[17902.240730] Allocation:kmalloc, Bytes:8, order: 1, cycles for request: 79
+[17902.240731] Freeing:kmalloc, Bytes:8, order:1, cycles for request: 45
+[17902.240732] Allocation:kmalloc, Bytes:16, order: 1, cycles for request: 84
+[17902.240733] Freeing:kmalloc, Bytes:16, order:1, cycles for request: 73
+[17902.245043] Allocation:kmalloc, Bytes:32, order: 1, cycles for request: 7060142
+[17902.245047] Freeing:kmalloc, Bytes:32, order:1, cycles for request: 1535
+[17902.245048] Allocation:kmalloc, Bytes:64, order: 1, cycles for request: 1025
+[17902.245049] Freeing:kmalloc, Bytes:64, order:1, cycles for request: 100
+[17902.245051] Allocation:kmalloc, Bytes:128, order: 1, cycles for request: 1194
+[17902.245052] Freeing:kmalloc, Bytes:128, order:1, cycles for request: 569
+[17902.245053] Allocation:kmalloc, Bytes:256, order: 1, cycles for request: 798
+[17902.245054] Freeing:kmalloc, Bytes:256, order:1, cycles for request: 698
+[17902.245382] Allocation:kmalloc, Bytes:512, order: 1, cycles for request: 2028
+[17902.245384] Freeing:kmalloc, Bytes:512, order:1, cycles for request: 2348
+[17902.245385] Allocation:kmalloc, Bytes:1024, order: 1, cycles for request: 502
+[17902.245387] Freeing:kmalloc, Bytes:1024, order:1, cycles for request: 275
+[17902.245389] Allocation:kmalloc, Bytes:2048, order: 1, cycles for request: 3369
+[17902.245390] Freeing:kmalloc, Bytes:2048, order:1, cycles for request: 795
+[17902.245391] Allocation:kmalloc, Bytes:4096, order: 1, cycles for request: 1958
+[17902.245393] Freeing:kmalloc, Bytes:4096, order:1, cycles for request: 737
+[17902.245395] Allocation:kmalloc, Bytes:8192, order: 2, cycles for request: 4040
+[17902.245396] Freeing:kmalloc, Bytes:8192, order:2, cycles for request: 747
+[17902.245400] Allocation:kmalloc, Bytes:16384, order: 3, cycles for request: 10176
+[17902.245401] Freeing:kmalloc, Bytes:16384, order:3, cycles for request: 1408
+[17902.245405] Allocation:kmalloc, Bytes:32768, order: 4, cycles for request: 11231
+[17902.245406] Freeing:kmalloc, Bytes:32768, order:4, cycles for request: 439
+[17902.245413] Allocation:kmalloc, Bytes:65536, order: 5, cycles for request: 19620
+[17902.245414] Freeing:kmalloc, Bytes:65536, order:5, cycles for request: 380
+[17902.245426] Allocation:kmalloc, Bytes:131072, order: 6, cycles for request: 37820
+[17902.245427] Freeing:kmalloc, Bytes:131072, order:6, cycles for request: 882
+[17902.245458] Allocation:kmalloc, Bytes:262144, order: 7, cycles for request: 101764
+[17902.245459] Freeing:kmalloc, Bytes:262144, order:7, cycles for request: 1451
+[17902.245520] Allocation:kmalloc, Bytes:524288, order: 8, cycles for request: 203610
+[17902.245521] Freeing:kmalloc, Bytes:524288, order:8, cycles for request: 1611
+[17902.245645] Allocation:kmalloc, Bytes:1048576, order: 9, cycles for request: 414628
+[17902.245646] Freeing:kmalloc, Bytes:1048576, order:9, cycles for request: 2856
+[17902.245984] Allocation:kmalloc, Bytes:2097152, order: 10, cycles for request: 1142079
+[17902.245988] Freeing:kmalloc, Bytes:2097152, order:10, cycles for request: 4189
+[17902.269979] Allocation:kmalloc, Bytes:4194304, order: 11, cycles for request: 81341243
+[17902.270248] Freeing:kmalloc, Bytes:4194304, order:11, cycles for request: 9614
+[17902.270313] Allocation:kvmalloc, Bytes:1, order: 1, cycles for request: 22700
+[17902.270318] Freeing:kvmalloc, Bytes:1, order:1, cycles for request: 7238
+[17902.270319] Allocation:kvmalloc, Bytes:2, order: 1, cycles for request: 2354
+[17902.270321] Freeing:kvmalloc, Bytes:2, order:1, cycles for request: 1741
+[17902.270323] Allocation:kvmalloc, Bytes:4, order: 1, cycles for request: 2683
+[17902.270324] Freeing:kvmalloc, Bytes:4, order:1, cycles for request: 692
+[17902.270326] Allocation:kvmalloc, Bytes:8, order: 1, cycles for request: 3152
+[17902.270327] Freeing:kvmalloc, Bytes:8, order:1, cycles for request: 1082
+[17902.270328] Allocation:kvmalloc, Bytes:16, order: 1, cycles for request: 1575
+[17902.270329] Freeing:kvmalloc, Bytes:16, order:1, cycles for request: 1013
+[17902.270330] Allocation:kvmalloc, Bytes:32, order: 1, cycles for request: 1786
+[17902.270351] Freeing:kvmalloc, Bytes:32, order:1, cycles for request: 3412
+[17902.270354] Allocation:kvmalloc, Bytes:64, order: 1, cycles for request: 8912
+[17902.270355] Freeing:kvmalloc, Bytes:64, order:1, cycles for request: 1152
+[17902.270357] Allocation:kvmalloc, Bytes:128, order: 1, cycles for request: 2376
+[17902.270358] Freeing:kvmalloc, Bytes:128, order:1, cycles for request: 952
+[17902.270360] Allocation:kvmalloc, Bytes:256, order: 1, cycles for request: 2234
+[17902.270361] Freeing:kvmalloc, Bytes:256, order:1, cycles for request: 901
+[17902.270363] Allocation:kvmalloc, Bytes:512, order: 1, cycles for request: 3781
+[17902.270364] Freeing:kvmalloc, Bytes:512, order:1, cycles for request: 1070
+[17902.270366] Allocation:kvmalloc, Bytes:1024, order: 1, cycles for request: 3765
+[17902.270367] Freeing:kvmalloc, Bytes:1024, order:1, cycles for request: 1113
+[17902.270369] Allocation:kvmalloc, Bytes:2048, order: 1, cycles for request: 3645
+[17902.270387] Freeing:kvmalloc, Bytes:2048, order:1, cycles for request: 3303
+[17902.270390] Allocation:kvmalloc, Bytes:4096, order: 1, cycles for request: 4666
+[17902.270391] Freeing:kvmalloc, Bytes:4096, order:1, cycles for request: 810
+[17902.270394] Allocation:kvmalloc, Bytes:8192, order: 2, cycles for request: 7223
+[17902.270395] Freeing:kvmalloc, Bytes:8192, order:2, cycles for request: 2684
+[17902.270400] Allocation:kvmalloc, Bytes:16384, order: 3, cycles for request: 12597
+[17902.270402] Freeing:kvmalloc, Bytes:16384, order:3, cycles for request: 2696
+[17902.270408] Allocation:kvmalloc, Bytes:32768, order: 4, cycles for request: 18151
+[17902.270410] Freeing:kvmalloc, Bytes:32768, order:4, cycles for request: 2820
+[17902.270421] Allocation:kvmalloc, Bytes:65536, order: 5, cycles for request: 36412
+[17902.270423] Freeing:kvmalloc, Bytes:65536, order:5, cycles for request: 4561
+[17902.270441] Allocation:kvmalloc, Bytes:131072, order: 6, cycles for request: 57392
+[17902.270444] Freeing:kvmalloc, Bytes:131072, order:6, cycles for request: 5733
+[17902.270479] Allocation:kvmalloc, Bytes:262144, order: 7, cycles for request: 116380
+[17902.270483] Freeing:kvmalloc, Bytes:262144, order:7, cycles for request: 11823
+[17902.270539] Allocation:kvmalloc, Bytes:524288, order: 8, cycles for request: 185643
+[17902.270550] Freeing:kvmalloc, Bytes:524288, order:8, cycles for request: 33129
+[17902.270658] Allocation:kvmalloc, Bytes:1048576, order: 9, cycles for request: 363446
+[17902.270679] Freeing:kvmalloc, Bytes:1048576, order:9, cycles for request: 68245
+[17902.271004] Allocation:kvmalloc, Bytes:2097152, order: 10, cycles for request: 1099823
+[17902.271051] Freeing:kvmalloc, Bytes:2097152, order:10, cycles for request: 151371
+[17902.271687] Allocation:kvmalloc, Bytes:4194304, order: 11, cycles for request: 2151620
+[17902.271827] Freeing:kvmalloc, Bytes:4194304, order:11, cycles for request: 463585
+[17902.273218] Allocation:kvmalloc, Bytes:8388608, order: 12, cycles for request: 4709137
+[17902.273477] Freeing:kvmalloc, Bytes:8388608, order:12, cycles for request: 851091
+[17902.280030] Allocation:kvmalloc, Bytes:16777216, order: 13, cycles for request: 22220476
+[17902.280674] Freeing:kvmalloc, Bytes:16777216, order:13, cycles for request: 2166541
+[17902.295291] Allocation:kvmalloc, Bytes:33554432, order: 14, cycles for request: 49569008
+[17902.296587] Freeing:kvmalloc, Bytes:33554432, order:14, cycles for request: 4368459
+[17902.318225] Allocation:kvmalloc, Bytes:67108864, order: 15, cycles for request: 73382733
+[17902.321002] Freeing:kvmalloc, Bytes:67108864, order:15, cycles for request: 9394276
+[17902.356255] Allocation:kvmalloc, Bytes:134217728, order: 16, cycles for request: 119564583
+[17902.361722] Freeing:kvmalloc, Bytes:134217728, order:16, cycles for request: 18518685
+[17902.416044] Allocation:kvmalloc, Bytes:268435456, order: 17, cycles for request: 184249717
+[17902.426107] Freeing:kvmalloc, Bytes:268435456, order:17, cycles for request: 33010639
+[17902.521267] Allocation:kvmalloc, Bytes:536870912, order: 18, cycles for request: 322772737
+[17902.539126] Freeing:kvmalloc, Bytes:536870912, order:18, cycles for request: 60553222
+[17902.705145] Allocation:kvmalloc, Bytes:1073741824, order: 19, cycles for request: 563136948
+[17902.733371] Freeing:kvmalloc, Bytes:1073741824, order:19, cycles for request: 95721160
+[17903.735211] Allocation:kvmalloc, Bytes:2147483648, order: 20, cycles for request: 3398357169
+[17903.806329] Freeing:kvmalloc, Bytes:2147483648, order:20, cycles for request: 241216831
+[17903.806335] insmod: vmalloc: allocation failure: 4294967296 bytes, mode:0xcc0(GFP_KERNEL), nodemask=(null),cpuset=/,mems_allowed=0
+[17903.806344] CPU: 1 PID: 34810 Comm: insmod Tainted: G        W  OE     5.11.0-37-generic #41~20.04.2-Ubuntu
+[17903.806346] Hardware name: VMware, Inc. VMware Virtual Platform/440BX Desktop Reference Platform, BIOS 6.00 07/22/2020
+[17903.806347] Call Trace:
+[17903.806351]  dump_stack+0x74/0x92
+[17903.806357]  warn_alloc.cold+0x7b/0xdf
+[17903.806395]  __vmalloc_node_range+0x1a2/0x240
+[17903.806429]  __vmalloc_node+0x4e/0x70
+[17903.806432]  ? profile_alloc+0x67/0x1000 [memory_profiler]
+[17903.806436]  vmalloc+0x21/0x30
+[17903.806437]  profile_alloc+0x67/0x1000 [memory_profiler]
+[17903.806439]  ? 0xffffffffc0665000
+[17903.806440]  init+0x1a/0x1000 [memory_profiler]
+[17903.806451]  do_one_initcall+0x48/0x1d0
+[17903.806455]  ? _cond_resched+0x19/0x30
+[17903.806458]  ? kmem_cache_alloc_trace+0x37a/0x430
+[17903.806461]  ? do_init_module+0x28/0x250
+[17903.806465]  do_init_module+0x62/0x250
+[17903.806467]  load_module+0x11aa/0x1370
+[17903.806469]  ? security_kernel_post_read_file+0x5c/0x70
+[17903.806474]  ? security_kernel_post_read_file+0x5c/0x70
+[17903.806476]  __do_sys_finit_module+0xc2/0x120
+[17903.806478]  ? __do_sys_finit_module+0xc2/0x120
+[17903.806481]  __x64_sys_finit_module+0x1a/0x20
+[17903.806482]  do_syscall_64+0x38/0x90
+[17903.806484]  entry_SYSCALL_64_after_hwframe+0x44/0xa9
+[17903.806487] RIP: 0033:0x7f239736989d
+[17903.806489] Code: 00 c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d c3 f5 0c 00 f7 d8 64 89 01 48
+[17903.806491] RSP: 002b:00007ffe6c4b0858 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[17903.806493] RAX: ffffffffffffffda RBX: 000055b93fbef7c0 RCX: 00007f239736989d
+[17903.806494] RDX: 0000000000000000 RSI: 000055b93e585358 RDI: 0000000000000003
+[17903.806494] RBP: 0000000000000000 R08: 0000000000000000 R09: 00007f239743d260
+[17903.806495] R10: 0000000000000003 R11: 0000000000000246 R12: 000055b93e585358
+[17903.806496] R13: 0000000000000000 R14: 000055b93fbef760 R15: 0000000000000000
+[17903.806618] Mem-Info:
+[17903.806620] active_anon:112658 inactive_anon:117971 isolated_anon:0
+                active_file:24445 inactive_file:23569 isolated_file:32
+                unevictable:4 dirty:0 writeback:175
+                slab_reclaimable:13475 slab_unreclaimable:23129
+                mapped:64483 shmem:34278 pagetables:7360 bounce:0
+                free:551758 free_pcp:1425 free_cma:0
+[17903.806623] Node 0 active_anon:450632kB inactive_anon:471884kB active_file:97780kB inactive_file:94276kB unevictable:16kB isolated(anon):0kB isolated(file):128kB mapped:257932kB dirty:0kB writeback:700kB shmem:137112kB shmem_thp: 0kB shmem_pmdmapped: 0kB anon_thp: 0kB writeback_tmp:0kB kernel_stack:14352kB pagetables:29440kB all_unreclaimable? no
+[17903.806626] Node 0 DMA free:15384kB min:272kB low:340kB high:408kB reserved_highatomic:0KB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB present:15988kB managed:15904kB mlocked:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+[17903.806630] lowmem_reserve[]: 0 2907 3828 3828 3828
+[17903.806633] Node 0 DMA32 free:1879092kB min:51116kB low:63892kB high:76668kB reserved_highatomic:0KB active_anon:377244kB inactive_anon:282448kB active_file:38684kB inactive_file:48748kB unevictable:16kB writepending:808kB present:3129152kB managed:3036228kB mlocked:16kB bounce:0kB free_pcp:2884kB local_pcp:1484kB free_cma:0kB
+[17903.806655] lowmem_reserve[]: 0 0 920 920 920
+[17903.806657] Node 0 Normal free:312556kB min:16188kB low:20232kB high:24276kB reserved_highatomic:0KB active_anon:73036kB inactive_anon:189712kB active_file:58948kB inactive_file:45596kB unevictable:0kB writepending:144kB present:1048576kB managed:942948kB mlocked:0kB bounce:0kB free_pcp:2816kB local_pcp:1468kB free_cma:0kB
+[17903.806660] lowmem_reserve[]: 0 0 0 0 0
+[17903.806663] Node 0 DMA: 0*4kB 1*8kB (U) 1*16kB (U) 0*32kB 2*64kB (U) 1*128kB (U) 1*256kB (U) 1*512kB (U) 0*1024kB 1*2048kB (M) 3*4096kB (M) = 15384kB
+[17903.806672] Node 0 DMA32: 48801*4kB (UME) 32376*8kB (UME) 18329*16kB (UME) 9212*32kB (UME) 3683*64kB (UME) 1651*128kB (UME) 531*256kB (UM) 175*512kB (UM) 63*1024kB (U) 23*2048kB (U) 13*4096kB (U) = 1879700kB
+[17903.806682] Node 0 Normal: 14777*4kB (UME) 9404*8kB (UME) 5308*16kB (UME) 1841*32kB (UME) 474*64kB (UME) 32*128kB (UM) 1*256kB (U) 0*512kB 0*1024kB 0*2048kB 0*4096kB = 312868kB
+[17903.806691] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+[17903.806693] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+[17903.806710] 99534 total pagecache pages
+[17903.806712] 17183 pages in swap cache
+[17903.806712] Swap cache stats: add 234199, delete 217015, find 4745/16457
+[17903.806713] Free swap  = 1228908kB
+[17903.806714] Total swap = 2097148kB
+[17903.806715] 1048429 pages RAM
+[17903.806715] 0 pages HighMem/MovableOnly
+[17903.806716] 49659 pages reserved
+[17903.806716] 0 pages hwpoisoned
+[17903.806777] Allocation:get_free_pages, Bytes:1, order: 1, cycles for request: 201803
+[17903.806779] Freeing:get_free_pages, Bytes:1, order:1, cycles for request: 1534
+[17903.806781] Allocation:get_free_pages, Bytes:2, order: 1, cycles for request: 1821
+[17903.806782] Freeing:get_free_pages, Bytes:2, order:1, cycles for request: 252
+[17903.806783] Allocation:get_free_pages, Bytes:4, order: 1, cycles for request: 1242
+[17903.806784] Freeing:get_free_pages, Bytes:4, order:1, cycles for request: 237
+[17903.806785] Allocation:get_free_pages, Bytes:8, order: 1, cycles for request: 1227
+[17903.806786] Freeing:get_free_pages, Bytes:8, order:1, cycles for request: 154
+[17903.806787] Allocation:get_free_pages, Bytes:16, order: 1, cycles for request: 1239
+[17903.806788] Freeing:get_free_pages, Bytes:16, order:1, cycles for request: 165
+[17903.806799] Allocation:get_free_pages, Bytes:32, order: 1, cycles for request: 1402
+[17903.806800] Freeing:get_free_pages, Bytes:32, order:1, cycles for request: 182
+[17903.806802] Allocation:get_free_pages, Bytes:64, order: 1, cycles for request: 1291
+[17903.806802] Freeing:get_free_pages, Bytes:64, order:1, cycles for request: 160
+[17903.806804] Allocation:get_free_pages, Bytes:128, order: 1, cycles for request: 1254
+[17903.806804] Freeing:get_free_pages, Bytes:128, order:1, cycles for request: 182
+[17903.806806] Allocation:get_free_pages, Bytes:256, order: 1, cycles for request: 1257
+[17903.806807] Freeing:get_free_pages, Bytes:256, order:1, cycles for request: 160
+[17903.806827] Allocation:get_free_pages, Bytes:512, order: 1, cycles for request: 65242
+[17903.806829] Freeing:get_free_pages, Bytes:512, order:1, cycles for request: 612
+[17903.806830] Allocation:get_free_pages, Bytes:1024, order: 1, cycles for request: 2156
+[17903.806841] Freeing:get_free_pages, Bytes:1024, order:1, cycles for request: 190
+[17903.806842] Allocation:get_free_pages, Bytes:2048, order: 1, cycles for request: 1348
+[17903.806843] Freeing:get_free_pages, Bytes:2048, order:1, cycles for request: 245
+[17903.806844] Allocation:get_free_pages, Bytes:4096, order: 1, cycles for request: 1272
+[17903.806845] Freeing:get_free_pages, Bytes:4096, order:1, cycles for request: 185
+[17903.806848] Allocation:get_free_pages, Bytes:8192, order: 2, cycles for request: 5609
+[17903.806849] Freeing:get_free_pages, Bytes:8192, order:2, cycles for request: 354
+[17903.806853] Allocation:get_free_pages, Bytes:16384, order: 3, cycles for request: 11811
+[17903.806985] Freeing:get_free_pages, Bytes:16384, order:3, cycles for request: 949
+[17903.807057] Allocation:get_free_pages, Bytes:32768, order: 4, cycles for request: 175039
+[17903.807059] Freeing:get_free_pages, Bytes:32768, order:4, cycles for request: 910
+[17903.807072] Allocation:get_free_pages, Bytes:65536, order: 5, cycles for request: 39538
+[17903.807072] Freeing:get_free_pages, Bytes:65536, order:5, cycles for request: 473
+[17903.807097] Allocation:get_free_pages, Bytes:131072, order: 6, cycles for request: 81922
+[17903.807099] Freeing:get_free_pages, Bytes:131072, order:6, cycles for request: 967
+[17903.807151] Allocation:get_free_pages, Bytes:262144, order: 7, cycles for request: 175337
+[17903.807153] Freeing:get_free_pages, Bytes:262144, order:7, cycles for request: 2132
+[17903.807260] Allocation:get_free_pages, Bytes:524288, order: 8, cycles for request: 362053
+[17903.807262] Freeing:get_free_pages, Bytes:524288, order:8, cycles for request: 3637
+[17903.807509] Allocation:get_free_pages, Bytes:1048576, order: 9, cycles for request: 834038
+[17903.807514] Freeing:get_free_pages, Bytes:1048576, order:9, cycles for request: 7270
+[17903.807992] Allocation:get_free_pages, Bytes:2097152, order: 10, cycles for request: 1615650
+[17903.807999] Freeing:get_free_pages, Bytes:2097152, order:10, cycles for request: 14227
+[17903.808085] Allocation:kzalloc, Bytes:1, order: 1, cycles for request: 2495
+[17903.808087] Freeing:kzalloc, Bytes:1, order:1, cycles for request: 774
+[17903.808088] Allocation:kzalloc, Bytes:2, order: 1, cycles for request: 225
+[17903.808089] Freeing:kzalloc, Bytes:2, order:1, cycles for request: 59
+[17903.808090] Allocation:kzalloc, Bytes:4, order: 1, cycles for request: 65
+[17903.808091] Freeing:kzalloc, Bytes:4, order:1, cycles for request: 56
+[17903.808092] Allocation:kzalloc, Bytes:8, order: 1, cycles for request: 68
+[17903.808092] Freeing:kzalloc, Bytes:8, order:1, cycles for request: 56
+[17903.808094] Allocation:kzalloc, Bytes:16, order: 1, cycles for request: 2173
+[17903.808095] Freeing:kzalloc, Bytes:16, order:1, cycles for request: 402
+[17903.808096] Allocation:kzalloc, Bytes:32, order: 1, cycles for request: 1035
+[17903.808097] Freeing:kzalloc, Bytes:32, order:1, cycles for request: 325
+[17903.808098] Allocation:kzalloc, Bytes:64, order: 1, cycles for request: 1002
+[17903.808100] Freeing:kzalloc, Bytes:64, order:1, cycles for request: 1023
+[17903.808101] Allocation:kzalloc, Bytes:128, order: 1, cycles for request: 2063
+[17903.808102] Freeing:kzalloc, Bytes:128, order:1, cycles for request: 547
+[17903.808103] Allocation:kzalloc, Bytes:256, order: 1, cycles for request: 417
+[17903.808104] Freeing:kzalloc, Bytes:256, order:1, cycles for request: 305
+[17903.808105] Allocation:kzalloc, Bytes:512, order: 1, cycles for request: 1532
+[17903.808106] Freeing:kzalloc, Bytes:512, order:1, cycles for request: 503
+[17903.808108] Allocation:kzalloc, Bytes:1024, order: 1, cycles for request: 1712
+[17903.808109] Freeing:kzalloc, Bytes:1024, order:1, cycles for request: 393
+[17903.808110] Allocation:kzalloc, Bytes:2048, order: 1, cycles for request: 2078
+[17903.808111] Freeing:kzalloc, Bytes:2048, order:1, cycles for request: 857
+[17903.808113] Allocation:kzalloc, Bytes:4096, order: 1, cycles for request: 3989
+[17903.808115] Freeing:kzalloc, Bytes:4096, order:1, cycles for request: 535
+[17903.808117] Allocation:kzalloc, Bytes:8192, order: 2, cycles for request: 3873
+[17903.808118] Freeing:kzalloc, Bytes:8192, order:2, cycles for request: 544
+[17903.808121] Allocation:kzalloc, Bytes:16384, order: 3, cycles for request: 9438
+[17903.808122] Freeing:kzalloc, Bytes:16384, order:3, cycles for request: 837
+[17903.808127] Allocation:kzalloc, Bytes:32768, order: 4, cycles for request: 12356
+[17903.808128] Freeing:kzalloc, Bytes:32768, order:4, cycles for request: 384
+[17903.808154] Allocation:kzalloc, Bytes:65536, order: 5, cycles for request: 25805
+[17903.808155] Freeing:kzalloc, Bytes:65536, order:5, cycles for request: 866
+[17903.808169] Allocation:kzalloc, Bytes:131072, order: 6, cycles for request: 43801
+[17903.808170] Freeing:kzalloc, Bytes:131072, order:6, cycles for request: 523
+[17903.808198] Allocation:kzalloc, Bytes:262144, order: 7, cycles for request: 91782
+[17903.808199] Freeing:kzalloc, Bytes:262144, order:7, cycles for request: 1180
+[17903.808254] Allocation:kzalloc, Bytes:524288, order: 8, cycles for request: 181826
+[17903.808255] Freeing:kzalloc, Bytes:524288, order:8, cycles for request: 1868
+[17903.808361] Allocation:kzalloc, Bytes:1048576, order: 9, cycles for request: 356098
+[17903.808362] Freeing:kzalloc, Bytes:1048576, order:9, cycles for request: 2055
+[17903.808566] Allocation:kzalloc, Bytes:2097152, order: 10, cycles for request: 687649
+[17903.808568] Freeing:kzalloc, Bytes:2097152, order:10, cycles for request: 3533
+[17903.809150] Allocation:kzalloc, Bytes:4194304, order: 11, cycles for request: 1969772
+[17903.809156] Freeing:kzalloc, Bytes:4194304, order:11, cycles for request: 9635
