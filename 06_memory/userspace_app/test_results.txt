@@ -1,0 +1,168 @@
+PROFILE MALLOC BEGIN
+Allocation of 0 bytes completed. Time spent:0.000001 
+De-Allocation of 0 bytes completed. Time spent:0.000001 
+Allocation of 1 bytes completed. Time spent:0.000001 
+De-Allocation of 1 bytes completed. Time spent:0.000001 
+Allocation of 2 bytes completed. Time spent:0.000001 
+De-Allocation of 2 bytes completed. Time spent:0.000001 
+Allocation of 4 bytes completed. Time spent:0.000000 
+De-Allocation of 4 bytes completed. Time spent:0.000000 
+Allocation of 8 bytes completed. Time spent:0.000001 
+De-Allocation of 8 bytes completed. Time spent:0.000001 
+Allocation of 16 bytes completed. Time spent:0.000000 
+De-Allocation of 16 bytes completed. Time spent:0.000000 
+Allocation of 32 bytes completed. Time spent:0.000001 
+De-Allocation of 32 bytes completed. Time spent:0.000001 
+Allocation of 64 bytes completed. Time spent:0.000001 
+De-Allocation of 64 bytes completed. Time spent:0.000001 
+Allocation of 128 bytes completed. Time spent:0.000000 
+De-Allocation of 128 bytes completed. Time spent:0.000000 
+Allocation of 256 bytes completed. Time spent:0.000001 
+De-Allocation of 256 bytes completed. Time spent:0.000001 
+Allocation of 512 bytes completed. Time spent:0.000001 
+De-Allocation of 512 bytes completed. Time spent:0.000001 
+Allocation of 1024 bytes completed. Time spent:0.000000 
+De-Allocation of 1024 bytes completed. Time spent:0.000000 
+Allocation of 2048 bytes completed. Time spent:0.000002 
+De-Allocation of 2048 bytes completed. Time spent:0.000002 
+Allocation of 4096 bytes completed. Time spent:0.000000 
+De-Allocation of 4096 bytes completed. Time spent:0.000000 
+Allocation of 8192 bytes completed. Time spent:0.000002 
+De-Allocation of 8192 bytes completed. Time spent:0.000002 
+Allocation of 16384 bytes completed. Time spent:0.000002 
+De-Allocation of 16384 bytes completed. Time spent:0.000002 
+Allocation of 32768 bytes completed. Time spent:0.000003 
+De-Allocation of 32768 bytes completed. Time spent:0.000003 
+Allocation of 65536 bytes completed. Time spent:0.000002 
+De-Allocation of 65536 bytes completed. Time spent:0.000002 
+Allocation of 131072 bytes completed. Time spent:0.000002 
+De-Allocation of 131072 bytes completed. Time spent:0.000002 
+Allocation of 262144 bytes completed. Time spent:0.000005 
+De-Allocation of 262144 bytes completed. Time spent:0.000005 
+Allocation of 524288 bytes completed. Time spent:0.000005 
+De-Allocation of 524288 bytes completed. Time spent:0.000005 
+Allocation of 1048576 bytes completed. Time spent:0.000004 
+De-Allocation of 1048576 bytes completed. Time spent:0.000004 
+Allocation of 2097152 bytes completed. Time spent:0.000011 
+De-Allocation of 2097152 bytes completed. Time spent:0.000011 
+Allocation of 4194304 bytes completed. Time spent:0.000006 
+De-Allocation of 4194304 bytes completed. Time spent:0.000006 
+Allocation of 8388608 bytes completed. Time spent:0.000004 
+De-Allocation of 8388608 bytes completed. Time spent:0.000004 
+Allocation of 16777216 bytes completed. Time spent:0.000004 
+De-Allocation of 16777216 bytes completed. Time spent:0.000004 
+Allocation of 33554432 bytes completed. Time spent:0.000004 
+De-Allocation of 33554432 bytes completed. Time spent:0.000004 
+Allocation of 67108864 bytes completed. Time spent:0.000004 
+De-Allocation of 67108864 bytes completed. Time spent:0.000004 
+Allocation of 134217728 bytes completed. Time spent:0.000005 
+De-Allocation of 134217728 bytes completed. Time spent:0.000005 
+Allocation of 268435456 bytes completed. Time spent:0.000004 
+De-Allocation of 268435456 bytes completed. Time spent:0.000004 
+Allocation of 536870912 bytes completed. Time spent:0.000004 
+De-Allocation of 536870912 bytes completed. Time spent:0.000004 
+Allocation of 1073741824 bytes completed. Time spent:0.000005 
+De-Allocation of 1073741824 bytes completed. Time spent:0.000005 
+Allocation of 2147483648 bytes completed. Time spent:0.000005 
+De-Allocation of 2147483648 bytes completed. Time spent:0.000005 
+Allocation of 4294967296 bytes completed. Time spent:0.000005 
+De-Allocation of 4294967296 bytes completed. Time spent:0.000005 
+Allocation of 8589934592 bytes failed, return. Time spent:0.000003 
+PROFILE MALLOC END
+PROFILE CALLOC BEGIN
+Allocation of 0 bytes completed. Time spent:0.000001 
+De-Allocation of 0 bytes completed. Time spent:0.000001 
+Allocation of 1 bytes completed. Time spent:0.000000 
+De-Allocation of 1 bytes completed. Time spent:0.000000 
+Allocation of 2 bytes completed. Time spent:0.000001 
+De-Allocation of 2 bytes completed. Time spent:0.000001 
+Allocation of 4 bytes completed. Time spent:0.000000 
+De-Allocation of 4 bytes completed. Time spent:0.000000 
+Allocation of 8 bytes completed. Time spent:0.000001 
+De-Allocation of 8 bytes completed. Time spent:0.000001 
+Allocation of 16 bytes completed. Time spent:0.000000 
+De-Allocation of 16 bytes completed. Time spent:0.000000 
+Allocation of 32 bytes completed. Time spent:0.000001 
+De-Allocation of 32 bytes completed. Time spent:0.000001 
+Allocation of 64 bytes completed. Time spent:0.000000 
+De-Allocation of 64 bytes completed. Time spent:0.000000 
+Allocation of 128 bytes completed. Time spent:0.000001 
+De-Allocation of 128 bytes completed. Time spent:0.000001 
+Allocation of 256 bytes completed. Time spent:0.000000 
+De-Allocation of 256 bytes completed. Time spent:0.000000 
+Allocation of 512 bytes completed. Time spent:0.000001 
+De-Allocation of 512 bytes completed. Time spent:0.000001 
+Allocation of 1024 bytes completed. Time spent:0.000000 
+De-Allocation of 1024 bytes completed. Time spent:0.000000 
+Allocation of 2048 bytes completed. Time spent:0.000001 
+De-Allocation of 2048 bytes completed. Time spent:0.000001 
+Allocation of 4096 bytes completed. Time spent:0.000001 
+De-Allocation of 4096 bytes completed. Time spent:0.000001 
+Allocation of 8192 bytes completed. Time spent:0.000002 
+De-Allocation of 8192 bytes completed. Time spent:0.000002 
+Allocation of 16384 bytes completed. Time spent:0.000003 
+De-Allocation of 16384 bytes completed. Time spent:0.000003 
+Allocation of 32768 bytes completed. Time spent:0.000006 
+De-Allocation of 32768 bytes completed. Time spent:0.000006 
+Allocation of 65536 bytes completed. Time spent:0.000013 
+De-Allocation of 65536 bytes completed. Time spent:0.000013 
+Allocation of 131072 bytes completed. Time spent:0.000030 
+De-Allocation of 131072 bytes completed. Time spent:0.000030 
+Allocation of 262144 bytes completed. Time spent:0.000058 
+De-Allocation of 262144 bytes completed. Time spent:0.000058 
+Allocation of 524288 bytes completed. Time spent:0.000013 
+De-Allocation of 524288 bytes completed. Time spent:0.000013 
+Allocation of 1048576 bytes completed. Time spent:0.000198 
+De-Allocation of 1048576 bytes completed. Time spent:0.000198 
+Allocation of 2097152 bytes completed. Time spent:0.000295 
+De-Allocation of 2097152 bytes completed. Time spent:0.000295 
+Allocation of 4194304 bytes completed. Time spent:0.000575 
+De-Allocation of 4194304 bytes completed. Time spent:0.000575 
+Allocation of 8388608 bytes completed. Time spent:0.001021 
+De-Allocation of 8388608 bytes completed. Time spent:0.001021 
+Allocation of 16777216 bytes completed. Time spent:0.002367 
+De-Allocation of 16777216 bytes completed. Time spent:0.002367 
+Allocation of 33554432 bytes completed. Time spent:0.000014 
+De-Allocation of 33554432 bytes completed. Time spent:0.000014 
+Allocation of 67108864 bytes completed. Time spent:0.000005 
+De-Allocation of 67108864 bytes completed. Time spent:0.000005 
+Allocation of 134217728 bytes completed. Time spent:0.000004 
+De-Allocation of 134217728 bytes completed. Time spent:0.000004 
+Allocation of 268435456 bytes completed. Time spent:0.000008 
+De-Allocation of 268435456 bytes completed. Time spent:0.000008 
+Allocation of 536870912 bytes completed. Time spent:0.000004 
+De-Allocation of 536870912 bytes completed. Time spent:0.000004 
+Allocation of 1073741824 bytes completed. Time spent:0.000006 
+De-Allocation of 1073741824 bytes completed. Time spent:0.000006 
+Allocation of 2147483648 bytes completed. Time spent:0.000005 
+De-Allocation of 2147483648 bytes completed. Time spent:0.000005 
+Allocation of 4294967296 bytes completed. Time spent:0.000004 
+De-Allocation of 4294967296 bytes completed. Time spent:0.000004 
+Allocation of 8589934592 bytes failed, return. Time spent:0.000004 
+PROFILE CALLOC END
+PROFILE ALLOCA BEGIN
+alloca request completed. Bytes: 0, Time:0.000000
+alloca request completed. Bytes: 1, Time:0.000000
+alloca request completed. Bytes: 2, Time:0.000000
+alloca request completed. Bytes: 4, Time:0.000001
+alloca request completed. Bytes: 8, Time:0.000001
+alloca request completed. Bytes: 16, Time:0.000000
+alloca request completed. Bytes: 32, Time:0.000000
+alloca request completed. Bytes: 64, Time:0.000001
+alloca request completed. Bytes: 128, Time:0.000000
+alloca request completed. Bytes: 256, Time:0.000000
+alloca request completed. Bytes: 512, Time:0.000001
+alloca request completed. Bytes: 1024, Time:0.000000
+alloca request completed. Bytes: 2048, Time:0.000000
+alloca request completed. Bytes: 4096, Time:0.000001
+alloca request completed. Bytes: 8192, Time:0.000003
+alloca request completed. Bytes: 16384, Time:0.000004
+alloca request completed. Bytes: 32768, Time:0.000007
+alloca request completed. Bytes: 65536, Time:0.000022
+alloca request completed. Bytes: 131072, Time:0.000025
+alloca request completed. Bytes: 262144, Time:0.000054
+alloca request completed. Bytes: 524288, Time:0.000105
+alloca request completed. Bytes: 1048576, Time:0.000214
+alloca request completed. Bytes: 2097152, Time:0.000471
+alloca request completed. Bytes: 4194304, Time:0.001054
+Segmentation fault (core dumped)
