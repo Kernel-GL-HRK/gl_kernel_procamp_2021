@@ -1,0 +1,42 @@
+# insmod /home/user/hello.ko 
+# cd MyObject/
+# echo "qwety1" > list
+# echo "qwety2" > list
+# echo "qwety3" > list
+# cat list
+qwety3
+qwety2
+qwety1
+# dmesg
+hello: ---< list_show
+hello: ---> hello_exit
+hello: Clean node: qwety3
+hello: Clean node: qwety2
+hello: Clean node: q1
+hello: List_empty: 1
+hello: ---< hello_exit
+hello: ---> hello_init
+hello: ---< hello_init
+hello: ---> list_store size_t: 7
+hello: value created: 7
+hello: ---> add_node
+hello: ---< add_node
+hello: ---< list_store
+hello: ---> list_store size_t: 7
+hello: value created: 7
+hello: ---> add_node
+hello: ---< add_node
+hello: ---< list_store
+hello: ---> list_store size_t: 7
+hello: value created: 7
+hello: ---> add_node
+hello: ---< add_node
+hello: ---< list_store
+hello: ---> list_show
+hello: Node copy to buf: qwety3
+hello: Node copy to buf: qwety2
+hello: Node copy to buf: qwety1
+# pwd
+/sys/kernel/MyObject
+# 
+
