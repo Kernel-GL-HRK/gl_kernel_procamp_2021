@@ -1,153 +1,126 @@
 /**
- * @file string_storage.c
- * @brief String Storage kernel module.
- *   This module allows you to store and retrieve stored strings through sysfs
- *   file in /sys/kernel/string_storage/list.
- *   Type echo "some string" > /sys/kernel/string_storage/list to save the string,
- *   type cat /sys/kernel/string_storage/list to print all the saved strings.
+ * @file timediff.c
+ * @brief Timediff kernel module.
+ *   This module uses ktime CLOCK_MONOTONIC to calculate relative and absolute time.
+ *   It gives you relative time since last time_relative attribute read and
+ *   gives you absolute time on each time_absolute reading.
  */
 
 #include <linux/module.h>
-#include <linux/moduleparam.h>
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/kobject.h>
-#include <linux/err.h>
-#include <linux/string.h>
+#include <linux/time.h>
+#include <linux/ktime.h>
+#include <linux/timekeeping.h>
+#include <linux/jiffies.h>
 #include <linux/sysfs.h>
-#include <linux/list.h>
-#include <linux/slab.h>
 #include <asm-generic/bug.h>
 
-struct node
-{
-    struct list_head list;
-    const char *string;
-};
-
-struct my_object
-{
-    struct kobject  *kobj;
-    struct list_head strings_list;
-    struct kobj_attribute kattr;
-};
-
-static ssize_t string_show(struct kobject *kobj, struct kobj_attribute *attr,
+static ssize_t timediff_relative_show(struct kobject *kobj, struct kobj_attribute *attr,
     char *buf);
 
-static ssize_t string_store(struct kobject *kobj, struct kobj_attribute *attr,
-    const char *buf, size_t count);
+static ssize_t timediff_absolute_show(struct kobject *kobj, struct kobj_attribute *attr,
+    char *buf);
 
-static struct my_object string_storage =
-{
-    .kattr = __ATTR(list, 0660, string_show, string_store),
-};
+static struct kobject *kobj;
+static struct kobj_attribute  kattr_rel      = __ATTR(time_relative, 0440, timediff_relative_show, NULL);
+static struct kobj_attribute  kattr_absolute = __ATTR(time_absolute, 0440, timediff_absolute_show, NULL);
 
-static ssize_t string_show(struct kobject *kobj, struct kobj_attribute *attr,
+static ktime_t last_rel_ktime;
+static struct timespec64 last_abs_ktime;
+
+static ssize_t timediff_relative_show(struct kobject *kobj, struct kobj_attribute *attr,
     char *buf)
 {
-    struct node *entry;
-    struct list_head *entity;
-    struct list_head *tmp;
-    ssize_t len = 0;
+    ktime_t ktime_rel;
+    ktime_t ktime_diff;
+    struct timespec64 ktime_rel_show;
+    int ret;
 
-    (void)kobj;
-    (void)attr;
+    // CLOCK_MONOTONIC
+    ktime_rel  = ktime_get();
 
-    list_for_each_safe(entity, tmp, &string_storage.strings_list)
+    if (last_rel_ktime == 0)
     {
-        entry = list_entry(entity, struct node, list);
+        ret = sprintf(buf, "You have not read time_relative yet\n");    
+    }
+    else
+    {
+        ktime_diff     = ktime_sub(ktime_rel, last_rel_ktime);
+        ktime_rel_show = ktime_to_timespec64(ktime_diff);
 
-        BUG_ON(entry == NULL);
-        BUG_ON(entry->string == NULL);
-
-        const size_t entry_len = strlen(entry->string);
-        const size_t tmp       = strlcpy(&buf[len], entry->string, PAGE_SIZE - len);
-        if (tmp != entry_len)
-        {
-            BUG();
-            len = -ENOMEM;
-            pr_err("[STR_STORAGE] String copy failed or PAGE_SIZE was reached");
-            break;
-        }
-
-        len += tmp;
+        ret = sprintf(buf, "Seconds past since last read: %lld.%ld\n",
+            ktime_rel_show.tv_sec, ktime_rel_show.tv_nsec / 1000000);
     }
 
-    if (len > 0)
-        pr_debug("[STR_STORAGE] String storage contains:\n%s", buf);
+    last_rel_ktime = ktime_rel;
 
-    return len;
+    pr_debug("[TIMEDIFF] %s", buf);
+
+    return ret;
 }
 
-static ssize_t string_store(struct kobject *kobj, struct kobj_attribute *attr,
-    const char *buf, size_t count)
+static ssize_t timediff_absolute_show(struct kobject *kobj, struct kobj_attribute *attr,
+    char *buf)
 {
-    struct node *str;
+    int ret;
 
-    (void)kobj;
-    (void)attr;
+    if (last_abs_ktime.tv_sec == 0)
+    {
+        ret = sprintf(buf, "You have not read time_absolute yet\n");
+    }
+    else
+    {
+        ret = sprintf(buf, "Last read was at %lld.%ld seconds after system start\n",
+            last_abs_ktime.tv_sec, last_abs_ktime.tv_nsec / 100);
+    }
+    
+    pr_debug("[TIMEDIFF] %s", buf);
 
-    str = kmalloc(sizeof(struct node), GFP_KERNEL);
-    if (str == NULL)
-        return -ENOMEM;
+    // CLOCK_MONOTONIC
+    ktime_get_ts64(&last_abs_ktime);
 
-    str->string = kstrdup_const(buf, GFP_KERNEL);
-    if (str->string == NULL)
-        return -ENOMEM;
-
-    pr_debug("[STR_STORAGE] String %s stored", str->string);
-
-    list_add_tail(&str->list, &string_storage.strings_list);
-
-    return count;
+    return ret;
 }
 
-static int string_store_init(void)
+static int timediff_init(void)
 {
-    string_storage.kobj = kobject_create_and_add("string_storage", kernel_kobj);
-    if (string_storage.kobj == NULL)
+    int res;
+
+    kobj = kobject_create_and_add("timediff", kernel_kobj);
+    if (kobj == NULL)
         return -ENOMEM;
 
-    const int res = sysfs_create_file(string_storage.kobj, &string_storage.kattr.attr);
+    res = sysfs_create_file(kobj, &kattr_rel.attr);
     if (res)
     {
-        pr_err("[STR_STORAGE] Failed to create sysfs file");
-        kobject_put(string_storage.kobj);
+        BUG();
+        pr_err("[TIMEDIFF] Failed to create sysfs file");
+        kobject_put(kobj);
         return res;
     }
 
-    INIT_LIST_HEAD(&string_storage.strings_list);
+    res = sysfs_create_file(kobj, &kattr_absolute.attr);
+    if (res)
+    {
+        BUG();
+        pr_err("[TIMEDIFF] Failed to create sysfs file");
+        kobject_put(kobj);
+        return res;
+    }
 
     return res;
 }
 
-static void string_store_exit(void)
+static void timediff_exit(void)
 {
-    struct node *entry;
-    struct list_head *entity;
-    struct list_head *tmp;
-
-    list_for_each_safe(entity, tmp, &string_storage.strings_list)
-    {
-        entry = list_entry(entity, struct node, list);
-
-        list_del(entity);
-
-        BUG_ON(entry == NULL);
-        BUG_ON(entry->string == NULL);
-
-        kfree(entry->string);
-        kfree(entry);
-    }
-
-    kobject_put(string_storage.kobj);
-    string_storage.kobj = NULL;
+    kobject_put(kobj);
 }
 
-module_init(string_store_init);
-module_exit(string_store_exit);
+module_init(timediff_init);
+module_exit(timediff_exit);
 
-MODULE_DESCRIPTION("String Storage kernel module");
+MODULE_DESCRIPTION("Timediff kernel module");
 MODULE_AUTHOR("Sergey D.");
 MODULE_LICENSE("GPL");
