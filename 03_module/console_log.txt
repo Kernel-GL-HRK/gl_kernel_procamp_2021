@@ -1,0 +1,32 @@
+Starting dropbear sshd: OK
+
+Welcome to Buildroot
+buildroot login: root
+# cd /home/user/
+# ls
+argsmod.ko
+# insmod argsmod.ko first_arg=3 second_arg=4
+argsmod: loading out-of-tree module taints kernel.
+3 + 4 = 7
+# rmmod argsmod.ko 
+3 - 4 = -1
+# insmod argsmod.ko first_arg=8 second_arg=6
+8 + 6 = 14
+# rmmod argsmod.ko 
+8 - 6 = 2
+# insmod argsmod.ko first_arg=5
+5 + 0 = 5
+# rmmod argsmod.ko 
+5 - 0 = 5
+# insmod argsmod.ko second_arg=10
+0 + 10 = 10
+# rmmod argsmod.ko 
+0 - 10 = -10
+# insmod argsmod.ko
+0 + 0 = 0
+# rmmod argsmod.ko 
+0 - 0 = 0
+# exit
+
+Welcome to Buildroot
+buildroot login: qemu-system-x86_64: terminating on signal 2
