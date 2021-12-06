@@ -1,12 +1,14 @@
 # insmod hello_mod.ko
-Operetion summary
-Parameter1=10
-Parameter2=15
-Summ=25
+Addition process
+Hi...P1=0 P2=0 Summ=0
 # rmmod hello_mod.ko
-Operetion substration
-Parameter1=10
-Parameter2=15
-Subst=-5
+Processing substration
+bye...P1=0 P2=0 Subst=0
+# insmod hello_mod.ko a=7 b=5
+Addition process
+Hi...P1=7 P2=5 Summ=12
+# rmmod hello_mod.ko
+Processing substration
+bye...P1=7 P2=5 Subst=2
 # 
 
