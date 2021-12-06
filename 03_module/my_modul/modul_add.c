@@ -22,5 +22,6 @@ void cleanup_module(void)
 }
 
 MODULE_DESCRIPTION("My simple kernel module");
-MODULE_AUTHOR("Michael N.");
+MODULE_AUTHOR("Valentin S.");
 MODULE_LICENSE("GPL");
+MODULE_VERSION("0.1");
