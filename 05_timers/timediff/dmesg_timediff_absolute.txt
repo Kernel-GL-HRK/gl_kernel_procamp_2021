@@ -1,0 +1,8 @@
+[TIMEDIFF] You have not read time_absolute yet
+[TIMEDIFF] Last read was at 809.551044 seconds after system start
+[TIMEDIFF] Last read was at 811.555076 seconds after system start
+[TIMEDIFF] Last read was at 812.950683 seconds after system start
+[TIMEDIFF] Last read was at 813.1678972 seconds after system start
+[TIMEDIFF] Last read was at 814.2792612 seconds after system start
+[TIMEDIFF] Last read was at 818.713325 seconds after system start
+[TIMEDIFF] Last read was at 826.7950020 seconds after system start

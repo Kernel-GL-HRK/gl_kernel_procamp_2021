@@ -1,0 +1,8 @@
+timediff: loading out-of-tree module taints kernel.
+[TIMEDIFF] You have not read time_relative yet
+[TIMEDIFF] Seconds past since last read: 1.156
+[TIMEDIFF] Seconds past since last read: 2.338
+[TIMEDIFF] Seconds past since last read: 0.896
+[TIMEDIFF] Seconds past since last read: 0.442
+[TIMEDIFF] Seconds past since last read: 10.431
+[TIMEDIFF] Seconds past since last read: 13.789
