@@ -1,0 +1,10 @@
+# insmod /home/user/recv_msg.ko
+# echo message1 > /sys/kernel/recv_msg/list
+# echo message2 > /sys/kernel/recv_msg/list
+# echo message3 > /sys/kernel/recv_msg/list
+# cat /sys/kernel/recv_msg/list
+message1
+message2
+message3
+# rmmod /home/user/recv_msg.ko
+# 
