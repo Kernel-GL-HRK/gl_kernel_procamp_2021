@@ -58,7 +58,8 @@ static ssize_t timing_show(struct kobject *kobj, struct kobj_attribute *attr,
 					ts.tv_nsec);
 
 		prev_tick = curr_tick - prev_tick;
-		wr_len  += sprintf(buf+wr_len, "Relative cycles                            %09lld\n", prev_tick);
+		wr_len  += sprintf(buf+wr_len, "Relative cycles                            %09lld\n",
+					prev_tick);
 	}
 
 	//save current time stamp
