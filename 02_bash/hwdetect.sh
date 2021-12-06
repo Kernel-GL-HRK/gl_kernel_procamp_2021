@@ -23,15 +23,7 @@ sleep 2
 
 diff detect.txt detect2.txt
 
-if cmp detect.txt detect2.txt ;
- then
-
-echo "Device disconnection check"
-
-else 
-break
-
-fi
+cmp detect.txt detect2.txt
 
 done
 
