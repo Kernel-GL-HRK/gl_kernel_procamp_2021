@@ -1,0 +1,17 @@
+[Hello it`s test for first Kernel module]
+ 
+[With parameters]
+ 
+[With one parameters]
+ 
+[Without parameters]
+
+dmesg | grep 'znach'
+
+[ 3230.039347] znach_1 + znach_2 = 255
+[ 3230.042907] znach_1 - znach_2 = -11
+[ 3230.164680] znach_1 + znach_2 = 0
+[ 3230.168207] znach_1 - znach_2 = -20
+[ 3230.302357] znach_1 + znach_2 = 15
+[ 3230.305929] znach_1 - znach_2 = -5
+

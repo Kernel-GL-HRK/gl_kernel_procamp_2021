@@ -7,18 +7,17 @@ echo '[Hello it`s test for first Kernel module]'
 echo ' '
 echo '[With parameters]'
 sleep 0.1s
-insmod main.ko user=Valentin
-#insmod main.ko user=Valentin task=3
-rmmod main.ko
+insmod modul_add.ko znach_1=122  znach_2=133
+rmmod modul_add.ko
 
 echo ' '
-echo '[With bad parameters]'
-sleep 0.1s
-insmod main.ko user=Valentin task=1
-rmmod main.ko
+echo '[With one parameters]'
+sleep 0.1s 
+insmod modul_add.ko znach_1=-10    
+rmmod modul_add.ko
 
 echo ' '
 echo '[Without parameters]'
 sleep 0.1s
-insmod main.ko
-rmmod main.ko
+insmod modul_add.ko
+rmmod modul_add.ko
