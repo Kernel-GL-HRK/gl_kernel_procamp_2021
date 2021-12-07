@@ -1,0 +1,6 @@
+[ 1579.250693] test_module loaded
+[ 1579.250694] al_name           buf_size        all_time        fr_time
+[ 1579.250695] kmalloc:          100,            59 ns,          35 ns
+[ 1579.250695] kzalloc:          100,            50 ns,          26 ns
+[ 1579.250705] vmalloc:          4096,           9280 ns,        17 ns
+[ 1579.250705] get_free_pages:   0,              79 ns,          68 ns
