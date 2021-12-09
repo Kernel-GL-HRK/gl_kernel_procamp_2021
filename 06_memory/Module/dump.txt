@@ -1,0 +1,109 @@
+# insmod /home/user/memory_tst_mod.ko
+# cat /sys/kernel/memory_tst_mod/getmemtst
+
+	Memory allocation/deallocation test
+
+Size		Function		Alloc(ns)	Dealloc(ns)
+2^0		kmalloc       		29830		33470
+2^0		kzalloc       		33650		1600
+2^0		vmalloc       		89010		50810
+2^0		get_free_pages		38530		23750
+2^1		kmalloc       		2780		1570
+2^1		kzalloc       		1880		1130
+2^1		vmalloc       		16450		11620
+2^1		get_free_pages		2630		1830
+2^2		kmalloc       		1710		1210
+2^2		kzalloc       		1640		1090
+2^2		vmalloc       		9640		7120
+2^2		get_free_pages		2270		1520
+2^3		kmalloc       		1710		1100
+2^3		kzalloc       		1610		1060
+2^3		vmalloc       		9400		6580
+2^3		get_free_pages		2360		1470
+2^4		kmalloc       		4370		1110
+2^4		kzalloc       		1710		1040
+2^4		vmalloc       		336620		108880
+2^4		get_free_pages		4110		2160
+2^5		kmalloc       		2560		2740
+2^5		kzalloc       		2340		1080
+2^5		vmalloc       		16330		8280
+2^5		get_free_pages		2570		1610
+2^6		kmalloc       		1740		1180
+2^6		kzalloc       		1710		1030
+2^6		vmalloc       		11700		6670
+2^6		get_free_pages		2160		1450
+2^7		kmalloc       		3300		2140
+2^7		kzalloc       		1890		990
+2^7		vmalloc       		8850		6170
+2^7		get_free_pages		2340		1590
+2^8		kmalloc       		3400		1300
+2^8		kzalloc       		1840		1010
+2^8		vmalloc       		9140		6350
+2^8		get_free_pages		2110		1420
+2^9		kmalloc       		3170		1030
+2^9		kzalloc       		1870		990
+2^9		vmalloc       		8310		5990
+2^9		get_free_pages		2160		1480
+2^10		kmalloc       		3000		3220
+2^10		kzalloc       		2070		1030
+2^10		vmalloc       		8440		6170
+2^10		get_free_pages		2090		1460
+2^11		kmalloc       		3080		2220
+2^11		kzalloc       		2340		980
+2^11		vmalloc       		9180		7390
+2^11		get_free_pages		2120		1450
+2^12		kmalloc       		3080		1270
+2^12		kzalloc       		2890		1050
+2^12		vmalloc       		11330		6190
+2^12		get_free_pages		2130		1450
+2^13		kmalloc       		3300		2210
+2^13		kzalloc       		5390		1060
+2^13		vmalloc       		28320		7480
+2^13		get_free_pages		10190		8400
+2^14		kmalloc       		10810		6270
+2^14		kzalloc       		15250		3060
+2^14		vmalloc       		16450		9020
+2^14		get_free_pages		3070		3030
+2^15		kmalloc       		52380		4250
+2^15		kzalloc       		23930		3040
+2^15		vmalloc       		38050		12200
+2^15		get_free_pages		3400		3240
+2^16		kmalloc       		4310		3290
+2^16		kzalloc       		36150		3190
+2^16		vmalloc       		20380		19590
+2^16		get_free_pages		3270		3210
+2^17		kmalloc       		5200		5430
+2^17		kzalloc       		68850		4780
+2^17		vmalloc       		37670		27600
+2^17		get_free_pages		3930		5030
+2^18		kmalloc       		5310		6000
+2^18		kzalloc       		153060		5610
+2^18		vmalloc       		77830		46190
+2^18		get_free_pages		4480		6020
+2^19		kmalloc       		10010		6900
+2^19		kzalloc       		1068410		11670
+2^19		vmalloc       		172820		93110
+2^19		get_free_pages		7930		8630
+2^20		kmalloc       		14860		8660
+2^20		kzalloc       		552680		11950
+2^20		vmalloc       		235970		186950
+2^20		get_free_pages		10250		9560
+2^21		kmalloc       		27500		16920
+2^21		kzalloc       		1291920		26230
+2^21		vmalloc       		715850		366160
+2^21		get_free_pages		15300		14600
+2^22		kmalloc       		47150		26910
+2^22		kzalloc       		2406550		51710
+2^22		vmalloc       		1176980		709480
+2^22		get_free_pages		27620		23490
+2^23		kmalloc       		error
+2^23		kzalloc       		error
+2^23		vmalloc       		1699320		1453870
+2^23		get_free_pages		error
+2^24		kmalloc       		error
+2^24		kzalloc       		error
+2^24		vmalloc       		3499200		3032510
+2^24		get_free_pages		error
+# rmmod /home/user/memory_tst_mod.ko
+# 
+
