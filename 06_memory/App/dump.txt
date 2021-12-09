@@ -1,0 +1,105 @@
+	Memory allocation/deallocation test
+
+Size		Function	Alloc(ns)	Dealloc(ns)
+2^0		alloca		400		0
+2^0		calloc		611		238
+2^0		malloc		164		72
+2^1		alloca		54		0
+2^1		calloc		155		53
+2^1		malloc		47		54
+2^2		alloca		53		0
+2^2		calloc		106		56
+2^2		malloc		62		56
+2^3		alloca		52		0
+2^3		calloc		104		58
+2^3		malloc		49		55
+2^4		alloca		52		0
+2^4		calloc		162		56
+2^4		malloc		64		54
+2^5		alloca		52		0
+2^5		calloc		125		54
+2^5		malloc		48		54
+2^6		alloca		54		0
+2^6		calloc		111		55
+2^6		malloc		47		56
+2^7		alloca		52		0
+2^7		calloc		239		53
+2^7		malloc		50		56
+2^8		alloca		52		0
+2^8		calloc		162		58
+2^8		malloc		50		54
+2^9		alloca		53		0
+2^9		calloc		146		58
+2^9		malloc		48		54
+2^10		alloca		52		0
+2^10		calloc		241		58
+2^10		malloc		47		52
+2^11		alloca		54		0
+2^11		calloc		5840		415
+2^11		malloc		371		129
+2^12		alloca		102		0
+2^12		calloc		440		69
+2^12		malloc		158		65
+2^13		alloca		5405		0
+2^13		calloc		6218		327
+2^13		malloc		310		94
+2^14		alloca		17881		0
+2^14		calloc		12444		368
+2^14		malloc		361		99
+2^15		alloca		22088		0
+2^15		calloc		23112		382
+2^15		malloc		350		93
+2^16		alloca		38445		0
+2^16		calloc		50092		405
+2^16		malloc		359		94
+2^17		alloca		84172		0
+2^17		calloc		12702		10346
+2^17		malloc		9211		346
+2^18		alloca		201729		0
+2^18		calloc		264216		374
+2^18		malloc		373		91
+2^19		alloca		393075		0
+2^19		calloc		11581		9660
+2^19		malloc		8750		305
+2^20		alloca		799612		0
+2^20		calloc		11796		10163
+2^20		malloc		8642		313
+2^21		alloca		error
+2^21		calloc		12631		11374
+2^21		malloc		9904		307
+2^22		alloca		error
+2^22		calloc		12721		10158
+2^22		malloc		10035		305
+2^23		alloca		error
+2^23		calloc		13096		10197
+2^23		malloc		9698		305
+2^24		alloca		error
+2^24		calloc		13462		10141
+2^24		malloc		9805		308
+2^25		alloca		error
+2^25		calloc		12614		10372
+2^25		malloc		11600		10153
+2^26		alloca		error
+2^26		calloc		11735		10634
+2^26		malloc		12040		10568
+2^27		alloca		error
+2^27		calloc		11524		11401
+2^27		malloc		11522		11358
+2^28		alloca		error
+2^28		calloc		11573		13073
+2^28		malloc		11568		13055
+2^29		alloca		error
+2^29		calloc		24143		30025
+2^29		malloc		12747		17119
+2^30		alloca		error
+2^30		calloc		12704		23797
+2^30		malloc		12631		23852
+2^31		alloca		error
+2^31		calloc		12561		23796
+2^31		malloc		12523		23874
+2^32		alloca		error
+2^32		calloc		12544		23950
+2^32		malloc		12943		23929
+2^33		alloca		error
+2^33		calloc		error
+2^33		malloc		error
