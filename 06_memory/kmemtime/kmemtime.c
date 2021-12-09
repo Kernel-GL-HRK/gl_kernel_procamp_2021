@@ -1,6 +1,6 @@
 /**
  * @file kmemtime.c
- * @brief 
+ * @brief Kernel module to measure time spent for different type of memory allocators
  * 
  */
 
@@ -40,10 +40,10 @@ struct kmemtime
 
 static struct kmemtime kmemtime_test[] =
 {
-    { .type = e_malloc,        .alloc_name = "kmalloc       ", .free_name = "kfree     " },
-    { .type = e_calloc,        .alloc_name = "vmalloc       ", .free_name = "vfree     " },
+    { .type = e_malloc,         .alloc_name = "kmalloc       ", .free_name = "kfree     " },
+    { .type = e_calloc,         .alloc_name = "vmalloc       ", .free_name = "vfree     " },
     { .type = e_get_free_pages, .alloc_name = "get_free_pages", .free_name = "free_pages" },
-    { .type = e_alloca,        .alloc_name = "kzalloc       ", .free_name = "kfree     " },
+    { .type = e_alloca,         .alloc_name = "kzalloc       ", .free_name = "kfree     " },
 };
 
 static char *memtime_print_result(const struct kmemtime *result)
@@ -78,12 +78,10 @@ static char *memtime_print_result(const struct kmemtime *result)
 
     for (int i = 0; i < KMEMTIME_TESTS_MAX_N; ++i)
     {
-        const int sn_res = snprintf(&table[buff_pos], table_len - buff_pos, "%*d |%*llu |%*llu |\n",
+        buff_pos += snprintf(&table[buff_pos], table_len - buff_pos, "%*d |%*llu |%*llu |\n",
             buff_size_width, result->buff_size[i],
             alloc_time_width, result->time_alloc[i],
             free_time_width, result->time_free[i]);
-
-        buff_pos += sn_res;
     }
 
     return table;
