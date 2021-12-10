@@ -1,0 +1,54 @@
+Welcome to QEMU
+QEMU_5_15 login: random: crng init done
+[Aroot
+Password: 
+Login incorrect
+QEMU_5_15 login: root
+Password: 
+# insmod custom_attributes.ko 
+custom_attributes: loading out-of-tree module taints kernel.
+custom_attributes: init 0
+# echo 'My friend!!!' > /sys/kernel/custom_attr/string_list 
+custom_attributes: New item: My friend!!!
+
+custom_attributes: item++: 0x8124fb40
+# echo 'My friend!!!' > /sys/kernel/custom_attr/string_list 
+custom_attributes: New item: My friend!!!
+
+custom_attributes: item++: 0x8124fb60
+# 
+# 
+# 
+# 
+# cat /sys/kernel/custom_attr/string_list 
+custom_attributes: 
+custom_attributes: My friend!!!
+
+custom_attributes: iterator: 0x8124fb48 [0xc0008310, 0x8124fb68]
+custom_attributes: My friend!!!
+
+custom_attributes: iterator: 0x8124fb68 [0x8124fb48, 0xc0008310]
+# rmmod custom_attributes.ko 
+custom_attributes: r_iterator: 0x8124fb68 [0x8124fb48, 0xc0008310] v:0x8124fb60
+custom_attributes: r_iterator: 0x8124fb48 [0xc0008310, 0xc0008310] v:0x8124fb40
+custom_attributes: exit.
+
+# cat /sys/kernel/custom_attr/string_list 
+cat: can't open '/sys/kernel/custom_attr/string_list': No such file or directory
+# insmod custom_attributes.ko 
+custom_attributes: init 0
+# cat /sys/kernel/custom_attr/string_list 
+custom_attributes: 
+# echo 'We are the champions' > /sys/kernel/custom_attr/string_list 
+custom_attributes: New item: We are the champions
+
+custom_attributes: item++: 0x8124fb60
+# echo 'My friend!!!' > /sys/kernel/custom_attr/string_list 
+custom_attributes: New item: My friend!!!
+
+custom_attributes: item++: 0x8124fb40
+# rmmod custom_attributes.ko 
+custom_attributes: r_iterator: 0x8124fb48 [0x8124fb68, 0xc0008310] v:0x8124fb40
+custom_attributes: r_iterator: 0x8124fb68 [0xc0008310, 0xc0008310] v:0x8124fb60
+custom_attributes: exit.
+

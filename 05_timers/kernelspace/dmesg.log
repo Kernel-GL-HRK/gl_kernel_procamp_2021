@@ -1,0 +1,23 @@
+# insmod custom_timer.ko
+init OK.
+# cat /sys/kernel/time_marker/trigger 
+Nothing to show yet.
+Nothing to show yet.
+# cat /sys/kernel/time_marker/trigger 
+Realtime delta: 00:00:01.980801350
+Monotonic delta: 00:00:01.980857750
+# cat /sys/kernel/time_marker/trigger 
+Realtime delta: 00:00:05.641162330
+Monotonic delta: 00:00:05.642791470
+# cat /sys/kernel/time_marker/trigger 
+Realtime delta: 00:00:01.56817560
+Monotonic delta: 00:00:01.55108410
+# cat /sys/kernel/time_marker/trigger 
+Realtime delta: 00:00:03.31169690
+Monotonic delta: 00:00:03.31140440
+# cat /sys/kernel/time_marker/trigger 
+Realtime delta: 00:00:05.816726640
+Monotonic delta: 00:00:05.816735560
+# rmmod custom_timer.ko
+exit.
+# 
