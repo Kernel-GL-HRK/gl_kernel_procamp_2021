@@ -1,0 +1,324 @@
+Dec 11 23:25:54 buildroot syslog.info syslogd started: BusyBox v1.33.1
+Dec 11 23:25:54 buildroot kern.notice kernel: klogd started: BusyBox v1.33.1 (2021-11-29 23:48:25 EET)
+Dec 11 23:25:54 buildroot kern.notice kernel: Linux version 5.10.7 (vdm@dell) (x86_64-buildroot-linux-uclibc-gcc.br_real (Buildroot 2021.02.7) 9.4.0, GNU ld (GNU Binutils) 2.35.2) #1 SMP Tue Nov 30 00:06:37 EET 2021
+Dec 11 23:25:54 buildroot kern.info kernel: Command line: rootwait root=/dev/vda console=tty1 console=ttyS0
+Dec 11 23:25:54 buildroot kern.info kernel: x86/fpu: x87 FPU will use FXSAVE
+Dec 11 23:25:54 buildroot kern.info kernel: BIOS-provided physical RAM map:
+Dec 11 23:25:54 buildroot kern.info kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+Dec 11 23:25:54 buildroot kern.info kernel: BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+Dec 11 23:25:54 buildroot kern.info kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+Dec 11 23:25:54 buildroot kern.info kernel: BIOS-e820: [mem 0x0000000000100000-0x0000000007fdcfff] usable
+Dec 11 23:25:54 buildroot kern.info kernel: BIOS-e820: [mem 0x0000000007fdd000-0x0000000007ffffff] reserved
+Dec 11 23:25:54 buildroot kern.info kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+Dec 11 23:25:54 buildroot kern.info kernel: NX (Execute Disable) protection: active
+Dec 11 23:25:54 buildroot kern.info kernel: SMBIOS 2.8 present.
+Dec 11 23:25:54 buildroot kern.info kernel: DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Dec 11 23:25:54 buildroot kern.info kernel: tsc: Fast TSC calibration using PIT
+Dec 11 23:25:54 buildroot kern.info kernel: tsc: Detected 2793.512 MHz processor
+Dec 11 23:25:54 buildroot kern.debug kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+Dec 11 23:25:54 buildroot kern.debug kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+Dec 11 23:25:54 buildroot kern.info kernel: last_pfn = 0x7fdd max_arch_pfn = 0x400000000
+Dec 11 23:25:54 buildroot kern.debug kernel: MTRR default type: write-back
+Dec 11 23:25:54 buildroot kern.debug kernel: MTRR fixed ranges enabled:
+Dec 11 23:25:54 buildroot kern.debug kernel:   00000-9FFFF write-back
+Dec 11 23:25:54 buildroot kern.debug kernel:   A0000-BFFFF uncachable
+Dec 11 23:25:54 buildroot kern.debug kernel:   C0000-FFFFF write-protect
+Dec 11 23:25:54 buildroot kern.debug kernel: MTRR variable ranges enabled:
+Dec 11 23:25:54 buildroot kern.debug kernel:   0 base 0080000000 mask FF80000000 uncachable
+Dec 11 23:25:54 buildroot kern.debug kernel:   1 disabled
+Dec 11 23:25:54 buildroot kern.debug kernel:   2 disabled
+Dec 11 23:25:54 buildroot kern.debug kernel:   3 disabled
+Dec 11 23:25:54 buildroot kern.debug kernel:   4 disabled
+Dec 11 23:25:54 buildroot kern.debug kernel:   5 disabled
+Dec 11 23:25:54 buildroot kern.debug kernel:   6 disabled
+Dec 11 23:25:54 buildroot kern.debug kernel:   7 disabled
+Dec 11 23:25:54 buildroot kern.info kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+Dec 11 23:25:54 buildroot kern.info kernel: found SMP MP-table at [mem 0x000f5aa0-0x000f5aaf]
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Early table checksum verification disabled
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: RSDP 0x00000000000F58C0 000014 (v00 BOCHS )
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: RSDT 0x0000000007FE1550 000034 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: FACP 0x0000000007FE1404 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: DSDT 0x0000000007FE0040 0013C4 (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: FACS 0x0000000007FE0000 000040
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: APIC 0x0000000007FE1478 000078 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: HPET 0x0000000007FE14F0 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: WAET 0x0000000007FE1528 000028 (v01 BOCHS  BXPCWAET 00000001 BXPC 00000001)
+Dec 11 23:25:54 buildroot kern.debug kernel: ACPI: Local APIC address 0xfee00000
+Dec 11 23:25:54 buildroot kern.info kernel: Zone ranges:
+Dec 11 23:25:54 buildroot kern.info kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+Dec 11 23:25:54 buildroot kern.info kernel:   DMA32    [mem 0x0000000001000000-0x0000000007fdcfff]
+Dec 11 23:25:54 buildroot kern.info kernel:   Normal   empty
+Dec 11 23:25:54 buildroot kern.info kernel: Movable zone start for each node
+Dec 11 23:25:54 buildroot kern.info kernel: Early memory node ranges
+Dec 11 23:25:54 buildroot kern.info kernel:   node   0: [mem 0x0000000000001000-0x000000000009efff]
+Dec 11 23:25:54 buildroot kern.info kernel:   node   0: [mem 0x0000000000100000-0x0000000007fdcfff]
+Dec 11 23:25:54 buildroot kern.info kernel: Zeroed struct page in unavailable ranges: 133 pages
+Dec 11 23:25:54 buildroot kern.info kernel: Initmem setup node 0 [mem 0x0000000000001000-0x0000000007fdcfff]
+Dec 11 23:25:54 buildroot kern.debug kernel: On node 0 totalpages: 32635
+Dec 11 23:25:54 buildroot kern.debug kernel:   DMA zone: 64 pages used for memmap
+Dec 11 23:25:54 buildroot kern.debug kernel:   DMA zone: 21 pages reserved
+Dec 11 23:25:54 buildroot kern.debug kernel:   DMA zone: 3998 pages, LIFO batch:0
+Dec 11 23:25:54 buildroot kern.debug kernel:   DMA32 zone: 448 pages used for memmap
+Dec 11 23:25:54 buildroot kern.debug kernel:   DMA32 zone: 28637 pages, LIFO batch:7
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: PM-Timer IO Port: 0x608
+Dec 11 23:25:54 buildroot kern.debug kernel: ACPI: Local APIC address 0xfee00000
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+Dec 11 23:25:54 buildroot kern.info kernel: IOAPIC[0]: apic_id 0, version 32, address 0xfec00000, GSI 0-23
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+Dec 11 23:25:54 buildroot kern.debug kernel: ACPI: IRQ0 used by override.
+Dec 11 23:25:54 buildroot kern.debug kernel: ACPI: IRQ5 used by override.
+Dec 11 23:25:54 buildroot kern.debug kernel: ACPI: IRQ9 used by override.
+Dec 11 23:25:54 buildroot kern.debug kernel: ACPI: IRQ10 used by override.
+Dec 11 23:25:54 buildroot kern.debug kernel: ACPI: IRQ11 used by override.
+Dec 11 23:25:54 buildroot kern.info kernel: Using ACPI (MADT) for SMP configuration information
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: HPET id: 0x8086a201 base: 0xfed00000
+Dec 11 23:25:54 buildroot kern.info kernel: smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+Dec 11 23:25:54 buildroot kern.info kernel: [mem 0x08000000-0xfffbffff] available for PCI devices
+Dec 11 23:25:54 buildroot kern.info kernel: Booting paravirtualized kernel on bare hardware
+Dec 11 23:25:54 buildroot kern.info kernel: clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+Dec 11 23:25:54 buildroot kern.info kernel: setup_percpu: NR_CPUS:64 nr_cpumask_bits:64 nr_cpu_ids:1 nr_node_ids:1
+Dec 11 23:25:54 buildroot kern.info kernel: percpu: Embedded 42 pages/cpu s133528 r8192 d30312 u2097152
+Dec 11 23:25:54 buildroot kern.debug kernel: pcpu-alloc: s133528 r8192 d30312 u2097152 alloc=1*2097152
+Dec 11 23:25:54 buildroot kern.debug kernel: pcpu-alloc: [0] 0 
+Dec 11 23:25:54 buildroot kern.info kernel: Built 1 zonelists, mobility grouping on.  Total pages: 32102
+Dec 11 23:25:54 buildroot kern.notice kernel: Kernel command line: rootwait root=/dev/vda console=tty1 console=ttyS0
+Dec 11 23:25:54 buildroot kern.info kernel: Dentry cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: Inode-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: mem auto-init: stack:off, heap alloc:off, heap free:off
+Dec 11 23:25:54 buildroot kern.info kernel: Memory: 111304K/130540K available (8195K kernel code, 900K rwdata, 1740K rodata, 896K init, 2212K bss, 18976K reserved, 0K cma-reserved)
+Dec 11 23:25:54 buildroot kern.info kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Dec 11 23:25:54 buildroot kern.info kernel: rcu: Hierarchical RCU implementation.
+Dec 11 23:25:54 buildroot kern.info kernel: rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=1.
+Dec 11 23:25:54 buildroot kern.info kernel: rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+Dec 11 23:25:54 buildroot kern.info kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+Dec 11 23:25:54 buildroot kern.info kernel: NR_IRQS: 4352, nr_irqs: 48, preallocated irqs: 16
+Dec 11 23:25:54 buildroot kern.info kernel: Console: colour VGA+ 80x25
+Dec 11 23:25:54 buildroot kern.info kernel: printk: console [tty1] enabled
+Dec 11 23:25:54 buildroot kern.info kernel: printk: console [ttyS0] enabled
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Core revision 20200925
+Dec 11 23:25:54 buildroot kern.info kernel: clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+Dec 11 23:25:54 buildroot kern.info kernel: APIC: Switch to symmetric I/O mode setup
+Dec 11 23:25:54 buildroot kern.info kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+Dec 11 23:25:54 buildroot kern.info kernel: clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x28444fec0a3, max_idle_ns: 440795304652 ns
+Dec 11 23:25:54 buildroot kern.info kernel: Calibrating delay loop (skipped), value calculated using timer frequency.. 5587.02 BogoMIPS (lpj=11174048)
+Dec 11 23:25:54 buildroot kern.info kernel: pid_max: default: 32768 minimum: 301
+Dec 11 23:25:54 buildroot kern.info kernel: Mount-cache hash table entries: 512 (order: 0, 4096 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: Mountpoint-cache hash table entries: 512 (order: 0, 4096 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+Dec 11 23:25:54 buildroot kern.info kernel: Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+Dec 11 23:25:54 buildroot kern.info kernel: Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+Dec 11 23:25:54 buildroot kern.info kernel: Spectre V2 : Mitigation: Full AMD retpoline
+Dec 11 23:25:54 buildroot kern.info kernel: Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+Dec 11 23:25:54 buildroot kern.info kernel: Speculative Store Bypass: Vulnerable
+Dec 11 23:25:54 buildroot kern.info kernel: Freeing SMP alternatives memory: 24K
+Dec 11 23:25:54 buildroot kern.info kernel: smpboot: CPU0: AMD QEMU Virtual CPU version 2.5+ (family: 0x6, model: 0x6, stepping: 0x3)
+Dec 11 23:25:54 buildroot kern.info kernel: Performance Events: PMU not available due to virtualization, using software events only.
+Dec 11 23:25:54 buildroot kern.info kernel: rcu: Hierarchical SRCU implementation.
+Dec 11 23:25:54 buildroot kern.info kernel: smp: Bringing up secondary CPUs ...
+Dec 11 23:25:54 buildroot kern.info kernel: smp: Brought up 1 node, 1 CPU
+Dec 11 23:25:54 buildroot kern.info kernel: smpboot: Max logical packages: 1
+Dec 11 23:25:54 buildroot kern.info kernel: smpboot: Total of 1 processors activated (5587.02 BogoMIPS)
+Dec 11 23:25:54 buildroot kern.info kernel: devtmpfs: initialized
+Dec 11 23:25:54 buildroot kern.notice kernel: random: get_random_u32 called from bucket_table_alloc.isra.0+0x75/0x160 with crng_init=0
+Dec 11 23:25:54 buildroot kern.info kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+Dec 11 23:25:54 buildroot kern.info kernel: futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: NET: Registered protocol family 16
+Dec 11 23:25:54 buildroot kern.info kernel: thermal_sys: Registered thermal governor 'step_wise'
+Dec 11 23:25:54 buildroot kern.info kernel: thermal_sys: Registered thermal governor 'user_space'
+Dec 11 23:25:54 buildroot kern.info kernel: cpuidle: using governor ladder
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: bus type PCI registered
+Dec 11 23:25:54 buildroot kern.info kernel: PCI: Using configuration type 1 for base access
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Added _OSI(Module Device)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Added _OSI(Processor Device)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Added _OSI(Processor Aggregator Device)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Added _OSI(Linux-Dell-Video)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: 1 ACPI AML tables successfully acquired and loaded
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Interpreter enabled
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: (supports S0 S3 S5)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Using IOAPIC for interrupt routing
+Dec 11 23:25:54 buildroot kern.info kernel: PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Enabled 2 GPEs in block 00 to 0F
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Dec 11 23:25:54 buildroot kern.info kernel: acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments HPX-Type3]
+Dec 11 23:25:54 buildroot kern.warn kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+Dec 11 23:25:54 buildroot kern.info kernel: PCI host bridge to bus 0000:00
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: root bus resource [mem 0x08000000-0xfebfffff window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: root bus resource [mem 0x100000000-0x17fffffff window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.1: reg 0x20: [io  0xc0a0-0xc0af]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:02.0: [1234:1111] type 00 class 0x030000
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:02.0: reg 0x10: [mem 0xfd000000-0xfdffffff pref]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:02.0: reg 0x18: [mem 0xfebd0000-0xfebd0fff]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:02.0: reg 0x30: [mem 0xfebc0000-0xfebcffff pref]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:03.0: [1af4:1000] type 00 class 0x020000
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:03.0: reg 0x10: [io  0xc080-0xc09f]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:03.0: reg 0x14: [mem 0xfebd1000-0xfebd1fff]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:03.0: reg 0x20: [mem 0xfe000000-0xfe003fff 64bit pref]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:03.0: reg 0x30: [mem 0xfeb80000-0xfebbffff pref]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:04.0: [1af4:1001] type 00 class 0x010000
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:04.0: reg 0x10: [io  0xc000-0xc07f]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:04.0: reg 0x14: [mem 0xfebd2000-0xfebd2fff]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:04.0: reg 0x20: [mem 0xfe004000-0xfe007fff 64bit pref]
+Dec 11 23:25:54 buildroot kern.debug kernel: pci_bus 0000:00: on NUMA node 0
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:02.0: vgaarb: setting as boot VGA device
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:02.0: vgaarb: bridge control possible
+Dec 11 23:25:54 buildroot kern.info kernel: vgaarb: loaded
+Dec 11 23:25:54 buildroot kern.notice kernel: SCSI subsystem initialized
+Dec 11 23:25:54 buildroot kern.debug kernel: libata version 3.00 loaded.
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: bus type USB registered
+Dec 11 23:25:54 buildroot kern.info kernel: usbcore: registered new interface driver usbfs
+Dec 11 23:25:54 buildroot kern.info kernel: usbcore: registered new interface driver hub
+Dec 11 23:25:54 buildroot kern.info kernel: usbcore: registered new device driver usb
+Dec 11 23:25:54 buildroot kern.info kernel: Advanced Linux Sound Architecture Driver Initialized.
+Dec 11 23:25:54 buildroot kern.info kernel: PCI: Using ACPI for IRQ routing
+Dec 11 23:25:54 buildroot kern.debug kernel: PCI: pci_cache_line_size set to 64 bytes
+Dec 11 23:25:54 buildroot kern.debug kernel: e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+Dec 11 23:25:54 buildroot kern.debug kernel: e820: reserve RAM buffer [mem 0x07fdd000-0x07ffffff]
+Dec 11 23:25:54 buildroot kern.info kernel: clocksource: Switched to clocksource tsc-early
+Dec 11 23:25:54 buildroot kern.info kernel: pnp: PnP ACPI init
+Dec 11 23:25:54 buildroot kern.debug kernel: pnp 00:00: Plug and Play ACPI device, IDs PNP0303 (active)
+Dec 11 23:25:54 buildroot kern.debug kernel: pnp 00:01: Plug and Play ACPI device, IDs PNP0f13 (active)
+Dec 11 23:25:54 buildroot kern.debug kernel: pnp 00:02: [dma 2]
+Dec 11 23:25:54 buildroot kern.debug kernel: pnp 00:02: Plug and Play ACPI device, IDs PNP0700 (active)
+Dec 11 23:25:54 buildroot kern.debug kernel: pnp 00:03: Plug and Play ACPI device, IDs PNP0400 (active)
+Dec 11 23:25:54 buildroot kern.debug kernel: pnp 00:04: Plug and Play ACPI device, IDs PNP0501 (active)
+Dec 11 23:25:54 buildroot kern.debug kernel: pnp 00:05: Plug and Play ACPI device, IDs PNP0b00 (active)
+Dec 11 23:25:54 buildroot kern.info kernel: pnp: PnP ACPI: found 6 devices
+Dec 11 23:25:54 buildroot kern.info kernel: clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+Dec 11 23:25:54 buildroot kern.info kernel: NET: Registered protocol family 2
+Dec 11 23:25:54 buildroot kern.info kernel: tcp_listen_portaddr_hash hash table entries: 256 (order: 0, 4096 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: TCP established hash table entries: 1024 (order: 1, 8192 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: TCP bind hash table entries: 1024 (order: 2, 16384 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: TCP: Hash tables configured (established 1024 bind 1024)
+Dec 11 23:25:54 buildroot kern.info kernel: UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+Dec 11 23:25:54 buildroot kern.info kernel: NET: Registered protocol family 1
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: resource 7 [mem 0x08000000-0xfebfffff window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci_bus 0000:00: resource 8 [mem 0x100000000-0x17fffffff window]
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.0: PIIX3: Enabling Passive Release
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:01.0: Activating ISA DMA hang workarounds
+Dec 11 23:25:54 buildroot kern.info kernel: pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+Dec 11 23:25:54 buildroot kern.info kernel: PCI: CLS 0 bytes, default 64
+Dec 11 23:25:54 buildroot kern.info kernel: workingset: timestamp_bits=62 max_order=15 bucket_order=0
+Dec 11 23:25:54 buildroot kern.info kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 254)
+Dec 11 23:25:54 buildroot kern.info kernel: io scheduler mq-deadline registered
+Dec 11 23:25:54 buildroot kern.info kernel: io scheduler kyber registered
+Dec 11 23:25:54 buildroot kern.info kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+Dec 11 23:25:54 buildroot kern.info kernel: ACPI: Power Button [PWRF]
+Dec 11 23:25:54 buildroot kern.info kernel: PCI Interrupt Link [LNKC] enabled at IRQ 11
+Dec 11 23:25:54 buildroot kern.info kernel: PCI Interrupt Link [LNKD] enabled at IRQ 10
+Dec 11 23:25:54 buildroot kern.info kernel: Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+Dec 11 23:25:54 buildroot kern.info kernel: 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+Dec 11 23:25:54 buildroot kern.info kernel: bochs-drm 0000:00:02.0: vgaarb: deactivate vga console
+Dec 11 23:25:54 buildroot kern.info kernel: Console: switching to colour dummy device 80x25
+Dec 11 23:25:54 buildroot kern.info kernel: [drm] Found bochs VGA, ID 0xb0c0.
+Dec 11 23:25:54 buildroot kern.info kernel: [drm] Framebuffer size 16384 kB @ 0xfd000000, mmio @ 0xfebd0000.
+Dec 11 23:25:54 buildroot kern.info kernel: [TTM] Zone  kernel: Available graphics memory: 55794 KiB
+Dec 11 23:25:54 buildroot kern.info kernel: [TTM] Initializing pool allocator
+Dec 11 23:25:54 buildroot kern.info kernel: [TTM] Initializing DMA pool allocator
+Dec 11 23:25:54 buildroot kern.info kernel: [drm] Found EDID data blob.
+Dec 11 23:25:54 buildroot kern.info kernel: [drm] Initialized bochs-drm 1.0.0 20130925 for 0000:00:02.0 on minor 0
+Dec 11 23:25:54 buildroot kern.info kernel: fbcon: bochs-drmdrmfb (fb0) is primary device
+Dec 11 23:25:54 buildroot kern.info kernel: Console: switching to colour frame buffer device 128x48
+Dec 11 23:25:54 buildroot kern.info kernel: bochs-drm 0000:00:02.0: [drm] fb0: bochs-drmdrmfb frame buffer device
+Dec 11 23:25:54 buildroot kern.notice kernel: virtio_blk virtio1: [vda] 122880 512-byte logical blocks (62.9 MB/60.0 MiB)
+Dec 11 23:25:54 buildroot kern.info kernel: vda: detected capacity change from 0 to 62914560
+Dec 11 23:25:54 buildroot kern.debug kernel: ata_piix 0000:00:01.1: version 2.13
+Dec 11 23:25:54 buildroot kern.info kernel: scsi host0: ata_piix
+Dec 11 23:25:54 buildroot kern.info kernel: scsi host1: ata_piix
+Dec 11 23:25:54 buildroot kern.info kernel: ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc0a0 irq 14
+Dec 11 23:25:54 buildroot kern.info kernel: ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc0a8 irq 15
+Dec 11 23:25:54 buildroot kern.info kernel: ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Dec 11 23:25:54 buildroot kern.info kernel: ehci-pci: EHCI PCI platform driver
+Dec 11 23:25:54 buildroot kern.info kernel: uhci_hcd: USB Universal Host Controller Interface driver
+Dec 11 23:25:54 buildroot kern.info kernel: usbcore: registered new interface driver usb-storage
+Dec 11 23:25:54 buildroot kern.info kernel: i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+Dec 11 23:25:54 buildroot kern.info kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+Dec 11 23:25:54 buildroot kern.info kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+Dec 11 23:25:54 buildroot kern.info kernel: usbcore: registered new interface driver usbhid
+Dec 11 23:25:54 buildroot kern.info kernel: usbhid: USB HID core driver
+Dec 11 23:25:54 buildroot kern.info kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+Dec 11 23:25:54 buildroot kern.info kernel: NET: Registered protocol family 10
+Dec 11 23:25:54 buildroot kern.info kernel: Segment Routing with IPv6
+Dec 11 23:25:54 buildroot kern.info kernel: sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+Dec 11 23:25:54 buildroot kern.info kernel: NET: Registered protocol family 17
+Dec 11 23:25:54 buildroot kern.info kernel: IPI shorthand broadcast: enabled
+Dec 11 23:25:54 buildroot kern.info kernel: sched_clock: Marking stable (1184621815, 23641113)->(1208670707, -407779)
+Dec 11 23:25:54 buildroot kern.info kernel: ALSA device list:
+Dec 11 23:25:54 buildroot kern.info kernel:   No soundcards found.
+Dec 11 23:25:54 buildroot kern.debug kernel: ata2.01: NODEV after polling detection
+Dec 11 23:25:54 buildroot kern.info kernel: ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+Dec 11 23:25:54 buildroot kern.notice kernel: scsi 1:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+Dec 11 23:25:54 buildroot kern.info kernel: tsc: Refined TSC clocksource calibration: 2793.464 MHz
+Dec 11 23:25:54 buildroot kern.info kernel: clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x284422664b2, max_idle_ns: 440795205098 ns
+Dec 11 23:25:54 buildroot kern.info kernel: clocksource: Switched to clocksource tsc
+Dec 11 23:25:54 buildroot kern.info kernel: input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3
+Dec 11 23:25:54 buildroot kern.info kernel: EXT4-fs (vda): mounting ext2 file system using the ext4 subsystem
+Dec 11 23:25:54 buildroot kern.info kernel: EXT4-fs (vda): mounted filesystem without journal. Opts: (null)
+Dec 11 23:25:54 buildroot kern.info kernel: VFS: Mounted root (ext2 filesystem) readonly on device 254:0.
+Dec 11 23:25:54 buildroot kern.info kernel: devtmpfs: mounted
+Dec 11 23:25:54 buildroot kern.info kernel: Freeing unused kernel image (initmem) memory: 896K
+Dec 11 23:25:54 buildroot kern.info kernel: Write protecting the kernel read-only data: 12288k
+Dec 11 23:25:54 buildroot kern.info kernel: Freeing unused kernel image (text/rodata gap) memory: 2044K
+Dec 11 23:25:54 buildroot kern.info kernel: Freeing unused kernel image (rodata/data gap) memory: 308K
+Dec 11 23:25:54 buildroot kern.info kernel: Run /sbin/init as init process
+Dec 11 23:25:54 buildroot kern.debug kernel:   with arguments:
+Dec 11 23:25:54 buildroot kern.debug kernel:     /sbin/init
+Dec 11 23:25:54 buildroot kern.debug kernel:   with environment:
+Dec 11 23:25:54 buildroot kern.debug kernel:     HOME=/
+Dec 11 23:25:54 buildroot kern.debug kernel:     TERM=linux
+Dec 11 23:25:54 buildroot kern.warn kernel: EXT4-fs (vda): warning: mounting unchecked fs, running e2fsck is recommended
+Dec 11 23:25:54 buildroot kern.info kernel: EXT4-fs (vda): re-mounted. Opts: (null)
+Dec 11 23:25:54 buildroot kern.warn kernel: ext2 filesystem being remounted at / supports timestamps until 2038 (0x7fffffff)
+Dec 11 23:25:54 buildroot kern.notice kernel: random: fast init done
+Dec 11 23:25:54 buildroot kern.notice kernel: random: dd: uninitialized urandom read (512 bytes read)
+Dec 11 23:25:54 buildroot kern.notice kernel: random: mktemp: uninitialized urandom read (6 bytes read)
+Dec 11 23:25:54 buildroot kern.notice kernel: random: mktemp: uninitialized urandom read (6 bytes read)
+Dec 11 23:25:55 buildroot daemon.info : starting pid 109, tty '/dev/console': '/sbin/getty -L  console 0 vt100 '
+Dec 11 23:25:55 buildroot daemon.info : starting pid 110, tty '/dev/tty1': '/sbin/getty -L  tty1 0 vt100 '
+Dec 11 23:25:55 buildroot authpriv.info dropbear[108]: Running in background
+Dec 11 23:26:03 buildroot auth.info login[109]: root login on 'console'
+Dec 11 23:28:53 buildroot authpriv.warn dropbear[108]: Waiting for kernel randomness to be initialised...
+Dec 11 23:28:56 buildroot kern.notice kernel: random: crng init done
+Dec 11 23:28:56 buildroot authpriv.info dropbear[115]: Child connection from 10.0.2.2:46064
+Dec 11 23:29:00 buildroot authpriv.notice dropbear[115]: Password auth succeeded for 'user' from 10.0.2.2:46064
+Dec 11 23:29:00 buildroot authpriv.info dropbear[115]: Exit (user) from <10.0.2.2:46064>: Disconnect received
+Dec 11 23:31:16 buildroot auth.info passwd: password for user changed by root
+Dec 11 23:31:40 buildroot authpriv.info dropbear[121]: Child connection from 10.0.2.2:46066
+Dec 11 23:31:43 buildroot authpriv.notice dropbear[121]: Password auth succeeded for 'user' from 10.0.2.2:46066
+Dec 11 23:31:43 buildroot authpriv.info dropbear[121]: Exit (user) from <10.0.2.2:46066>: Disconnect received
+Dec 11 23:32:23 buildroot kern.warn kernel: hello: loading out-of-tree module taints kernel.
+Dec 11 23:32:23 buildroot kern.warn kernel: hello: module license 'unspecified' taints kernel.
+Dec 11 23:32:23 buildroot kern.warn kernel: Disabling lock debugging due to kernel taint
+Dec 11 23:32:23 buildroot kern.info kernel: Parameter 100 and 50 sum: 150
+Dec 11 23:32:40 buildroot kern.info kernel: Parameter 100 and 50 substration: 50 
