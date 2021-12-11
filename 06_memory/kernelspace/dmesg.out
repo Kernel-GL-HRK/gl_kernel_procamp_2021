@@ -1,0 +1,14 @@
+kmalloc of 262144
+Realtime delta: 00:00:00.100202
+kfree
+Realtime delta: 00:00:00.26539
+kzalloc of 262144
+Realtime delta: 00:00:00.427069
+kfree
+Realtime delta: 00:00:00.25055
+vmalloc of 262144
+Realtime delta: 00:00:00.93763
+kfree
+Realtime delta: 00:00:00.82436
+# rmmod custom_mem_alloc_measure.ko 
+# 
