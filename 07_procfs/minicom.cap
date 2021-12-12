@@ -1,0 +1,96 @@
+# Minicom2.7.1Minicom2.7.1Minicom2.7.1Minicom2.7.1
+-sh: Minicom2.7.1Minicom2.7.1Minicom2.7.1Minicom2.7.1: not found
+# 
+# 
+# 
+# 
+# 
+# 
+# uname -r
+5.10.10
+# ls -la
+total 16
+drwx------    2 root     root          1024 Jan  1 00:28 .
+drwxr-xr-x   18 root     root          1024 Dec 22  2021 ..
+-rw-------    1 root     root          1323 Jan  1 00:42 .ash_history
+-rwxrwxr-x    1 root     root           519 Jan  1 00:30 test.sh
+-rw-rw-r--    1 root     root         10244 Dec 22  2021 test_module.ko
+# modinfo ./test_module.ko 
+-sh: modinfo: not found
+# insmod ./test_module.ko 
+[ 1540.176577] example_module loaded
+# lsmod
+Module                  Size  Used by    Tainted: G  
+test_module            16384  0 
+xradio_wlan           122880  1 
+# echo 12345 > /sys/class/example-class/list 
+[ 1565.854013] write 6
+[ 1565.856143] Add: [MSG] 12345
+[ 1565.856143] {��_�, [LEN] 6
+# echo 12345 > /sys/class/example-class/list 
+[ 1568.481294] write 6
+[ 1568.483414] Add: [MSG] 12345
+[ 1568.483414] ��_�H_�H_�, [LEN] 6
+# echo 12345 > /sys/class/example-class/list 
+[ 1569.293965] write 6
+[ 1569.296083] Add: [MSG] 12345
+[ 1569.296083] �_�, [LEN] 6
+# echo 12345 > /sys/class/example-class/list 
+[ 1569.863062] write 6
+[ 1569.865178] Add: [MSG] 12345
+[ 1569.865178] LI�__�H_�, [LEN] 6
+# cat /sys/class/example-class/list 
+[ 1585.440739] read 6
+[ 1585.442781] Show: [MSG] 12345
+[ 1585.442781] LI�__�H_�, [LEN] 6
+[ 1585.449312] Show: [MSG] 12345
+[ 1585.449312] �_�, [LEN] 6
+[ 1585.455062] Show: [MSG] 12345
+[ 1585.455062] ��_�H_�H_�, [LEN] 6
+[ 1585.461536] Show: [MSG] 12345
+[ 1585.461536] {��_�, [LEN] 6
+12345
+# cat /sys/class/example-class/list 
+[ 1586.864518] read 6
+[ 1586.866559] Show: [MSG] 12345
+[ 1586.866559] LI�__�H_�, [LEN] 6
+[ 1586.873101] Show: [MSG] 12345
+[ 1586.873101] �_�, [LEN] 6
+[ 1586.878880] Show: [MSG] 12345
+[ 1586.878880] ��_�H_�H_�, [LEN] 6
+[ 1586.885322] Show: [MSG] 12345
+[ 1586.885322] {��_�, [LEN] 6
+12345
+# cat /proc/example/
+author  show    store
+# cat /proc/example/author 
+author: Vitaliy Zhyrko <vitaliyzh@gmail.com>
+[ 1605.140851] example_module read author, from 0(4096)
+# cat /proc/example/s
+show   store
+# cat /proc/example/store 
+[ 1605.140915] example_module read author, from 45(4096)
+store count: 4
+[ 1613.517842] example_module read store, from 0(4096)
+# cat /proc/example/show 
+[ 1613.522959] example_module read store, from 15(4096)
+show count: 2
+[ 1618.194726] example_module read show, from 0(4096)
+# rmmod test_module
+[ 1618.202853] example_module read show, from 14(4096)
+[ 1634.655015] example_module exited
+# lsmod
+Module                  Size  Used by    Tainted: G  
+xradio_wlan           122880  1 
+# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq qlen 1000
+    link/ether 02:42:61:89:52:72 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.2.116/24 brd 192.168.2.255 scope global eth0
+       valid_lft forever preferred_lft forever
+3: wlan0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop qlen 1000
+    link/ether 12:42:61:89:52:72 brd ff:ff:ff:ff:ff:ff
+# 
