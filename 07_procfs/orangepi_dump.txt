@@ -1,0 +1,41 @@
+Welcome to Buildroot for the Orange Pi Zero
+OrangePi_Zero login: root
+# uname
+Linux
+# mount -t nfs -o nolock 192.168.1.117:/export /mnt/mine
+# cd /mnt/mine/
+# insmod procfs_mod.ko 
+[  117.911129] module loaded
+# ls /proc/my_dir
+my_info  rd_file  wr_file
+# cat /proc/my_dir/my_info 
+Module name procfs_mod version 1.0
+Module author Volodymyr Kniazkyi <kniazkyi@gmail.com>
+# cat /proc/my_dir/rd_file 
+You tried to read 1 times
+# cat /proc/my_dir/rd_file 
+You tried to read 2 times
+# cat /proc/my_dir/rd_file 
+You tried to read 3 times
+# cat /proc/my_dir/rd_file 
+You tried to read 4 times
+# cat /proc/my_dir/rd_file 
+You tried to read 5 times
+# echo 'hello 1' > /proc/my_dir/wr_file 
+# cat /proc/my_dir/wr_file 
+You tried to write 1 times
+# cat /proc/my_dir/wr_file 
+You tried to write 1 times
+# cat /proc/my_dir/wr_file 
+You tried to write 1 times
+# echo 'hello 2' > /proc/my_dir/wr_file 
+# cat /proc/my_dir/wr_file 
+You tried to write 2 times
+# cat /proc/my_dir/wr_file 
+You tried to write 2 times
+# echo 'hello 3' > /proc/my_dir/wr_file 
+# cat /proc/my_dir/wr_file 
+You tried to write 3 times
+# rmmod procfs_mod.ko 
+[  247.722362] module exited
+
