@@ -1,0 +1,55 @@
+Clock - CLOCK_REALTIME
+        time sec  1638696837
+        time nsec  265112465
+        res sec  0
+        rs nsec  1
+Clock - CLOCK_REALTIME_ALARM
+        time sec  1638696837
+        time nsec  265126215
+        res sec  0
+        rs nsec  1
+Clock - CLOCK_REALTIME_COARSE
+        time sec  1638696837
+        time nsec  263821244
+        res sec  0
+        rs nsec  4000000
+Clock - CLOCK_TAI
+        time sec  1638696837
+        time nsec  265145840
+        res sec  0
+        rs nsec  1
+Clock - CLOCK_MONOTONIC
+        time sec  34890
+        time nsec  523876764
+        res sec  0
+        rs nsec  1
+Clock - CLOCK_MONOTONIC_COARSE
+        time sec  34890
+        time nsec  522528835
+        res sec  0
+        rs nsec  4000000
+Clock - CLOCK_MONOTONIC_RAW
+        time sec  34889
+        time nsec  761360235
+        res sec  0
+        rs nsec  1
+Clock - CLOCK_BOOTTIME
+        time sec  165057
+        time nsec  208177337
+        res sec  0
+        rs nsec  1
+Clock - CLOCK_BOOTTIME_ALARM
+        time sec  165057
+        time nsec  208205837
+        res sec  0
+        rs nsec  1
+Clock - CLOCK_PROCESS_CPUTIME_ID
+        time sec  3
+        time nsec  274211482
+        res sec  0
+        rs nsec  1
+Clock - CLOCK_THREAD_CPUTIME_ID
+        time sec  3
+        time nsec  274244959
+        res sec  0
+        rs nsec  1

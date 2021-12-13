@@ -1,0 +1,66 @@
+# pwd
+/sys/kernel
+# insmod /home/user/time_module.ko 
+# cd time/
+# ls -l
+total 0
+-r--r--r--    1 root     root          4096 Dec  8 10:24 absolute
+-rw-rw-r--    1 root     root          4096 Dec  8 10:24 relative
+# cat relative 
+# cat relative 
+Delta: 2453508690
+# cat relative 
+Delta: 2571053950
+# cat relative 
+Delta: 4401452740
+# echo "reset" > relative 
+# cat relative 
+# cat relative 
+Delta: 1044315750
+# 
+# cat absolute 
+Absolute: 0.000000000
+# cat absolute 
+Absolute: 1638959167.971671309
+# cat absolute 
+Absolute: 1638959169.873894859
+# echo "reset" > absolute 
+-sh: can't create absolute: Permission denied
+# dmesg
+time_module: ---< time_exit
+time_module: ---> time_init
+time_module: ---< time_init
+time_module: ---> relative_show
+time_module: Previous time initialization: 3862439910169
+time_module: ---< relative_show
+time_module: ---> relative_show
+Delta: 2453508690
+time_module: Previous time updated: 3864893418859
+time_module: ---< relative_show
+time_module: ---> relative_show
+Delta: 2571053950
+time_module: Previous time updated: 3867464472809
+time_module: ---< relative_show
+time_module: ---> relative_show
+Delta: 4401452740
+time_module: Previous time updated: 3871865925549
+time_module: ---< relative_show
+time_module: ---> relative_store size_t: 6
+time_module: Previous time reset: 3871865925549
+time_module: ---< relative_store
+time_module: ---> relative_show
+time_module: Previous time initialization: 3887672222959
+time_module: ---< relative_show
+time_module: ---> relative_show
+Delta: 1044315750
+time_module: Previous time updated: 3888716538709
+time_module: ---< relative_show
+time_module: ---> absolute_show
+Absolute: 0.000000000
+time_module: ---< absolute_show
+time_module: ---> absolute_show
+Absolute: 1638959167.971671309
+time_module: ---< absolute_show
+time_module: ---> absolute_show
+Absolute: 1638959169.873894859
+# 
