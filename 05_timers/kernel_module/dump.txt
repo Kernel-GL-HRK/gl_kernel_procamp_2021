@@ -1,0 +1,25 @@
+# insmod /tmp/time_attr_presenter.ko 
+# cat /sys/kernel/time_attr_presenter/last_abs_time  
+-1
+# cat /sys/kernel/time_attr_presenter/last_abs_time  
+1639337982.183260522
+# cat /sys/kernel/time_attr_presenter/last_abs_time  
+1639337984.166915503
+# cat /sys/kernel/time_attr_presenter/last_relative_time 
+-1
+# cat /sys/kernel/time_attr_presenter/last_relative_time 
+0.636000000
+# cat /sys/kernel/time_attr_presenter/last_relative_time 
+1.812000000
+# cat /sys/kernel/time_attr_presenter/last_relative_time 
+0.752000000
+# rmmod time_attr_presenter.ko
+time_attr_presenter: Module exited
+# ls /sys/kernel/time_attr_presenter
+ls: /sys/kernel/time_attr_presenter: No such file or directory
+
+# unix timestamps are matched with real time
+date -d @1639337984.166915503
+неділя, 12 грудня 2021 21:39:44 +0200
+date -d @1639337982.183260522
+неділя, 12 грудня 2021 21:39:42 +0200
