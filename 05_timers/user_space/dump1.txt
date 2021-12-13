@@ -1,0 +1,41 @@
+ivan@ivan-VirtualBox:~/buildroot/buildroot-2021.02.7/05-timers$ gcc -std=c99 -D_POSIX_C_SOURCE=199309L main.c && ./a.out ; echo $?
+getting clock resolution...
+----------------------------------------------------------------
+|clock_id            |sec                 |nsec                |
+----------------------------------------------------------------
+|CLOCK_REALTIME      |0                   |1                   |
+|CLOCK_MONOTONIC     |0                   |1                   |
+|CLOCK_PROCESS_CPUTIM|0                   |1                   |
+|CLOCK_THREAD_CPUTIME|0                   |1                   |
+|CLOCK_BOOTTIME      |0                   |1                   |
+
+getting actual clock values...
+----------------------------------------------------------------
+|clock_id            |sec                 |nsec                |
+----------------------------------------------------------------
+|CLOCK_REALTIME      |1638701883          |825167534           |
+|CLOCK_MONOTONIC     |6539                |56162158            |
+|CLOCK_PROCESS_CPUTIM|0                   |625613              |
+|CLOCK_THREAD_CPUTIME|0                   |626629              |
+|CLOCK_BOOTTIME      |6539                |56164193            |
+
+Conclusion:
+*1 I have started with clock resolutions for different clock_id.
+In my case all of them have 1nsec resolution which is expected for the host system.
+
+*2 Then I have contnued with actual clock values.
+CLOCK_REALTIME is matched with localtime
+
+ivan@ivan-VirtualBox:~/buildroot/buildroot-2021.02.7/05-timers$ date -d @1638701883.825167534
+неділя, 5 грудня 2021 12:58:03 +0200
+
+CLOCK_MONOTONIC is coresponding with the system uptime (take into account time taken for this report writing).
+6539/60=108 minutes
+van@ivan-VirtualBox:~$ w
+ 13:08:06 up  1:59,  1 user,  load average: 0,05, 0,07, 0,08
+
+The difference is explained by the time spent on this report writing.
+
+CLOCK_PROCESS_CPUTIM and CLOCK_THREAD_CPUTIME are short and very close. In this task I do not expect another result.
+CLOCK_BOOTTIME is mathched with CLOCK_MONOTONIC here, but also includes suspended time which I do not have for the moment.
+have not managed to get difference between CLOCK_BOOTTIME and CLOCK_MONOTONIC
