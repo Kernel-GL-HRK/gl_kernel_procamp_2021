@@ -1,46 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<time.h>
+#include <time.h>
 
-const char arr[3] = {'r', 'p', 's'};
+#define ROCK 'r'
+#define PAPER 'p'
+#define SCISSORS 's'
 
-int machine_rand(void) {
-    srand(time(0));
-    int random = rand() % 3;
-    return random;
-}
+const char arr[] = {ROCK, PAPER, SCISSORS};
+
 
 int start_game(char input_user, char *machine_choice_c){
-    int machine_choice_int  = machine_rand();
+    srand(time(0));
+    int machine_choice_int  = rand() % 3;
     *machine_choice_c = arr[machine_choice_int];
     int result;
     if(input_user == arr[machine_choice_int])
     {
         result = -1;
     }
-    else if (input_user == 'r' && arr[machine_choice_int] == 's')
+    else if (input_user == ROCK && arr[machine_choice_int] == SCISSORS)
     {
         result = 1;
     }
-    else if (arr[machine_choice_int] == 'r' && input_user == 's')
+    else if (arr[machine_choice_int] == ROCK && input_user == SCISSORS)
     {
         result = 0;
     }
-    else if (input_user == 'p' && arr[machine_choice_int] == 'r')
+    else if (input_user == PAPER && arr[machine_choice_int] == ROCK)
     {
         result = 1;
     }
-    else if (arr[machine_choice_int] == 'p' && input_user == 'r')
+    else if (arr[machine_choice_int] == PAPER && input_user == ROCK)
     {
         result = 0;
     }
-    else if (input_user == 's' && arr[machine_choice_int] == 'p')
+    else if (input_user == SCISSORS && arr[machine_choice_int] == PAPER)
     {
         result =  1;
     }
-    else if (arr[machine_choice_int] == 's' && input_user == 'p')
+    else if (arr[machine_choice_int] == SCISSORS && input_user == PAPER)
     {
         result =  0;
+    }
+    else
+    {
+        result = -2;
     }
 
     return result;
@@ -61,8 +65,12 @@ int main () {
     {
         printf("\nYou chose %c and I choose %c, HAHAHAH Machine wins ! \n\n", input_from_user, machine_chose);
     }
-    else
+    else if(result == 1)
     {
         printf("\nYou chose %c and I choose %c, You win !\n\n", input_from_user, machine_chose);
+    }
+    else
+    {
+        printf("\nYour chose :%c: is incorrect\n\n", input_from_user);
     }
 }
