@@ -10,7 +10,7 @@ struct message_list {
 
 static struct list_head my_list;
 
-static ssize_t list_show(struct kobject *kobj, struct kobj_attribute * attr,
+static ssize_t list_show(struct kobject *kobj, struct kobj_attribute *attr,
 	char *buf)
 {
 	struct message_list *pos;
@@ -30,10 +30,10 @@ static ssize_t list_show(struct kobject *kobj, struct kobj_attribute * attr,
 		p += size;
 	}
 
-	return PAGE_SIZE - size_left; 
+	return PAGE_SIZE - size_left;
 }
 
-static ssize_t list_store(struct kobject *kobj, struct kobj_attribute * attr,
+static ssize_t list_store(struct kobject *kobj, struct kobj_attribute *attr,
 	const char *buf, size_t count)
 {
 	char *new_msg;
