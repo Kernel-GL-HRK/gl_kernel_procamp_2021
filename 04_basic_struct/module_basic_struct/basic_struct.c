@@ -2,7 +2,6 @@
 
 #include <linux/module.h>
 #include <linux/slab.h>
-#include <linux/uaccess.h>
 
 struct message_list {
 	struct list_head entry;
