@@ -1,0 +1,17 @@
+# insmod basic_struct.ko 
+# echo "123456" > /sys/kernel/basic_struct/list
+# at /sys/kernel/basic_struct/list
+-sh: at: not found
+# cat /sys/kernel/basic_struct/list
+123456
+# echo "Hello world 1" > /sys/kernel/basic_struct/list
+# cat /sys/kernel/basic_struct/list
+123456
+Hello world 1
+# echo "Hello world 2" > /sys/kernel/basic_struct/list
+# echo "Hello world 3" > /sys/kernel/basic_struct/list
+# cat /sys/kernel/basic_struct/list
+123456
+Hello world 1
+Hello world 2
+Hello world 3

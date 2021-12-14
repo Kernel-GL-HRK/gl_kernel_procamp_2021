@@ -1,14 +1,11 @@
-ifneq ($(KERNELRELEASE),)
-# kbuild part of makefile
-obj-m   := modul_add.o
-else
-# normal makefile
-KDIR ?= /lib/modules/`uname -r`/build
-
-default:
-	$(MAKE) -C $(KDIR) M=$$PWD
-move:
-	cd ../ && sudo cp -r 03_module /srv/nfs/busybox/tmp/
+KERNELDIR ?= ~/soft/buildroot-2021.11-rc2/output/build/linux-5.15/
+obj-m += modul_add.o
+all:
+	make -C $(KERNELDIR) M=$(PWD) modules
 clean:
-	$(MAKE) -C $(KDIR) M=$$PWD clean
-endif
+	make -C $(KERNELDIR) M=$(PWD) clean
+test:
+	sudo dmesg -C
+	sudo insmod modul_add znach_1=10 znach_2=200
+	sudo rmmod modul_add.ko
+	dmesg

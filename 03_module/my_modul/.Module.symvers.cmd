@@ -1,0 +1,1 @@
+cmd_/home/sidorov/repositori/gl_kernel_procamp_2021/03_module/my_modul/Module.symvers := sed 's/\.ko$$/\.o/' /home/sidorov/repositori/gl_kernel_procamp_2021/03_module/my_modul/modules.order | scripts/mod/modpost    -o /home/sidorov/repositori/gl_kernel_procamp_2021/03_module/my_modul/Module.symvers -e -i Module.symvers   -T -
