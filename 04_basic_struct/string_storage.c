@@ -1,5 +1,5 @@
+// SPDX-License-Identifier: GPL-2.0
 /**
- * @file string_storage.c
  * @brief String Storage kernel module.
  *   This module allows you to store and retrieve stored strings through sysfs
  *   file in /sys/kernel/string_storage/list.
@@ -19,130 +19,125 @@
 #include <linux/slab.h>
 #include <asm-generic/bug.h>
 
-struct node
-{
-    struct list_head list;
-    const char *string;
+struct node {
+	struct list_head list;
+	const char *string;
 };
 
-struct my_object
-{
-    struct kobject  *kobj;
-    struct list_head strings_list;
-    struct kobj_attribute kattr;
+struct my_object {
+	struct kobject  *kobj;
+	struct list_head strings_list;
+	struct kobj_attribute kattr;
 };
 
 static ssize_t string_show(struct kobject *kobj, struct kobj_attribute *attr,
-    char *buf);
+	char *buf);
 
 static ssize_t string_store(struct kobject *kobj, struct kobj_attribute *attr,
-    const char *buf, size_t count);
+	const char *buf, size_t count);
 
-static struct my_object string_storage =
-{
-    .kattr = __ATTR(list, 0660, string_show, string_store),
+static struct my_object string_storage = {
+	.kattr = __ATTR(list, 0660, string_show, string_store),
 };
 
 static ssize_t string_show(struct kobject *kobj, struct kobj_attribute *attr,
-    char *buf)
+	char *buf)
 {
-    struct node *entry;
-    struct list_head *entity;
-    struct list_head *tmp;
-    ssize_t len = 0;
+	struct node *entry;
+	struct list_head *entity;
+	struct list_head *tmp;
+	ssize_t len = 0;
 
-    (void)kobj;
-    (void)attr;
+	(void)kobj;
+	(void)attr;
 
-    list_for_each_safe(entity, tmp, &string_storage.strings_list)
-    {
-        entry = list_entry(entity, struct node, list);
+	list_for_each_safe(entity, tmp, &string_storage.strings_list) {
+		entry = list_entry(entity, struct node, list);
 
-        BUG_ON(entry == NULL);
-        BUG_ON(entry->string == NULL);
+		BUG_ON(entry == NULL);
+		BUG_ON(entry->string == NULL);
 
-        const size_t entry_len = strlen(entry->string);
-        const size_t tmp       = strlcpy(&buf[len], entry->string, PAGE_SIZE - len);
-        if (tmp != entry_len)
-        {
-            BUG();
-            len = -ENOMEM;
-            pr_err("[STR_STORAGE] String copy failed or PAGE_SIZE was reached");
-            break;
-        }
+		const size_t entry_len = strlen(entry->string);
+		const size_t tmp       = strscpy(&buf[len], entry->string, PAGE_SIZE - len);
 
-        len += tmp;
-    }
+		if (tmp != entry_len) {
+			BUG();
+			len = -ENOMEM;
+			pr_err("[STR_STORAGE] String copy failed or PAGE_SIZE was reached");
+			break;
+		}
 
-    if (len > 0)
-        pr_debug("[STR_STORAGE] String storage contains:\n%s", buf);
+		len += tmp;
+	}
 
-    return len;
+	if (len > 0)
+		pr_debug("[STR_STORAGE] String storage contains:\n%s", buf);
+
+	return len;
 }
 
 static ssize_t string_store(struct kobject *kobj, struct kobj_attribute *attr,
-    const char *buf, size_t count)
+	const char *buf, size_t count)
 {
-    struct node *str;
+	struct node *str;
 
-    (void)kobj;
-    (void)attr;
+	(void)kobj;
+	(void)attr;
 
-    str = kmalloc(sizeof(struct node), GFP_KERNEL);
-    if (str == NULL)
-        return -ENOMEM;
+	str = kmalloc(sizeof(struct node), GFP_KERNEL);
+	if (str == NULL)
+		return -ENOMEM;
 
-    str->string = kstrdup_const(buf, GFP_KERNEL);
-    if (str->string == NULL)
-        return -ENOMEM;
+	str->string = kstrdup_const(buf, GFP_KERNEL);
+	if (str->string == NULL)
+		return -ENOMEM;
 
-    pr_debug("[STR_STORAGE] String %s stored", str->string);
+	pr_debug("[STR_STORAGE] String %s stored", str->string);
 
-    list_add_tail(&str->list, &string_storage.strings_list);
+	list_add_tail(&str->list, &string_storage.strings_list);
 
-    return count;
+	return count;
 }
 
 static int string_store_init(void)
 {
-    string_storage.kobj = kobject_create_and_add("string_storage", kernel_kobj);
-    if (string_storage.kobj == NULL)
-        return -ENOMEM;
+	string_storage.kobj = kobject_create_and_add("string_storage", kernel_kobj);
+	if (string_storage.kobj == NULL)
+		return -ENOMEM;
 
-    const int res = sysfs_create_file(string_storage.kobj, &string_storage.kattr.attr);
-    if (res)
-    {
-        pr_err("[STR_STORAGE] Failed to create sysfs file");
-        kobject_put(string_storage.kobj);
-        return res;
-    }
+	const int res = sysfs_create_file(string_storage.kobj, &string_storage.kattr.attr);
 
-    INIT_LIST_HEAD(&string_storage.strings_list);
+	if (res) {
+		pr_err("[STR_STORAGE] Failed to create sysfs file");
+		kobject_put(string_storage.kobj);
+		return res;
+	}
 
-    return res;
+	INIT_LIST_HEAD(&string_storage.strings_list);
+
+	return res;
 }
 
 static void string_store_exit(void)
 {
-    struct node *entry;
-    struct list_head *entity;
-    struct list_head *tmp;
+	struct node *entry;
+	struct list_head *entity;
+	struct list_head *tmp;
 
-    list_for_each_safe(entity, tmp, &string_storage.strings_list)
-    {
-        entry = list_entry(entity, struct node, list);
+	list_for_each_safe(entity, tmp, &string_storage.strings_list) {
+		entry = list_entry(entity, struct node, list);
 
-        list_del(entity);
+		list_del(entity);
 
-        BUG_ON(entry == NULL);
-        BUG_ON(entry->string == NULL);
+		BUG_ON(entry == NULL);
+		BUG_ON(entry->string == NULL);
 
-        kfree(entry->string);
-        kfree(entry);
-    }
+		kfree(entry->string);
+		kfree(entry);
+	}
 
-    kobject_put(string_storage.kobj);
-    string_storage.kobj = NULL;
+	kobject_put(string_storage.kobj);
+	string_storage.kobj = NULL;
 }
 
 module_init(string_store_init);
