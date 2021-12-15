@@ -57,7 +57,9 @@ static ssize_t read_info(struct file *file, char __user *pbuf,
 	static ssize_t msg_len = 1;
 
 	if (msg_len == 1) {
-		msg_len = sprintf(msg, "Module name %s version %s\n", THIS_MODULE->name, THIS_MODULE->version);
+		msg_len = sprintf(msg, "Module name %s version %s\n",
+		 					THIS_MODULE->name, 
+							THIS_MODULE->version);
 		msg_len += sprintf(msg+msg_len, "Module author %s\n", MOD_AUTHOR);
 	}
 
@@ -142,18 +144,18 @@ static int procfs_module_init(void)
 	}
 
 	info_f = proc_create(INF_FILE_NAME, 0444, dir, &ops_info);
-	if (read_f == NULL) {
-		pr_info("procfs_module: Can not create procfs entry %s\n", RD_FILE_NAME);
+	if (info_f == NULL) {
+		pr_info("procfs_module: Can not create procfs entry %s\n", INF_FILE_NAME);
 		remove_proc_entry(RD_FILE_NAME, dir);
 		remove_proc_entry(DIR_NAME, NULL);
 		return -ENOMEM;
 	}
 
 	write_f = proc_create(WR_FILE_NAME, 0666, dir, &ops_write);
-	if (read_f == NULL) {
+	if (write_f == NULL) {
 		pr_info("procfs_module: Can not create procfs entry %s\n", WR_FILE_NAME);
-		remove_proc_entry(RD_FILE_NAME, dir);
 		remove_proc_entry(INF_FILE_NAME, dir);
+		remove_proc_entry(RD_FILE_NAME, dir);
 		remove_proc_entry(DIR_NAME, NULL);
 		return -ENOMEM;
 	}
