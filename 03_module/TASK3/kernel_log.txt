@@ -1,0 +1,6 @@
+#
+# insmod TASK3.ko param_1=3 param_2=2
+Start: param_1=3, param_2=2, param_1+param_2=5
+# rmmod TASK3.ko
+Stop: param_1=3, param_2=2, param_1-param_2=1
+#

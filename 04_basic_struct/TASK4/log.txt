@@ -1,0 +1,30 @@
+cd /
+# cd home/user/
+# ls
+TASK4.ko
+# insmod TASK4.ko
+TASK4: module loaded
+# cd /
+# cd sys/kernel/
+# ls
+MyObject    	fscaps      	notes       	slab
+boot_params 	irq         	rcu_expedited   software_nodes
+cgroup      	mm          	rcu_normal  	uevent_seqnum
+# cd MyObject/
+# ls
+list
+# cat list
+There are no records yet...
+# echo "0-record" > list
+# echo "1-record" > list
+# echo "2-record" > list
+# cat list
+2-record
+1-record
+0-record
+# rmmod TASK4.ko
+TASK4: module exited
+#
+
+
+
