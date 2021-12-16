@@ -1,0 +1,10 @@
+$ : make app_time
+cc     app_time.c   -o app_time
+$ : ./app_time
+Get time with id CLOCK_REALTIME: 1639695008.651509774 seconds and time resolution is 1 nsec
+Get time with id CLOCK_REALTIME_COARSE: 1639695008.646127342 seconds and time resolution is 4000000 nsec
+Get time with id CLOCK_MONOTONIC: 6111.181230477 seconds and time resolution is 1 nsec
+Get time with id CLOCK_MONOTONIC_COARSE: 6111.175664844 seconds and time resolution is 4000000 nsec
+Get time with id CLOCK_MONOTONIC_RAW: 6110.970983700 seconds and time resolution is 1 nsec
+Get time with id CLOCK_BOOTTIME: 6111.181244625 seconds and time resolution is 1 nsec
+
