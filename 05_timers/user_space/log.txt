@@ -1,0 +1,36 @@
+make clean && make run
+rm -rf *.o user_time
+gcc user_time.c -o user_time
+./user_time
+
+Clock resolutin of different sources
+===============================================+===========
+|             CLOCK SOURCE|        Seconds|   Nano Seconds|
+==============================================+============
+|           CLOCK_REALTIME|              0|              1|
+|          CLOCK_MONOTONIC|              0|              1|
+| CLOCK_PROCESS_CPUTIME_ID|              0|              1|
+|  CLOCK_THREAD_CPUTIME_ID|              0|              1|
+|      CLOCK_MONOTONIC_RAW|              0|              1|
+|    CLOCK_REALTIME_COARSE|              0|        4000000|
+|   CLOCK_MONOTONIC_COARSE|              0|        4000000|
+|           CLOCK_BOOTTIME|              0|              1|
+|     CLOCK_REALTIME_ALARM|              0|              1|
+|     CLOCK_BOOTTIME_ALARM|              0|              1|
+|                CLOCK_TAI|              0|              1|
+
+Absolute time of different sources
+===============================================+===========
+|             CLOCK SOURCE|        Seconds|   Nano Seconds|
+==============================================+============
+|           CLOCK_REALTIME|     1639660529|      425502424|
+|          CLOCK_MONOTONIC|        3678873|      218307740|
+| CLOCK_PROCESS_CPUTIME_ID|              0|         577837|
+|  CLOCK_THREAD_CPUTIME_ID|              0|         579480|
+|      CLOCK_MONOTONIC_RAW|        3678789|       17715489|
+|    CLOCK_REALTIME_COARSE|     1639660529|      422321721|
+|   CLOCK_MONOTONIC_COARSE|        3678873|      215126891|
+|           CLOCK_BOOTTIME|        3678873|      218311974|
+|     CLOCK_REALTIME_ALARM|     1639660529|      425508058|
+|     CLOCK_BOOTTIME_ALARM|        3678873|      218314016|
+|                CLOCK_TAI|     1639660529|      425509644|
