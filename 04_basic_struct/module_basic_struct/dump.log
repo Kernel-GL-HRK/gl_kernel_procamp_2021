@@ -1,0 +1,17 @@
+$ insmode basic_struct.ko
+$ echo "t1" > /sys/kernel/my_object/list
+$ echo "t2" > /sys/kernel/my_object/list
+$ echo "t3" > /sys/kernel/my_object/list
+$ echo "t4" > /sys/kernel/my_object/list
+$ echo "t5" > /sys/kernel/my_object/list
+$ echo "t6" > /sys/kernel/my_object/list
+$ echo "t7" > /sys/kernel/my_object/list
+$ cat /sys/kernel/my_object/list
+Constent of list 0: t1
+Constent of list 1: t2
+Constent of list 2: t3
+Constent of list 3: t4
+Constent of list 4: t5
+Constent of list 5: t6
+Constent of list 6: t7
+$ 
