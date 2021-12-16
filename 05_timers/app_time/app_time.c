@@ -21,13 +21,29 @@ int print_time(clockid_t id, char *name) {
 }
 
 int main() {
+    int ret = 0;
     
-    print_time(CLOCK_REALTIME, "CLOCK_REALTIME");
-    print_time(CLOCK_REALTIME_COARSE, "CLOCK_REALTIME_COARSE");
-    print_time(CLOCK_MONOTONIC, "CLOCK_MONOTONIC");
-    print_time(CLOCK_MONOTONIC_COARSE, "CLOCK_MONOTONIC_COARSE");
-    print_time(CLOCK_MONOTONIC_RAW, "CLOCK_MONOTONIC_RAW");
-    print_time(CLOCK_BOOTTIME, "CLOCK_BOOTTIME");
+    ret = print_time(CLOCK_REALTIME, "CLOCK_REALTIME");
+    if (ret < 0)
+        return ret;
 
-    return 0;
+    ret = print_time(CLOCK_REALTIME_COARSE, "CLOCK_REALTIME_COARSE");
+    if (ret < 0)
+        return ret;
+
+    ret = print_time(CLOCK_MONOTONIC, "CLOCK_MONOTONIC");
+    if (ret < 0)
+        return ret;
+
+    ret = print_time(CLOCK_MONOTONIC_COARSE, "CLOCK_MONOTONIC_COARSE");
+    if (ret < 0)
+        return ret;
+
+    ret = print_time(CLOCK_MONOTONIC_RAW, "CLOCK_MONOTONIC_RAW");
+    if (ret < 0)
+        return ret;
+
+    ret = print_time(CLOCK_BOOTTIME, "CLOCK_BOOTTIME");
+
+    return ret;
 }
