@@ -1,0 +1,26 @@
+# insmod kernel_space.ko 
+kernel_space: loading out-of-tree module taints kernel.
+module loaded
+# cd /sys/kernel/Get_time_module/
+# ls
+Absolute_time  Relative_time
+# cat Absolute_time 
+Time of previous reading: 0.0 sec
+# cat Absolute_time 
+Time of previous reading: 1639727953.567501267 sec
+# cat Absolute_time 
+Time of previous reading: 1639727955.942719332 sec
+# cat Absolute_time 
+Time of previous reading: 1639727959.111860127 sec
+# cat Absolute_time 
+Time of previous reading: 1639727963.572791672 sec
+# cat Relative_time 
+Time passed since last reading: 266.203771477 sec
+# cat Relative_time 
+Time passed since last reading: 5.407672934 sec
+# cat Relative_time 
+Time passed since last reading: 2.726709147 sec
+# cat Relative_time 
+Time passed since last reading: 3.161853181 sec
+# rmmod kernel_space.ko 
+module exited
