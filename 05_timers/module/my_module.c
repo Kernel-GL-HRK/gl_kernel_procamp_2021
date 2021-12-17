@@ -11,7 +11,7 @@
 
 static struct kobject *my_kobj;
 
-static ssize_t relative_time_show(struct kobject *kobj,
+static ssize_t show_relative_time(struct kobject *kobj,
 				  struct kobj_attribute *attr, char *buf)
 {
 	static ktime_t last_read_kt = 0;
@@ -35,9 +35,9 @@ static ssize_t relative_time_show(struct kobject *kobj,
 }
 
 static struct kobj_attribute relative_time_attr =
-__ATTR(relative_time, 0664, relative_time_show, NULL);
+__ATTR(relative_time, 0664, show_relative_time, NULL);
 
-static ssize_t absolute_time_show(struct kobject *kobj,
+static ssize_t show_absolute_time(struct kobject *kobj,
 				  struct kobj_attribute *attr, char *buf)
 {
 	static struct timespec64 last_read_tv = { 0, };
@@ -58,7 +58,7 @@ static ssize_t absolute_time_show(struct kobject *kobj,
 }
 
 static struct kobj_attribute absolute_time_attr =
-__ATTR(absolute_time, 0664, absolute_time_show, NULL);
+__ATTR(absolute_time, 0664, show_absolute_time, NULL);
 
 static int my_module_init(void)
 {
