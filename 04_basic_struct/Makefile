@@ -1,6 +1,7 @@
 KERNELDIR ?= /home/oporoknyi/Desktop/build/buildroot-2021.02.7/output/build/linux-5.10.7 #WARNING relative path
 
-obj-m := hello.o
+obj-m := kobj.o
+
 .PHONY: clean
 
 all:
