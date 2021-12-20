@@ -1,0 +1,41 @@
+...
+OK
+Starting dropbear sshd: OK
+
+Welcome to Buildroot
+buildroot login: root
+# cd /home/user
+# ls
+sysfs_list.ko
+# dmesg -c
+Linux version 5.10.7 (victor@orion5491) (x86_64-buildroot-linux-uclibc-gcc.br_real (Buildroot 2021.02.7) 9.4.0, GNU ld (GNU Binutils) 2.35.2) #1 SMP Sun Nov 28 01:28:29 EET 2021
+Command line: rootwait root=/dev/vda console=tty1 console=ttyS0
+x86/fpu: x87 FPU will use FXSAVE
+...
+# insmod sysfs_list.ko 
+sysfs_list: loading out-of-tree module taints kernel.
+# echo "Foo!" > /sys/kernel/mod_sysfs/list 
+Node added: Foo!
+# echo "Bar!" > /sys/kernel/mod_sysfs/list 
+Node added: Bar!
+# echo "12345" > /sys/kernel/mod_sysfs/list 
+Node added: 12345
+# echo "%3@*&%#@" > /sys/kernel/mod_sysfs/list 
+Node added: %3@*&%#@
+# cat /sys/kernel/mod_sysfs/list 
+Foo!
+Bar!
+12345
+%3@*&%#@
+# dmesg
+sysfs_list: loading out-of-tree module taints kernel.
+Node added: Foo!
+Node added: Bar!
+Node added: 12345
+Node added: %3@*&%#@
+# rmmod sysfs_list.ko 
+4 nodes freed, the list is empty
+# exit
+
+Welcome to Buildroot
+buildroot login: qemu-system-x86_64: terminating on signal 2
