@@ -1,0 +1,7 @@
+&i2c1 {
+	status = "okay";
+	ds3231: ds3231@68 {
+		compatible = "maxim,ds3231x";
+		reg = <0x68>;
+	};
+};
