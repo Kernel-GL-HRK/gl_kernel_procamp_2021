@@ -1,0 +1,24 @@
+CLOCK_REALTIME time is: 1639727665.263768956 seconds
+Resolution of CLOCK_REALTIME is 1 nanosec
+
+CLOCK_REALTIME_COARSE time is: 1639727665.258468331 seconds
+Resolution of CLOCK_REALTIME_COARSE is 4000000 nanosec
+
+CLOCK_MONOTONIC time is: 1660.872781398 seconds
+Resolution of CLOCK_MONOTONIC is 1 nanosec
+
+CLOCK_MONOTONIC_COARSE time is: 1660.867354089 seconds
+Resolution of CLOCK_MONOTONIC_COARSE is 4000000 nanosec
+
+CLOCK_MONOTONIC_RAW time is: 1660.718324622 seconds
+Resolution of CLOCK_MONOTONIC_RAW is 1 nanosec
+
+CLOCK_BOOTTIME time is: 1660.872820247 seconds
+Resolution of CLOCK_BOOTTIME is 1 nanosec
+
+CLOCK_PROCESS_CPUTIME_ID time is: 0.882848 seconds
+Resolution of CLOCK_PROCESS_CPUTIME_ID is 1 nanosec
+
+CLOCK_THREAD_CPUTIME_ID time is: 0.888875 seconds
+Resolution of CLOCK_THREAD_CPUTIME_ID is 1 nanosec
+
