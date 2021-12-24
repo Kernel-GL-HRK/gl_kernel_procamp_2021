@@ -1,0 +1,45 @@
+$ insmod wimbledon.ko 
+$ echo "a1" >> /sys/kernel/wimbledon/list 
+$ cat /proc/wimbeldon/nshow 
+0
+$ cat /proc/wimbeldon/nstore 
+1
+$ cat /proc/wimbeldon/auth_name 
+Ivan Stepanenko <istepanenko@gmail.com>
+$ cat /proc/wimbeldon/nshow 
+0
+$ cat /sys/kernel/wimbledon/list 
+a1
+$ cat /proc/wimbeldon/nshow 
+1
+$ echo "b2" >> /sys/kernel/wimbledon/list 
+$ cat /proc/wimbeldon/nstore 
+2
+$ cat /sys/kernel/wimbledon/list 
+a1
+b2
+$ cat /proc/wimbeldon/nshow 
+2
+$ uname -a
+Linux orange 5.10.10 #1 SMP Mon Dec 13 18:03:39 EET 2021 armv7l GNU/Linux
+$ rmmod wimbledon.ko 
+
+$ dmesg
+[ 3395.465083] wimbledon: adding msg size: 3 to the list: 'a1
+[ 3395.465083] '
+[ 3437.850684] wimbledon: msg #0 size: 3 'a1
+[ 3437.850684] '
+[ 3455.577961] wimbledon: adding msg size: 3 to the list: 'b2
+[ 3455.577961] '
+[ 3468.681388] wimbledon: msg #0 size: 3 'a1
+[ 3468.681388] '
+[ 3468.686988] wimbledon: msg #1 size: 3 'b2
+[ 3468.686988] '
+[ 3498.512991] wimbledon: freeing msg size: 3 from the list: 'b2
+[ 3498.512991] '
+[ 3498.520373] wimbledon: freeing msg size: 3 from the list: 'a1
+[ 3498.520373] '
+[ 3498.527719] wimbledon: list is empty: 1
+[ 3498.531576] wimbledon: removing procfs entries
+[ 3498.536034] wimbledon: Module exited
+$
