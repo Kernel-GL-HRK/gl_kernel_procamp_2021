@@ -58,7 +58,7 @@ static ssize_t read_info(struct file *file, char __user *pbuf,
 
 	if (msg_len == 1) {
 		msg_len = sprintf(msg, "Module name %s version %s\n",
-		 					THIS_MODULE->name, 
+							THIS_MODULE->name,
 							THIS_MODULE->version);
 		msg_len += sprintf(msg+msg_len, "Module author %s\n", MOD_AUTHOR);
 	}
