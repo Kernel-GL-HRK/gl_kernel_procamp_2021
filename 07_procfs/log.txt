@@ -1,0 +1,34 @@
+# insmod /home/user/module_procfs.ko 
+# echo "t1" > /sys/kernel/my_list/my_list 
+# echo "t2" > /sys/kernel/my_list/my_list 
+# echo "t3" > /sys/kernel/my_list/my_list 
+# echo "t4" > /sys/kernel/my_list/my_list 
+# cat /sys/kernel/my_list/my_list 
+# cat /sys/kernel/my_list/my_list 
+# cat /proc/my_module_iface/module_owner 
+Vasyl Yosypenko
+# cat /proc/my_module_iface/write_num 
+The store funct was called 4 times
+# cat /proc/my_module_iface/read_num 
+The show funct was called 2 times
+# rmmod module_procfs
+# dmesg
+[  184.306137] Module initialized successfully 
+[  184.400311] xradio_wlan mmc1:0001:1: missed interrupt
+[  237.449019] t1
+[  237.449019] 
+[  237.452192] t2
+[  237.452192] 
+[  237.455333] t3
+[  237.455333] 
+[  237.458511] t4
+[  237.458511] 
+[  241.954232] t1
+[  241.954232] 
+[  241.957403] t2
+[  241.957403] 
+[  241.960653] t3
+[  241.960653] 
+[  241.963801] t4
+[  241.963801] 
+[  316.300510] Module removed successfully 
