@@ -17,14 +17,18 @@
  *  Board config for OPI-Zero:
  *	LED GREEN (PL10): GPIO_11_10 
  *	LED RED   (PA17): GPIO_0_17 
- *	BUTTON    (PG7) : GPIO_6_7
+ *	BUTTON    (PA6) : GPIO_0_6
  *  
  */
 
-#define LED_GREEN GPIO_NUMBER(11, 10)
-#define LED_RED GPIO_NUMBER(0, 15)
-#define BUTTON GPIO_NUMBER(6, 7)
-
+#ifdef ORANGE_PI_PC
+	#error "Implement the necessary port mappings"
+#endif
+#ifdef ORANGE_PI_ZERO
+	#define LED_GREEN GPIO_NUMBER(11, 10)
+	#define LED_RED GPIO_NUMBER(0, 17)
+	#define BUTTON GPIO_NUMBER(0, 6)
+#endif
 //#define TIMER_ENABLE 1
 
 static int ledg_gpio = -1;
@@ -79,6 +83,7 @@ static int button_gpio_init(int gpio)
 	button_gpio = gpio;
 	pr_info("Init GPIO%d OK\n", button_gpio);
 	button_state = gpio_get_value(button_gpio);
+	pr_info("Got button value: %d\n",button_state);
 	button_cnt = 0;
 
 	return 0;
@@ -137,7 +142,7 @@ err_led:
 
 static void __exit gpio_poll_exit(void)
 {
-	gpio_set_value(ledg_gpio, 0);
+	gpio_set_value(ledg_gpio, 1);
 	gpio_set_value(ledr_gpio, 0);
 	button_gpio_deinit();
 #ifdef TIMER_ENABLE
