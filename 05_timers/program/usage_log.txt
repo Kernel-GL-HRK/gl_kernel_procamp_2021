@@ -1,0 +1,84 @@
+# uname -a
+Linux buildroot 5.10.7 #1 SMP Thu Nov 18 19:08:18 EET 2021 x86_64 GNU/Linux
+# ./my_clock
+CLOCK_REALTIME:
+	status: OK
+	resolution   : 0 sec, 4000000 nsec
+	current value: 1638810053 sec, 994455062 nsec
+CLOCK_MONOTONIC:
+	status: OK
+	resolution   : 0 sec, 4000000 nsec
+	current value: 8198 sec, 79880401 nsec
+CLOCK_PROCESS_CPUTIME_ID:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 0 sec, 10540064 nsec
+CLOCK_THREAD_CPUTIME_ID:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 0 sec, 10878480 nsec
+CLOCK_MONOTONIC_RAW:
+	status: OK
+	resolution   : 0 sec, 4000000 nsec
+	current value: 8197 sec, 995951985 nsec
+CLOCK_REALTIME_COARSE:
+	status: OK
+	resolution   : 0 sec, 4000000 nsec
+	current value: 1638810053 sec, 991370763 nsec
+CLOCK_MONOTONIC_COARSE:
+	status: OK
+	resolution   : 0 sec, 4000000 nsec
+	current value: 8198 sec, 76306672 nsec
+CLOCK_BOOTTIME:
+	status: OK
+	resolution   : 0 sec, 4000000 nsec
+	current value: 8198 sec, 81952769 nsec
+CLOCK_REALTIME_ALARM:
+	status: NOT SUPPORTED
+CLOCK_BOOTTIME_ALARM:
+	status: NOT SUPPORTED
+
+
+$ uname -a
+Linux michael-PC 5.4.0-90-generic #101~18.04.1-Ubuntu SMP Fri Oct 22 09:25:04 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+$ ./my_clock
+CLOCK_REALTIME:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 1638810018 sec, 485680216 nsec
+CLOCK_MONOTONIC:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 24740 sec, 357926206 nsec
+CLOCK_PROCESS_CPUTIME_ID:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 0 sec, 390438746 nsec
+CLOCK_THREAD_CPUTIME_ID:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 0 sec, 390443670 nsec
+CLOCK_MONOTONIC_RAW:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 24740 sec, 194286249 nsec
+CLOCK_REALTIME_COARSE:
+	status: OK
+	resolution   : 0 sec, 4000000 nsec
+	current value: 1638810018 sec, 484150321 nsec
+CLOCK_MONOTONIC_COARSE:
+	status: OK
+	resolution   : 0 sec, 4000000 nsec
+	current value: 24740 sec, 356391802 nsec
+CLOCK_BOOTTIME:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 24740 sec, 357954270 nsec
+CLOCK_REALTIME_ALARM:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 1638810018 sec, 485735066 nsec
+CLOCK_BOOTTIME_ALARM:
+	status: OK
+	resolution   : 0 sec, 1 nsec
+	current value: 24740 sec, 357984527 nsec

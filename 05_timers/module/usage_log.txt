@@ -1,0 +1,30 @@
+# insmod my_module.ko
+# cat /sys/kernel/my_module/relative_time
+relative time since last read: 2502054904926, tv_sec: 2502 tv_nsec: 54904926
+# cat /sys/kernel/my_module/relative_time
+relative time since last read: 799540915, tv_sec: 0 tv_nsec: 799540915
+# cat /sys/kernel/my_module/relative_time
+relative time since last read: 1416741414, tv_sec: 1 tv_nsec: 416741414
+# cat /sys/kernel/my_module/relative_time
+relative time since last read: 759867613, tv_sec: 0 tv_nsec: 759867613
+#
+# cat /sys/kernel/my_module/absolute_time
+absolute time of previous reading: 0.0
+# cat /sys/kernel/my_module/absolute_time
+absolute time of previous reading: 1638804371.547407279
+# cat /sys/kernel/my_module/absolute_time
+absolute time of previous reading: 1638804372.744484870
+# cat /sys/kernel/my_module/absolute_time
+absolute time of previous reading: 1638804373.938085775
+# cat /sys/kernel/my_module/absolute_time
+absolute time of previous reading: 1638804374.585905963
+# dmesg
+my_module: last_read_kt: 0
+my_module: last_read_kt: 2502054904926
+my_module: last_read_kt: 2502854445841
+my_module: last_read_kt: 2504271187255
+my_module: last_read_tv: 0.0
+my_module: last_read_tv: 1638804371.547407279
+my_module: last_read_tv: 1638804372.744484870
+my_module: last_read_tv: 1638804373.938085775
+my_module: last_read_tv: 1638804374.585905963
