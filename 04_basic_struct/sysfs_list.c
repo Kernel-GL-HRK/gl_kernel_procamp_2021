@@ -79,18 +79,17 @@ static ssize_t serialize_list(struct list_head *list_root, char *output)
 
 static void destroy_list(struct list_head *list_root)
 {
-	struct data_item *curr_data_item, *placeholder;
-	size_t nodes_cnt = 0;
+	struct data_item *curr_data_item;
+	struct data_item *placeholder;
 
 	list_for_each_entry_safe(curr_data_item, placeholder, list_root,
 				  list_node) {
 		kfree(curr_data_item->payload);
 		list_del(&curr_data_item->list_node);
 		kfree(curr_data_item);
-		++nodes_cnt;
 	}
 
-	pr_info("%lu nodes freed, the list is%sempty\n", nodes_cnt,
+	pr_info("The list is%sempty\n",
 			(list_empty_careful(list_root) ? " " : " NOT "));
 }
 
