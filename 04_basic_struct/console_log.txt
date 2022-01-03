@@ -1,0 +1,42 @@
+...
+random: mktemp: uninitialized urandom read (6 bytes read)
+adding dns 10.0.2.3
+OK
+Starting dropbear sshd: OK
+
+Welcome to Buildroot
+buildroot login: root
+# ls
+# cd /home/user/
+# ls
+sysfs_list.ko
+# rm sysfs_list.ko 
+# random: crng init done
+
+# insmod sysfs_list.ko 
+sysfs_list: loading out-of-tree module taints kernel.
+# echo "Foo!" > /sys/kernel/mod_sysfs/list
+Node added: Foo!
+# echo "Bar!" > /sys/kernel/mod_sysfs/list
+Node added: Bar!
+# cat /sys/kernel/mod_sysfs/list
+Foo!
+Bar!
+# rmmod sysfs_list.ko 
+The list is empty
+# dmesg
+Linux version 5.10.7 (victor@orion5491) (x86_64-buildroot-linux-uclibc-gcc.br_real (Buildroot 2021.02.7) 9.4.0, GNU ld (GNU Binutils) 2.35.2) #1 SMP Sun Nov 28 01:28:29 EET 2021
+Command line: rootwait root=/dev/vda console=tty1 console=ttyS0
+...
+random: dd: uninitialized urandom read (512 bytes read)
+random: mktemp: uninitialized urandom read (6 bytes read)
+random: mktemp: uninitialized urandom read (6 bytes read)
+random: crng init done
+sysfs_list: loading out-of-tree module taints kernel.
+Node added: Foo!
+Node added: Bar!
+The list is empty
+# exit
+
+Welcome to Buildroot
+buildroot login: qemu-system-x86_64: terminating on signal 2
