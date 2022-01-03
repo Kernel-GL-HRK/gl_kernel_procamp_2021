@@ -22,12 +22,12 @@
  */
 
 #ifdef ORANGE_PI_PC
-	#error "Implement the necessary port mappings"
+#error "Implement the necessary port mappings"
 #endif
 #ifdef ORANGE_PI_ZERO
-	#define LED_GREEN GPIO_NUMBER(11, 10)
-	#define LED_RED GPIO_NUMBER(0, 17)
-	#define BUTTON GPIO_NUMBER(0, 6)
+#define LED_GREEN GPIO_NUMBER(11, 10)
+#define LED_RED GPIO_NUMBER(0, 17)
+#define BUTTON GPIO_NUMBER(0, 6)
 #endif
 //#define TIMER_ENABLE 1
 
@@ -48,11 +48,11 @@ static enum hrtimer_restart timer_callback(struct hrtimer *timer)
 	cur_button_state = gpio_get_value(button_gpio);
 	button_cnt = (cur_button_state == button_state) ? (button_cnt + 1) : 0;
 	button_state = cur_button_state;
-	gpio_set_value(ledr_gpio, ((button_cnt == 20) ? 1 : 0));
-	if (button_cnt >= 20)
+	gpio_set_value(ledr_gpio, ((button_cnt == 400) ? 1 : 0));
+	if (button_cnt >= 400)
 		gpio_set_value(ledg_gpio, !button_state);
 	hrtimer_forward(timer, timer->base->get_time(), timer_period);
-	return HRTIMER_RESTART;  //restart timer
+	return HRTIMER_RESTART; //restart timer
 }
 #endif
 
@@ -83,7 +83,7 @@ static int button_gpio_init(int gpio)
 	button_gpio = gpio;
 	pr_info("Init GPIO%d OK\n", button_gpio);
 	button_state = gpio_get_value(button_gpio);
-	pr_info("Got button value: %d\n",button_state);
+	pr_info("Got button value: %d\n", button_state);
 	button_cnt = 0;
 
 	return 0;
@@ -113,7 +113,7 @@ static int __init gpio_poll_init(void)
 		return res;
 	}
 #ifdef TIMER_ENABLE
-	timer_period = ktime_set(0, 1000000);      /*1 msec*/
+	timer_period = ktime_set(0, 1000000); /*1 msec*/
 	hrtimer_init(&button_timer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
 	hrtimer_start(&button_timer, timer_period, HRTIMER_MODE_REL);
 	button_timer.function = timer_callback;
