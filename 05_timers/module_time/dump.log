@@ -1,0 +1,27 @@
+$ sudo insmod module_time.ko
+$ cd /sys/kernel/my_object/
+$ cat abs_time
+This one is first read of absolute time
+$ cat abs_time
+Previous reading was at 1641215808.143702793s
+$ cat abs_time
+Previous reading was at 1641215809.246211592s
+$ cat abs_time
+Previous reading was at 1641215810.229488216s
+$ cat abs_time
+Previous reading was at 1641215811.066960117s
+$ cat rel_time
+This one is first read of relative time
+$ cat rel_time
+Time since previous reading 972.159735474s
+$ cat rel_time
+Time since previous reading 1.642208462s
+$ cat rel_time
+Time since previous reading 0.978658302s
+$ cat rel_time
+Time since previous reading 0.525787171s
+$ cat rel_time
+Time since previous reading 0.446812197s
+$ cat rel_time
+Time since previous reading 2.567261595s
+$
