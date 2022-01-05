@@ -9,7 +9,7 @@
 #include <linux/module.h>
 
 #define GET_ENTIRE_SEC(TIME_NS) (TIME_NS / (1000000000UL))
-#define GET_REMAIN_NS(TIME_NS) (TIME_NS % (1000000000UL))
+#define GET_REMAIN_SEC(TIME_NS) (TIME_NS % (1000000000UL))
 
 static struct kobject *time_kobj;
 
@@ -27,7 +27,7 @@ static ssize_t show_abs_time(struct kobject *kobj, struct kobj_attribute *attr, 
 {
     static u64 last_abs_time;
 
-    sprintf(buf, "%llu.%llu sec\n", GET_ENTIRE_SEC(last_abs_time), GET_REMAIN_NS(last_abs_time));
+    sprintf(buf, "%d.%d sec\n", GET_ENTIRE_SEC(last_abs_time), GET_REMAIN_SEC(last_abs_time));
 
     last_abs_time = ktime_get();
 
@@ -44,7 +44,7 @@ static ssize_t show_rel_time(struct kobject *kobj, struct kobj_attribute *attr, 
 
     diff_time = curr_rel_time - last_rel_time;
 
-    sprintf(buf, "%llu.%llu sec\n", GET_ENTIRE_SEC(diff_time), GET_REMAIN_NS(diff_time));
+    sprintf(buf, "%d.%d sec\n", GET_ENTIRE_SEC(diff_time), GET_REMAIN_SEC(diff_time));
 
     last_rel_time = curr_rel_time;
 
