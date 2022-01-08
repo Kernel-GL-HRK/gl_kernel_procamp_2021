@@ -46,8 +46,10 @@ static ssize_t list_store(struct kobject *kobj, struct kobj_attribute *attr,
 	memcpy(new_msg, buf, count);
 
 	new_entry = kzalloc(sizeof(*new_entry), GFP_KERNEL);
-	if (!new_entry)
+	if (!new_entry) {
+		kfree(new_msg);
 		return -ENOMEM;
+	}
 
 	new_entry->buffer = new_msg;
 	list_add_tail(&new_entry->entry, &my_list);
