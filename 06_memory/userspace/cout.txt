@@ -1,0 +1,108 @@
+Size: 1
+Creation:                 1783 ns.
+Removal:                 1891 ns.
+Size: 2
+Creation:                  363 ns.
+Removal:                  333 ns.
+Size: 4
+Creation:                  235 ns.
+Removal:                  188 ns.
+Size: 8
+Creation:                  183 ns.
+Removal:                  173 ns.
+Size: 16
+Creation:                  225 ns.
+Removal:                  199 ns.
+Size: 32
+Creation:                  376 ns.
+Removal:                  152 ns.
+Size: 64
+Creation:                  238 ns.
+Removal:                  188 ns.
+Size: 128
+Creation:                  254 ns.
+Removal:                  159 ns.
+Size: 256
+Creation:                  219 ns.
+Removal:                  185 ns.
+Size: 512
+Creation:                  271 ns.
+Removal:                  160 ns.
+Size: 1024
+Creation:                  275 ns.
+Removal:                  205 ns.
+Size: 2048
+Creation:                 3479 ns.
+Removal:                  350 ns.
+Size: 4096
+Creation:                  372 ns.
+Removal:                  261 ns.
+Size: 8192
+Creation:                 2804 ns.
+Removal:                  214 ns.
+Size: 16384
+Creation:                 2969 ns.
+Removal:                  274 ns.
+Size: 32768
+Creation:                 2871 ns.
+Removal:                  197 ns.
+Size: 65536
+Creation:                20742 ns.
+Removal:                 6426 ns.
+Size: 131072
+Creation:                 3262 ns.
+Removal:                  249 ns.
+Size: 262144
+Creation:                 8434 ns.
+Removal:                 8885 ns.
+Size: 524288
+Creation:                 6289 ns.
+Removal:                 5649 ns.
+Size: 1048576
+Creation:                 5406 ns.
+Removal:                 9246 ns.
+Size: 2097152
+Creation:                 5225 ns.
+Removal:                 6614 ns.
+Size: 4194304
+Creation:                 4728 ns.
+Removal:                 6483 ns.
+Size: 8388608
+Creation:                 5317 ns.
+Removal:                 6475 ns.
+Size: 16777216
+Creation:                 4838 ns.
+Removal:                 6336 ns.
+Size: 33554432
+Creation:                 4830 ns.
+Removal:                 6571 ns.
+Size: 67108864
+Creation:                 4831 ns.
+Removal:                 5670 ns.
+Size: 134217728
+Creation:                 4909 ns.
+Removal:                 5924 ns.
+Size: 268435456
+Creation:                 4729 ns.
+Removal:                 6569 ns.
+Size: 536870912
+Creation:                 4849 ns.
+Removal:                 9073 ns.
+Size: 1073741824
+Creation:                 5903 ns.
+Removal:                11180 ns.
+Size: 2147483648
+Creation:                 5845 ns.
+Removal:                13080 ns.
+Size: 4294967296
+Creation:                 5700 ns.
+Removal:                11217 ns.
+Size: 8589934592
+Creation:                 5971 ns.
+Removal:                11127 ns.
+Size: 17179869184
+Creation:                 5779 ns.
+Removal:                10972 ns.
+Size: 34359738368
+Creation:                64242 ns.
+Removal:                  171 ns.
