@@ -1,0 +1,56 @@
+dmesg:
+[30488.897476] led_mod: gpio_poll_init: GPIO Init
+[30488.901992] led_mod: button_gpio_init: Init GPIO199 OK
+[30488.907155] led_mod: gpio_poll_init: Button irq: 105
+[30506.586840] led_mod: my_gpio_interrupt: my_gpio_interrupt
+[30508.118624] led_mod: my_gpio_interrupt: my_gpio_interrupt
+[30508.124051] led_mod: my_gpio_interrupt: my_gpio_interrupt
+[30509.562818] led_mod: my_gpio_interrupt: my_gpio_interrupt
+[30512.560895] led_mod: my_gpio_interrupt: my_gpio_interrupt
+[30583.414329] led_mod: button_gpio_deinit: Deinit GPIO199
+
+
+# cat /proc/interrupts
+           CPU0       CPU1       CPU2       CPU3
+ 25:          0          0          0          0     GICv2  50 Level     timer@1c20c00
+ 26:          0          0          0          0     GICv2  29 Level     arch_timer
+ 27:    1448092      31470      96231     191299     GICv2  30 Level     arch_timer
+ 30:          0          0          0          0     GICv2  82 Level     1c02000.dma-controller
+ 32:      59847          0          0          0     GICv2  92 Level     sunxi-mmc
+ 33:     892020          0          0          0     GICv2  93 Level     sunxi-mmc
+ 34:          0          0          0          0     GICv2  81 Level     1c17000.mailbox
+ 35:          0          0          0          0     GICv2 103 Level     musb-hdrc.2.auto
+ 36:          0          0          0          0     GICv2 104 Level     ehci_hcd:usb1
+ 37:          0          0          0          0     GICv2 105 Level     ohci_hcd:usb2
+ 38:          0          0          0          0     GICv2 106 Level     ehci_hcd:usb3
+ 39:          0          0          0          0     GICv2 107 Level     ohci_hcd:usb4
+ 43:          0          0          0          0     GICv2 114 Level     eth0
+ 44:          2          0          0          0     GICv2  97 Level     sun6i-spi
+ 45:          0          0          0          0     GICv2  98 Level     sun6i-spi
+ 47:       1478          0          0          0     GICv2  32 Level     ttyS0
+ 48:          0          0          0          0     GICv2  72 Level     1f00000.rtc
+ 51:          0          0          0          0     GICv2 125 Level     1400000.deinterlace
+ 52:          0          0          0          0     GICv2  90 Level     1c0e000.video-codec
+ 53:          0          0          0          0     GICv2 126 Level     sun8i-ce-ns
+ 54:          0          0          0          0     GICv2 129 Level     gp
+ 55:          0          0          0          0     GICv2 130 Level     gpmmu
+ 56:          0          0          0          0     GICv2 131 Level     pp0
+ 57:          0          0          0          0     GICv2 132 Level     ppmmu0
+ 58:          0          0          0          0     GICv2 134 Level     pp1
+ 59:          0          0          0          0     GICv2 135 Level     ppmmu1
+ 61:     122208          0          0          0     GICv2  63 Level     ths
+ 62:          0          0          0          0     GICv2 152 Level     arm-pmu
+ 63:          0          0          0          0     GICv2 153 Level     arm-pmu
+ 64:          0          0          0          0     GICv2 154 Level     arm-pmu
+ 65:          0          0          0          0     GICv2 155 Level     arm-pmu
+105:        295          0          0          0  sunxi_pio_edge  39 Edge      my_gpio_interrupt
+108:      43194          0          0          0  sunxi_pio_edge  42 Edge      xradio
+110:          1          0          0          0  sunxi_pio_edge  44 Edge      usb0-id-det
+IPI0:          0          0          0          0  CPU wakeup interrupts
+IPI1:          0          0          0          0  Timer broadcast interrupts
+IPI2:        111        113        197        310  Rescheduling interrupts
+IPI3:       1359      14350      53384      27636  Function call interrupts
+IPI4:          0          0          0          0  CPU stop interrupts
+IPI5:     714948       5122      46742      36933  IRQ work interrupts
+IPI6:          0          0          0          0  completion interrupts
+Err:          0
