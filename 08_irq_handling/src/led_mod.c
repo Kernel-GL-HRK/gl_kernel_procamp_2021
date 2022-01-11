@@ -26,7 +26,8 @@
 //#define BUTTON GPIO_NUMBER(6, 7)
 #define BUTTON GPIO_NUMBER(0, 1) //Activate PA1
 
-#define TIMER_ENABLE 1
+//#define TIMER_ENABLE 1
+#define IRQ_ENABLE 1
 
 static int ledg_gpio = -1;
 static int ledr_gpio = -1;
