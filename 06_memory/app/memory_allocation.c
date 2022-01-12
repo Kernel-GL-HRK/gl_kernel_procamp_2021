@@ -15,8 +15,9 @@ double to_nsec(struct timespec t) {
 	return t.tv_sec + ns;
 }
 
-void *call_alloc(enum allocator alloc, size_t i) {
+void *call_alloc(enum allocator alloc, size_t i, struct timespec *t) {
 	void *p = NULL;
+    int ret;
 
 	switch(alloc) {
 	case MALLOC:
@@ -32,30 +33,40 @@ void *call_alloc(enum allocator alloc, size_t i) {
 		return NULL;
 	}
 
+    // need to measure time here, as alloca will free the memory on exit of the functions
+    if (p != NULL) {
+        ret = clock_gettime(CLOCK_MONOTONIC, t);
+        if (ret < 0)
+            return NULL;
+    }
+
 	return p;
 }
 
 int measure(size_t i, enum allocator alloc) {
 	void *p;
-	struct timespec tp, tn;
+    // t0 - start of allocation
+    // t1 - end of allocation and start of free
+    // t2 - end of free
+	struct timespec t[3];
 	int ret;
 
-	ret = clock_gettime(CLOCK_MONOTONIC, &tp);
+	ret = clock_gettime(CLOCK_MONOTONIC, &t[0]);
 	if (ret < 0)
 		return ret;
 
-	p = call_alloc(alloc, i);
+	p = call_alloc(alloc, i, &t[1]);
 	if (p == NULL)
 		return 1;
-
-	ret = clock_gettime(CLOCK_MONOTONIC, &tn);
-	if (ret < 0)
-		return ret;
 
 	if (alloc != ALLOCA)
 		free(p);
 
-	printf(" %0.9f ", to_nsec(tn) - to_nsec(tp));
+	ret = clock_gettime(CLOCK_MONOTONIC, &t[2]);
+	if (ret < 0)
+		return ret;
+
+	printf(" %0.9f(%0.9f) ", to_nsec(t[1]) - to_nsec(t[0]), to_nsec(t[2]) - to_nsec(t[1]));
 
 	return 0;
 }
@@ -64,8 +75,8 @@ int main() {
 	size_t i;
 	int ret;
 
-	printf("	  bytes				 time				 \n");
-	printf("			  malloc	   calloc	   alloca   \n");
+	printf("	  bytes		time to allocate(time to free)\n");
+	printf("			  malloc	   calloc	            alloca   \n");
 	for (i = 2; i < SIZE_MAX; i *= 2) {
 		printf("%11ld ", i);
 
