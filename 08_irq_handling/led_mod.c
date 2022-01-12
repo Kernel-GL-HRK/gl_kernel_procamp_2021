@@ -22,10 +22,10 @@
  */
 
 #define LED_GREEN GPIO_NUMBER(11, 10)
-#define LED_RED GPIO_NUMBER(0, 15)
+#define LED_RED GPIO_NUMBER(0, 17)
 #define BUTTON GPIO_NUMBER(6, 7)
 
-//#define TIMER_ENABLE 1
+#define TIMER_ENABLE 1
 
 static int ledg_gpio = -1;
 static int ledr_gpio = -1;
@@ -97,7 +97,7 @@ static void button_gpio_deinit(void)
 }
 
 /* Module entry/exit points */
-static int __init gpio_poll_init(void)
+static int __init led_mod_init(void)
 {
 	int res;
 	pr_info("GPIO Init\n");
@@ -135,7 +135,7 @@ err_led:
 	return res;
 }
 
-static void __exit gpio_poll_exit(void)
+static void __exit led_mod_exit(void)
 {
 	gpio_set_value(ledg_gpio, 0);
 	gpio_set_value(ledr_gpio, 0);
@@ -145,8 +145,8 @@ static void __exit gpio_poll_exit(void)
 #endif
 }
 
-module_init(gpio_poll_init);
-module_exit(gpio_poll_exit);
+module_init(led_mod_init);
+module_exit(led_mod_exit);
 
 MODULE_AUTHOR("Oleksandr Posukhov oleksandr.posukhov@gmail.com>");
 MODULE_DESCRIPTION("LED Test");
