@@ -1,4 +1,4 @@
-KERNELDIR ?=/home/valenti/Development/Embedded/exercise8/build_orange_image/build/linux-5.10.10/
+KERNELDIR ?=/home/valenti/Development/Embedded/exercise8/build_orange_zero_image/build/linux-5.10.10/
 
 ifneq ($(KERNELRELEASE),)
 	obj-m := led_mod_irq.o
