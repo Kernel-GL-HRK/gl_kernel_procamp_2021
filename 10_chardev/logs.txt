@@ -1,0 +1,66 @@
+
+install and remove:
+# insmod chardev_mod.ko
+# rmmod chardev_mod
+
+user_app:
+# ./user_app
+This application interucts wit led kernl driver
+Press Ctrl+z to stop
+Turn on LED Green
+Turn on LED Red
+Turn off LED Green
+Turn off LED Red
+Turn on LED Green
+Turn off LED Green
+Turn on LED Red
+Turn on LED Green
+Turn off LED Green
+Turn off LED Red
+Turn on LED Green
+Turn off LED Green
+Turn on LED Red
+Turn on LED Green
+Turn off LED Green
+^C
+
+dmesg:
+[ 6574.298032] chardev_mod: chardev_init: chardev_init
+[ 6574.302952] chardev_mod: chardev_init: register chrdev, major = 244
+[ 6574.311798] chardev_mod: chardev_init: chrdev: device class created successfully
+[ 6574.321722] chardev_mod: chardev_init: chrdev: device node created successfully
+[ 6574.329098] chardev_mod: chardev_init: Both LEDs will be blining 3 times
+[ 6574.935958] chardev_mod: chardev_init: chrdev: module loaded
+[ 6581.710103] chardev_mod: device_open: device_open()
+[ 6581.715350] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 1
+[ 6581.715430] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 1
+[ 6581.723357] chardev_mod: led_ioctl: LED_GREEN: status 1
+[ 6581.730693] chardev_mod: led_ioctl: LED_GREEN: status 1
+[ 6582.731753] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 0
+[ 6582.738592] chardev_mod: led_ioctl: LED_GREEN: status 0
+[ 6583.741514] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 0
+[ 6583.743941] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 1
+[ 6583.748335] chardev_mod: led_ioctl: LED_GREEN: status 1
+[ 6583.760378] chardev_mod: led_ioctl: LED_GREEN: status 1
+[ 6584.767667] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 0
+[ 6584.774467] chardev_mod: led_ioctl: LED_GREEN: status 0
+[ 6585.748467] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 1
+[ 6585.755266] chardev_mod: led_ioctl: LED_RED: status 1
+[ 6585.780109] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 1
+[ 6585.786904] chardev_mod: led_ioctl: LED_GREEN: status 1
+[ 6586.792500] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 0
+[ 6586.799339] chardev_mod: led_ioctl: LED_GREEN: status 0
+[ 6587.760618] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 0
+[ 6587.767447] chardev_mod: led_ioctl: LED_RED: status 0
+[ 6587.809308] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 1
+[ 6587.816412] chardev_mod: led_ioctl: LED_GREEN: status 1
+[ 6588.822036] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 0
+[ 6588.828873] chardev_mod: led_ioctl: LED_GREEN: status 0
+[ 6589.772633] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 1
+[ 6589.779464] chardev_mod: led_ioctl: LED_RED: status 1
+[ 6589.844735] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 1
+[ 6589.852906] chardev_mod: led_ioctl: LED_GREEN: status 1
+[ 6590.860724] chardev_mod: led_ioctl: led_ioctl: led_state was updated to 0
+[ 6590.867559] chardev_mod: led_ioctl: LED_GREEN: status 0
+[ 6591.573605] chardev_mod: device_release: device_release()
+[ 6619.452107] chardev_mod: chardev_exit: chrdev: module exited
