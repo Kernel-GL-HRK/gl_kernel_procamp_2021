@@ -1,0 +1,21 @@
+# insmod  /tmp/kmodule_proc_fs.ko 
+# echo "store1" > /sys/kernel/MyObject/list 
+# echo "store2" > /sys/kernel/MyObject/list 
+# echo "store3" > /sys/kernel/MyObject/list 
+# cat /sys/kernel/MyObject/list 
+store3
+
+store2
+
+store1
+
+# cat /proc/MyObject/author 
+Nazarii Kurylko <kurylko.n@gmail.com># 
+# cat /proc/MyObject/storecount 
+storecount = 3
+# cat /proc/MyObject/s
+showcount   storecount
+# cat /proc/MyObject/showcount 
+showcount = 1
+# 
+
