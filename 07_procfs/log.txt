@@ -1,0 +1,23 @@
+# insmod *.ko
+# cat /proc/mydev
+cat: can't open '/proc/mydev': No such file or directory
+# cat /proc/my-
+my-author_name    my-show_counter   my-store_counter
+# cat /proc/my-show_counter 
+0
+# cat /proc/my-store_counter 
+0
+# cat /proc/my-author_name 
+denys
+# echo asdfsd > /sys/kernel/my-kobj/param 
+# cat /proc/my-store_counter 
+1
+# cat /sys/kernel/my-kobj/param 
+asdfsd
+# cat /proc/my-store_counter 
+1
+# cat /proc/my-show_counter 
+1
+# cat /proc/my-author_name 
+denys
+# 

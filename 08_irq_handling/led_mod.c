@@ -22,7 +22,7 @@
  */
 
 #define LED_GREEN GPIO_NUMBER(11, 10)
-#define LED_RED GPIO_NUMBER(0, 15)
+#define LED_RED GPIO_NUMBER(0, 17)
 #define BUTTON GPIO_NUMBER(6, 7)
 
 //#define TIMER_ENABLE 1
@@ -33,6 +33,10 @@ static int button_gpio = -1;
 static int button_state = -1;
 static int button_cnt = -1;
 
+static int button_irq = -1;
+static int dev_id = 0;
+static int irq_counter = 0;
+
 #ifdef TIMER_ENABLE
 static ktime_t timer_period;
 struct hrtimer button_timer;
@@ -42,15 +46,24 @@ static enum hrtimer_restart timer_callback(struct hrtimer *timer)
 	int cur_button_state;
 
 	cur_button_state = gpio_get_value(button_gpio);
-	button_cnt = (cur_button_state == button_state) ? (button_cnt + 1) : 0;
+	button_cnt = (cur_button_state == 1) ? (button_cnt + 1) : 0;
 	button_state = cur_button_state;
-	gpio_set_value(ledr_gpio, ((button_cnt == 20) ? 1 : 0));
-	if (button_cnt >= 20)
+
+	gpio_set_value(ledr_gpio, ((button_cnt > 20) ? 1 : 0));
+	if (button_cnt < 20)
 		gpio_set_value(ledg_gpio, !button_state);
 	hrtimer_forward(timer, timer->base->get_time(), timer_period);
 	return HRTIMER_RESTART;  //restart timer
 }
 #endif
+
+static irqreturn_t my_interrupt(int irq, void* devid)
+{
+    irq_counter++;
+    pr_info("In the ISR: counter = %d\n", irq_counter);
+    pr_info("in irq(): %s\n", in_irq()? "Y" : "N");
+    return IRQ_NONE;
+}
 
 static int led_gpio_init(int gpio, int *led_gpio)
 {
@@ -80,6 +93,9 @@ static int button_gpio_init(int gpio)
 	pr_info("Init GPIO%d OK\n", button_gpio);
 	button_state = gpio_get_value(button_gpio);
 	button_cnt = 0;
+
+	
+	button_irq = gpio_to_irq(gpio);
 
 	return 0;
 
@@ -113,6 +129,16 @@ static int __init gpio_poll_init(void)
 	hrtimer_start(&button_timer, timer_period, HRTIMER_MODE_REL);
 	button_timer.function = timer_callback;
 #endif
+//IRQ
+    if (request_irq(button_irq, my_interrupt, IRQF_SHARED, "my_interr", &dev_id)) {
+        res = -1;
+        pr_info("mymodule: failed to load\n");
+    } else {
+        pr_info("mymodule: module loaded, irq handled on IRQ = %d\n", button_irq);
+        pr_info("TASK: in irq(): %s\n", in_irq()? "Y" : "N");
+    }
+//
+
 	res = led_gpio_init(LED_GREEN, &ledg_gpio);
 	if (res != 0) {
 		pr_err("Can't set GPIO%d for output\n", LED_GREEN);
@@ -126,7 +152,7 @@ static int __init gpio_poll_init(void)
 		pr_err("Can't set GPIO%d for output\n", LED_RED);
 		goto err_led;
 	}
-	gpio_set_value(ledr_gpio, 1);
+	gpio_set_value(ledr_gpio, 0);
 
 	return 0;
 
@@ -140,6 +166,11 @@ static void __exit gpio_poll_exit(void)
 	gpio_set_value(ledg_gpio, 0);
 	gpio_set_value(ledr_gpio, 0);
 	button_gpio_deinit();
+//IRQ
+ 	synchronize_irq(button_irq);
+	free_irq(button_irq, &dev_id);
+		pr_info("module exited, counter: %d\n", irq_counter);
+//
 #ifdef TIMER_ENABLE
 	hrtimer_cancel(&button_timer);
 #endif
@@ -152,3 +183,7 @@ MODULE_AUTHOR("Oleksandr Posukhov oleksandr.posukhov@gmail.com>");
 MODULE_DESCRIPTION("LED Test");
 MODULE_LICENSE("GPL");
 MODULE_VERSION("0.1");
+
+
+
+

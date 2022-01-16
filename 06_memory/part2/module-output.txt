@@ -1,0 +1,20 @@
+[ 1008.513434] Hi!!!!
+[ 1049.670295] ***Allocating 1 bytes by kmalloc in 38222 cycles|
+[ 1049.671985] ***Allocating 1000 bytes by kmalloc in 23151 cycles|
+[ 1049.672150] ***Allocating 10000 bytes by kmalloc in 211510 cycles|
+[ 1049.672694] ***Allocating 100000 bytes by kmalloc in 995190 cycles|
+[ 1049.674384] ***Allocating 1000000 bytes by kmalloc in 3233686 cycles|
+[ 1049.674626] ***Allocating 4000000 bytes by kmalloc in 110011 cycles|
+[ 1049.674808] ***Allocating 1 bytes by vmalloc in 242158 cycles|
+[ 1049.674891] ***Allocating 1000 bytes by vmalloc in 54342 cycles|
+[ 1049.674983] ***Allocating 10000 bytes by vmalloc in 55056 cycles|
+[ 1049.675159] ***Allocating 100000 bytes by vmalloc in 186199 cycles|
+[ 1049.675425] ***Allocating 1000000 bytes by vmalloc in 397430 cycles|
+[ 1049.677217] ***Allocating 4000000 bytes by vmalloc in 3335679 cycles|
+[ 1049.677338] ***Allocating 1 order by __get_free_page in 57214 cycles|
+[ 1049.677402] ***Allocating 3 order by __get_free_page in 15859 cycles|
+[ 1049.677475] ***Allocating 4 order by __get_free_page in 63890 cycles|
+[ 1049.677929] ***Allocating 6 order by __get_free_page in 721659 cycles|
+[ 1049.678010] ***Allocating 8 order by __get_free_page in 24715 cycles|
+[ 1049.678079] ***Allocating 10 order by __get_free_page in 51659 cycles|
+
