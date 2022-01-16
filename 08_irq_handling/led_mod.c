@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-2.0-only
+
 #define pr_fmt(fmt) KBUILD_MODNAME ": %s: " fmt, __func__
 
 #include <linux/module.h>
@@ -10,28 +12,31 @@
 /*	https://linux-sunxi.org/Xunlong_Orange_Pi_PC#LEDs
  *  Board config for OPI-PC:
  *	LED GREEN (PL10): GPIO_11_10
- *	LED RED   (PA15): GPIO_0_15  
+ *	LED RED   (PA15): GPIO_0_15
  *	BUTTON    (PG7) : GPIO_6_7
  *
  *  https://linux-sunxi.org/Xunlong_Orange_Pi_Zero#LEDs
  *  Board config for OPI-Zero:
- *	LED GREEN (PL10): GPIO_11_10 
- *	LED RED   (PA17): GPIO_0_17 
+ *	LED GREEN (PL10): GPIO_11_10
+ *	LED RED   (PA17): GPIO_0_17
  *	BUTTON    (PG7) : GPIO_6_7
- *  
  */
 
 #define LED_GREEN GPIO_NUMBER(11, 10)
 #define LED_RED GPIO_NUMBER(0, 15)
 #define BUTTON GPIO_NUMBER(6, 7)
 
-//#define TIMER_ENABLE 1
+//#define TIMER_ENABLE
 
 static int ledg_gpio = -1;
 static int ledr_gpio = -1;
 static int button_gpio = -1;
 static int button_state = -1;
 static int button_cnt = -1;
+
+#ifndef TIMER_ENABLE
+static int button_irq = -1;
+#endif
 
 #ifdef TIMER_ENABLE
 static ktime_t timer_period;
@@ -49,6 +54,26 @@ static enum hrtimer_restart timer_callback(struct hrtimer *timer)
 		gpio_set_value(ledg_gpio, !button_state);
 	hrtimer_forward(timer, timer->base->get_time(), timer_period);
 	return HRTIMER_RESTART;  //restart timer
+}
+#endif
+
+//change the led green/led state on button press
+#ifndef TIMER_ENABLE
+static irqreturn_t button_irq_hadler(int irq, void *devid)
+{
+	static int value;
+
+	if (button_irq == irq) {
+		gpio_set_value(ledg_gpio, value);
+		gpio_set_value(ledr_gpio, !value);
+
+		value = !value;
+		pr_info("set green led to %d\n", value);
+	} else {
+		pr_info("not a button gpio irq\n");
+	}
+
+	return IRQ_HANDLED;
 }
 #endif
 
@@ -94,12 +119,16 @@ static void button_gpio_deinit(void)
 		gpio_free(button_gpio);
 		pr_info("Deinit GPIO%d\n", button_gpio);
 	}
+#ifndef TIMER_ENABLE
+	free_irq(button_irq, NULL);
+#endif
 }
 
 /* Module entry/exit points */
 static int __init gpio_poll_init(void)
 {
 	int res;
+
 	pr_info("GPIO Init\n");
 
 	res = button_gpio_init(BUTTON);
@@ -127,6 +156,23 @@ static int __init gpio_poll_init(void)
 		goto err_led;
 	}
 	gpio_set_value(ledr_gpio, 1);
+
+#ifndef TIMER_ENABLE
+	button_irq = gpio_to_irq(BUTTON);
+	if (res < 0) {
+		pr_err("gpio_to_irq for gpio %u returned %d\n", BUTTON,
+		       button_irq);
+		goto err_led;
+	}
+	//irq is generated when gpio is powered(rising age)
+	//devid = NULL due to it is not shared interupt
+	res = request_irq(button_irq, button_irq_hadler, IRQF_TRIGGER_RISING,
+			  "button", NULL);
+	if (res != 0) {
+		pr_err("request_irq for irq %d returned %d\n", button_irq, res);
+		goto err_led;
+	}
+#endif
 
 	return 0;
 
