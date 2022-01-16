@@ -122,6 +122,8 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 {
 	void __user *argp = (void __user *)arg;
 
+	pr_info("Handled ioctl call CMD: %d  \n", cmd);
+
 	switch (cmd) {
 	case GPIO_CHARDEV_SET_VALUE: {
 		struct gpio_chardev_set_data __user *gpio_data = argp;
