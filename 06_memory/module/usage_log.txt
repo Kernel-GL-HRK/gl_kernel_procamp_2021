@@ -1,0 +1,163 @@
+# uname -a
+Linux buildroot 5.10.7 #1 SMP Thu Nov 18 19:08:18 EET 2021 x86_64 GNU/Linux
+
+# free
+              total        used        free      shared  buff/cache   available
+Mem:         114836       15856       92180          96        6800       94516
+Swap:             0           0           0
+
+# insmod my_module.ko 
+my_module: |---------|------------------|----------------|
+my_module: |  Size   | kmalloc Time, ns | kfree Time, ns |
+my_module: |---------|------------------|----------------|
+my_module: |       1 |            14010 |          14168 |
+my_module: |       2 |             2029 |           1125 |
+my_module: |       4 |             2175 |            978 |
+my_module: |       8 |             1990 |            766 |
+my_module: |      16 |             1978 |           1364 |
+my_module: |      32 |             1798 |           1156 |
+my_module: |      64 |             2073 |            696 |
+my_module: |     128 |             1589 |            972 |
+my_module: |     256 |             2723 |           1160 |
+my_module: |     512 |             1666 |            732 |
+my_module: |    1024 |             2036 |            933 |
+my_module: |    2048 |             1887 |            983 |
+my_module: |    4096 |             2339 |            775 |
+my_module: |    8192 |             2114 |            832 |
+my_module: |   16384 |            13216 |           6599 |
+my_module: |   32768 |             4646 |           2743 |
+my_module: |   65536 |             4858 |           2773 |
+my_module: |  131072 |             9259 |           5039 |
+my_module: |  262144 |             5372 |           3767 |
+my_module: |  524288 |             5970 |           4529 |
+my_module: | 1048576 |             7852 |           5232 |
+my_module: | 2097152 |            12037 |           7063 |
+my_module: | 4194304 |            20177 |          11274 |
+my_module: |---------|------------------|----------------|
+my_module: |---------|--------- ---------|----------------|
+my_module: |  Size   | kzmalloc Time, ns | kfree Time, ns |
+my_module: |---------|---------- --------|----------------|
+my_module: |       1 |            10757  |           7511 |
+my_module: |       2 |             1969  |            954 |
+my_module: |       4 |             1985  |            732 |
+my_module: |       8 |             1754  |            673 |
+my_module: |      16 |             2142  |           1351 |
+my_module: |      32 |             2387  |           1098 |
+my_module: |      64 |             2624  |            777 |
+my_module: |     128 |             1908  |            728 |
+my_module: |     256 |             2290  |            747 |
+my_module: |     512 |             2471  |            815 |
+my_module: |    1024 |             3782  |            839 |
+my_module: |    2048 |             2694  |           1057 |
+my_module: |    4096 |             2625  |            800 |
+my_module: |    8192 |             7092  |           1608 |
+my_module: |   16384 |            15385  |           4772 |
+my_module: |   32768 |           102562  |           2855 |
+my_module: |   65536 |            44167  |           2636 |
+my_module: |  131072 |            79645  |           2732 |
+my_module: |  262144 |           148845  |           2970 |
+my_module: |  524288 |           287525  |           4531 |
+my_module: | 1048576 |           564375  |           5286 |
+my_module: | 2097152 |          1150401  |           7739 |
+my_module: | 4194304 |          1648048  |          13640 |
+my_module: |---------|-------------------|----------------|
+my_module: |----------|-------- ---------|----------------|
+my_module: |  Size    | vmalloc Time, ns | vfree Time, ns |
+my_module: |----------|--------- --------|----------------|
+my_module: |        1 |          7573639 |          26658 |
+my_module: |        2 |          2803773 |          13660 |
+my_module: |        4 |            26626 |           5094 |
+my_module: |        8 |            10568 |           3258 |
+my_module: |       16 |          3253637 |          13793 |
+my_module: |       32 |          2428222 |           7392 |
+my_module: |       64 |           374132 |          13277 |
+my_module: |      128 |            14704 |           3795 |
+my_module: |      256 |          3015455 |          17252 |
+my_module: |      512 |          2471689 |           8508 |
+my_module: |     1024 |           474535 |          13010 |
+my_module: |     2048 |            15535 |           3883 |
+my_module: |     4096 |             9358 |           3307 |
+my_module: |     8192 |          3333726 |          11939 |
+my_module: |    16384 |            19509 |           4764 |
+my_module: |    32768 |            14986 |           4947 |
+my_module: |    65536 |            19847 |          11095 |
+my_module: |   131072 |          3241494 |          21377 |
+my_module: |   262144 |          2838731 |          29120 |
+my_module: |   524288 |            55773 |          38105 |
+my_module: |  1048576 |            92303 |          72179 |
+my_module: |  2097152 |          3215216 |         152979 |
+my_module: |  4194304 |          3249552 |         300084 |
+my_module: |  8388608 |           701077 |         555386 |
+my_module: | 16777216 |          4428252 |        1189671 |
+my_module: | 33554432 |          7282167 |        2452473 |
+my_module: | 67108864 |          8427537 |        4663369 |
+insmod: vmalloc: allocation failure: 134217728 bytes, mode:0xcc0(GFP_KERNEL), nodemask=(null)
+CPU: 0 PID: 124 Comm: insmod Tainted: G        W  O      5.10.7 #1
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Call Trace:
+ dump_stack+0x5e/0x74
+ warn_alloc.cold+0x69/0xcd
+ ? vprintk_emit+0xa0/0x170
+ __vmalloc_node_range+0x196/0x240
+ __vmalloc_node+0x42/0x60
+ ? my_module_init+0x16e/0x3b0 [my_module]
+ vmalloc+0x1c/0x20
+ my_module_init+0x16e/0x3b0 [my_module]
+ ? 0xffffffffc00c7000
+ do_one_initcall+0x3c/0x160
+ ? __vunmap+0x1bb/0x220
+ ? kmem_cache_alloc+0x20/0x140
+ do_init_module+0x58/0x220
+ load_module+0x211b/0x2470
+ __do_sys_finit_module+0xa4/0xd0
+ ? __do_sys_finit_module+0xa4/0xd0
+ __x64_sys_finit_module+0x15/0x20
+ do_syscall_64+0x38/0x50
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
+RIP: 0033:0x7faa7b858d07
+Code: 48 89 57 30 48 8b 04 24 48 89 47 38 e9 f5 9f 02 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 0f 83 39 fd ff ff c3 48 c7 c6 01 00 00 00 e9 a1
+RSP: 002b:00007ffe5a089958 EFLAGS: 00000202 ORIG_RAX: 0000000000000139
+RAX: ffffffffffffffda RBX: 0000000000000060 RCX: 00007faa7b858d07
+RDX: 0000000000000000 RSI: 00000000004af010 RDI: 0000000000000003
+RBP: 0000000000000003 R08: 0000000000000000 R09: 000000000049887d
+R10: 00000000004af010 R11: 0000000000000202 R12: 00000000004af010
+R13: 0000000000000000 R14: 00007ffe5a08af46 R15: 0000000000000000
+Mem-Info:
+active_anon:21 inactive_anon:140 isolated_anon:0
+ active_file:967 inactive_file:541 isolated_file:0
+ unevictable:0 dirty:9 writeback:0
+ slab_reclaimable:168 slab_unreclaimable:1328
+ mapped:314 shmem:20 pagetables:54 bounce:0
+ free:23036 free_pcp:16 free_cma:0
+Node 0 active_anon:84kB inactive_anon:560kB active_file:3868kB inactive_file:2164kB unevictable:0kB isolated(anon):0kB isolated(file):0kB mapped:1256kB dirty:36kB writeback:0kB shmem:80kB writeback_tmp:0kB kernel_stack:608kB all_unreclaimable? no
+DMA free:15908kB min:188kB low:232kB high:276kB reserved_highatomic:0KB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB present:15992kB managed:15908kB mlocked:0kB pagetables:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+lowmem_reserve[]: 0 93 93 93
+DMA32 free:76236kB min:1144kB low:1428kB high:1712kB reserved_highatomic:0KB active_anon:84kB inactive_anon:560kB active_file:3868kB inactive_file:2164kB unevictable:0kB writepending:36kB present:114548kB managed:98928kB mlocked:0kB pagetables:216kB bounce:0kB free_pcp:64kB local_pcp:64kB free_cma:0kB
+lowmem_reserve[]: 0 0 0 0
+DMA: 1*4kB (U) 0*8kB 0*16kB 1*32kB (U) 2*64kB (U) 1*128kB (U) 1*256kB (U) 0*512kB 1*1024kB (U) 1*2048kB (U) 3*4096kB (M) = 15908kB
+DMA32: 1*4kB (M) 15*8kB (UM) 11*16kB (UM) 13*32kB (UME) 10*64kB (UE) 11*128kB (UM) 9*256kB (UE) 9*512kB (U) 9*1024kB (UME) 6*2048kB (UME) 11*4096kB (U) = 76236kB
+1528 total pagecache pages
+0 pages in swap cache
+Swap cache stats: add 0, delete 0, find 0/0
+Free swap  = 0kB
+Total swap = 0kB
+32635 pages RAM
+0 pages HighMem/MovableOnly
+3926 pages reserved
+my_module: |----------|------------------|----------------|
+my_module: |----------|-------- ----------------|---------------------|
+my_module: | order    | get_free_pages Time, ns | free_pages Time, ns |
+my_module: |----------|--------- ---------------|---------------------|
+my_module: |        0 |                   15195 |               10177 |
+my_module: |        1 |                    6155 |                5361 |
+my_module: |        2 |                    5476 |                3526 |
+my_module: |        3 |                    3674 |                1854 |
+my_module: |        4 |                    4077 |                2219 |
+my_module: |        5 |                    4215 |                3164 |
+my_module: |        6 |                    3967 |                2877 |
+my_module: |        7 |                    4839 |                3300 |
+my_module: |        8 |                    8263 |                4723 |
+my_module: |        9 |                    8211 |                5382 |
+my_module: |       10 |                   16099 |               10122 |
+my_module: |----------|-------------------------|---------------------|
+# 
