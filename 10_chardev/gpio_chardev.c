@@ -10,6 +10,7 @@
 
 #define GPIO_NUMBER(port, bit) (32 * (port) + (bit))
 
+//https://elixir.bootlin.com/linux/latest/source/sound/core/hwdep.c#L248
 //https://elixir.bootlin.com/linux/latest/source/drivers/char/dsp56k.c#L503
 
 /*	https://linux-sunxi.org/Xunlong_Orange_Pi_PC#LEDs
@@ -126,23 +127,30 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 
 	switch (cmd) {
 	case GPIO_CHARDEV_SET_VALUE: {
-		struct gpio_chardev_set_data __user *gpio_data = argp;
 
-		if (gpio_data->gpio_num == led_green_gpio ||
-		    gpio_data->gpio_num == led_red_gpio) {
-			gpio_set_value(gpio_data->gpio_num,
-				       gpio_data->gpio_value);
+		struct gpio_chardev_set_data gpio_data = {};
+
+		if (copy_from_user(&gpio_data, argp, sizeof(struct gpio_chardev_set_data)))
+			return -EFAULT;
+
+		if (gpio_data.gpio_num == led_green_gpio ||
+		    gpio_data.gpio_num == led_red_gpio) {
+			gpio_set_value(gpio_data.gpio_num,
+				       gpio_data.gpio_value);
 			return 0;
 		}
 		return -EINVAL;
 	} break;
 	case GPIO_CHARDEV_READ_BUTTON_VALUE: {
-		struct gpio_chardev_get_data __user *gpio_data = argp;
+		struct gpio_chardev_get_data gpio_data = {};
 
-		if (gpio_data->gpio_num == BUTTON) {
+		if (copy_from_user(&gpio_data, argp, sizeof(struct gpio_chardev_get_data)))
+			return -EFAULT;
+
+		if (gpio_data.gpio_num == BUTTON) {
 			int button_value = gpio_get_value(BUTTON);
 
-			return put_user(button_value, gpio_data->gpio_value);
+			return put_user(button_value, gpio_data.gpio_value);
 		}
 		return -EINVAL;
 	} break;

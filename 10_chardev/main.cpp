@@ -65,12 +65,20 @@ void runBlinker(FileRaiiGuard& chardev)
 {
     using namespace std::chrono_literals;
 
-    auto ledConfig = gpio_chardev_set_data{kLedGreen,1};
+    auto greenLed = gpio_chardev_set_data{kLedGreen,1};
+    auto redLed =  gpio_chardev_set_data{kLedRed,1};
     while(true){
-        chardev.passIoctl(GPIO_CHARDEV_SET_VALUE, ledConfig);
-        std::this_thread::sleep_for(200ms);
-        ledConfig.gpio_value = ~ledConfig.gpio_value;
-        chardev.passIoctl(GPIO_CHARDEV_SET_VALUE, ledConfig);
+        chardev.passIoctl(GPIO_CHARDEV_SET_VALUE, greenLed);
+        chardev.passIoctl(GPIO_CHARDEV_SET_VALUE, redLed);
+
+        std::this_thread::sleep_for(150ms);
+        greenLed.gpio_value = !greenLed.gpio_value;
+        chardev.passIoctl(GPIO_CHARDEV_SET_VALUE, greenLed);
+
+        std::this_thread::sleep_for(20ms);
+
+        redLed.gpio_value = !redLed.gpio_value;
+        chardev.passIoctl(GPIO_CHARDEV_SET_VALUE, redLed);
     }
 }
 int main()
