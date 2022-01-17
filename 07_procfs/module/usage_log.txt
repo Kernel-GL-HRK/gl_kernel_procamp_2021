@@ -1,0 +1,58 @@
+# uname -a
+Linux OrangePi_Zero 5.10.10 #1 SMP Tue Dec 7 19:28:25 EET 2021 armv7l GNU/Linux
+
+# insmod /my_module.ko 
+# ls -l /proc/my_module/
+total 0
+-r--r--r--    1 root     root             0 Jan  1 01:55 author
+-r--r--r--    1 root     root             0 Jan  1 01:55 show_count
+-r--r--r--    1 root     root             0 Jan  1 01:55 store_count
+# cat /proc/my_module/author 
+Michael N.
+# cat /proc/my_module/store_count 
+0
+# cat /proc/my_module/show_count 
+0
+# 
+# 
+# cat /sys/kernel/my_module/list 
+# cat /sys/kernel/my_module/list 
+# cat /proc/my_module/show_count 
+2
+# echo HELLO1 >  /sys/kernel/my_module/list 
+# echo HELLO2 >  /sys/kernel/my_module/list 
+# echo HELLO3 >  /sys/kernel/my_module/list 
+# cat /proc/my_module/store_count 
+3
+# cat /sys/kernel/my_module/list
+[HELLO1]->[HELLO2]->[HELLO3]
+# cat /proc/my_module/show_count 
+3
+# rmmod my_module
+# dmesg
+[ 6904.116000] my_module: d_iname: author
+[ 6904.116022] my_module: path: /my_module/author
+[ 6907.508334] my_module: d_iname: author
+[ 6907.508356] my_module: path: /my_module/author
+[ 6907.508474] my_module: d_iname: show_count
+[ 6907.508483] my_module: path: /my_module/show_count
+[ 6907.508555] my_module: d_iname: store_count
+[ 6907.508563] my_module: path: /my_module/store_count
+[ 6910.359467] my_module: d_iname: store_count
+[ 6910.359489] my_module: path: /my_module/store_count
+[ 6913.548418] my_module: d_iname: show_count
+[ 6913.548441] my_module: path: /my_module/show_count
+[ 7045.847289] my_module: d_iname: show_count
+[ 7045.847312] my_module: path: /my_module/show_count
+[ 7062.155391] my_module: ADD entry: cecd28cc HELLO1
+[ 7065.307295] my_module: ADD entry: 67b39aef HELLO2
+[ 7068.867352] my_module: ADD entry: 6ba0c95b HELLO3
+[ 7075.280182] my_module: d_iname: store_count
+[ 7075.280204] my_module: path: /my_module/store_count
+[ 7081.194545] my_module: d_iname: show_count
+[ 7081.194568] my_module: path: /my_module/show_count
+[ 7108.809334] my_module: DEL entry: 6ba0c95b HELLO3
+[ 7108.809359] my_module: DEL entry: 67b39aef HELLO2
+[ 7108.809370] my_module: DEL entry: cecd28cc HELLO1
+[ 7108.809391] my_module: module exited
+#
