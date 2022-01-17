@@ -25,13 +25,13 @@ struct FileRaiiGuard {
     {
         if (!std::filesystem::exists(filePath)) {
             throw std::runtime_error(
-                        "Bad file path for the FileRaiiGuard");
+                        fmt::format("Bad file path for the FileRaiiGuard, path:{}", filePath));
         }
         m_fileHandle = open(filePath.data(), O_WRONLY);
 
         if (m_fileHandle == kInvalidFileHandle) {
             throw std::runtime_error(
-                        "Failed to open the given file");
+                        fmt::format("Failed to open the given file, path: {}", filePath));
         }
     }
     FileRaiiGuard &operator=(const FileRaiiGuard &) = delete;
