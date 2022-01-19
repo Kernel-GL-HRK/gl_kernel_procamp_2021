@@ -74,7 +74,7 @@ void measure_one(enum allocator alloc, size_t i)
 	t_f = ktime_to_timespec64(ktime_sub(t[2], t[1]));
 
 	if (alloc == GET_FREE_PAGES)
-		buffer_allocated = i * PAGE_SIZE;
+		buffer_allocated = (1 << i) * PAGE_SIZE;
 
 	pr_info("%12ld    %lld.%09ld	  %lld.%09ld\n", buffer_allocated, t_a.tv_sec, t_a.tv_nsec, t_f.tv_sec, t_f.tv_nsec);
 }
@@ -93,7 +93,7 @@ void measure_step_plus(enum allocator alloc, size_t size_max)
 	size_t i;
 
 	pr_info(" Buffer size  allocation time  freeing time\n");
-	for (i = 1; i <= size_max; i++)
+	for (i = 0; i <= size_max; i++)
 		measure_one(alloc, i);
 }
 
@@ -109,7 +109,7 @@ static int module_malloc_init(void)
 	measure_step_shift(VMALLOC, 64 * 1024 * 1024);
 
 	pr_info("\n***** GET_FREE_PAGES *****\n");
-	measure_step_plus(GET_FREE_PAGES, 10);
+	measure_step_plus(GET_FREE_PAGES, 11);
 
 	pr_info("module_malloc: init");
 
