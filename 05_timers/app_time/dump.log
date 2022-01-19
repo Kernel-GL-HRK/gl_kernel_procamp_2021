@@ -1,5 +1,9 @@
 $ : make app_time 
 cc     app_time.c   -o app_time
-$ : ./app_time 
-Time is 1640599543.192108393 seconds, resolution is 1 nsec. Time local: Mon Dec 27 12:05:43 2021
+$ : ./app_time
+Time is 1642602130.382186 seconds, possible resolution is 1 nsec. Time local: Wed Jan 19 16:22:10 2022
+$ : ./app_time
+Time is 1642602131.177424 seconds, possible resolution is 1 nsec. Time local: Wed Jan 19 16:22:11 2022
+$ : ./app_time
+Time is 1642602131.813916 seconds, possible resolution is 1 nsec. Time local: Wed Jan 19 16:22:11 2022
 

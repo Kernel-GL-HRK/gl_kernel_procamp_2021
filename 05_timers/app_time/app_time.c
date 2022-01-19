@@ -13,9 +13,10 @@ int main() {
     if (ret < 0)
         return ret;
 
-	double ns = tp.tv_nsec / 1000000000.0;
-	double abs_time = tp.tv_sec + ns;
-    printf("Time is %.9f seconds, resolution is %ld nsec. Time local: %s", abs_time, tr.tv_nsec, ctime(&tp.tv_sec));
+    unsigned int us = tp.tv_nsec / 1000; // cut to us, as double can hold with precision 1us. 32bit for integer and 20bit for fractional
+    double s = us / 1000000.0;
+    double abs_time = tp.tv_sec + s;
+    printf("Time is %.6f seconds, possible resolution is %ld nsec. Time local: %s", abs_time, tr.tv_nsec, ctime(&tp.tv_sec));
 
     return 0;
 }
