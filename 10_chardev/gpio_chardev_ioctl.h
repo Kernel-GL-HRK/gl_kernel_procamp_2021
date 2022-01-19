@@ -15,11 +15,7 @@ struct gpio_chardev_set_data {
 
 struct gpio_chardev_get_data {
 	int gpio_num;
-#if defined(__cplusplus)
-	int *gpio_value;
-#else
-	int __user *gpio_value;
-#endif
+	int gpio_value;
 };
 
 #define GPIO_CHARDEV_IOCTL_BASE 'f'

@@ -8,7 +8,6 @@
 #include <exception>
 #include <thread>
 #include <filesystem>
-
 #include <fmt/format.h>
 
 #include "gpio_chardev_ioctl.h"

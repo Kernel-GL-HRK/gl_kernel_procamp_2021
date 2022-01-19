@@ -150,7 +150,8 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 		if (gpio_data.gpio_num == BUTTON) {
 			int button_value = gpio_get_value(BUTTON);
 
-			return put_user(button_value, gpio_data.gpio_value);
+			gpio_data.gpio_value = button_value;
+			return copy_to_user(argp, &gpio_data, sizeof(struct gpio_chardev_get_data));
 		}
 		return -EINVAL;
 	} break;
