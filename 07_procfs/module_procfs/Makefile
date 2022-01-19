@@ -10,7 +10,7 @@ all:
 	@PATH=$(PATH) make -C $(KERNEL_SRC) M=$(CURDIR) -j`nproc`
 
 send:
-	scp *.ko lavr:
+	scp *.ko olavr:
 
 clean:
 	@rm -f *.o .*.cmd *.ko *.mod.c *.mod Module.symvers modules.order
