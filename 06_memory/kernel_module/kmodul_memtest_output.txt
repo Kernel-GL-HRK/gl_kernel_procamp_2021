@@ -1,0 +1,212 @@
+test allocation/deallocation time for kmalloc
+bytes       | alloc time, ns | free time, ns()
+----------------------------------------------
+           1|        41963   |     33446   |
+           2|         4801   |      2799   |
+           4|         5689   |      1905   |
+           8|         6074   |      1791   |
+          16|         6858   |      6480   |
+          32|         4493   |      2592   |
+          64|         4759   |      8470   |
+         128|         5928   |      2045   |
+         256|         6719   |      4341   |
+         512|        17901   |      2802   |
+        1024|         5117   |      1681   |
+        2048|         4440   |      2603   |
+        4096|         4407   |     10469   |
+        8192|         3960   |      2286   |
+       16384|        14880   |      8347   |
+       32768|         9493   |      5077   |
+       65536|        14451   |      7262   |
+      131072|         9769   |      6356   |
+      262144|         9263   |      6443   |
+      524288|        19980   |     12740   |
+     1048576|        17080   |     10414   |
+     2097152|        40568   |     53316   |
+     4194304|        33941   |     18762   |
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 115 at mm/page_alloc.c:4933 __alloc_pages_nodemask+0xf7/0x170
+Modules linked in: kmodul_memtest(O+)
+CPU: 0 PID: 115 Comm: insmod Tainted: G           O      5.10.7 #1
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+RIP: 0010:__alloc_pages_nodemask+0xf7/0x170
+Code: ca 01 48 8d 4d c0 44 89 ee 44 89 e7 e8 42 e4 ff ff 48 85 c0 74 3e 48 83 c4 28 5b 41 5c 41 5d 5d c3 41 81 e4 00 20 00 00 75 02 <0f> 0b 48 83 c4 28 31 c0 5b 41 5c 41 5d 5d c3 48 89 da 44 89 c6 48
+RSP: 0018:ffff8d4bc04a3bc8 EFLAGS: 00000246
+RAX: 00000000000007ff RBX: ffffffffc0372120 RCX: 0000000000000000
+RDX: 0000000000000000 RSI: 000000000000000b RDI: 0000000000040cc0
+RBP: ffff8d4bc04a3c08 R08: 0000000000000000 R09: ffff8d4bc04a3a68
+R10: 0000000000000001 R11: 0000000000000001 R12: 0000000000000000
+R13: 000000000000000b R14: 0000000000000cc0 R15: 0000001aa2f14a14
+FS:  00007f98db5a06a0(0000) GS:ffff88ad07a00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00000000004af008 CR3: 00000000022e8000 CR4: 00000000000006f0
+Call Trace:
+ ? vprintk_default+0x18/0x20
+ ? vprintk_func+0x51/0xe0
+ kmalloc_order+0x2b/0x70
+ __kmalloc+0xf5/0x1a0
+ kmodule_init+0x13a/0x1f0 [kmodul_memtest]
+ ? get_order+0x20/0x20 [kmodul_memtest]
+ do_one_initcall+0x3c/0x160
+ ? __vunmap+0x1bb/0x220
+ ? kmem_cache_alloc+0x20/0x140
+ do_init_module+0x58/0x220
+ load_module+0x211b/0x2470
+ __do_sys_finit_module+0xa4/0xd0
+ ? __do_sys_finit_module+0xa4/0xd0
+ __x64_sys_finit_module+0x15/0x20
+ do_syscall_64+0x38/0x50
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
+RIP: 0033:0x7f98db522d07
+Code: 48 89 57 30 48 8b 04 24 48 89 47 38 e9 f5 9f 02 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 0f 83 39 fd ff ff c3 48 c7 c6 01 00 00 00 e9 a1
+RSP: 002b:00007ffd4b5b7808 EFLAGS: 00000202 ORIG_RAX: 0000000000000139
+RAX: ffffffffffffffda RBX: 0000000000000060 RCX: 00007f98db522d07
+RDX: 0000000000000000 RSI: 00000000004af010 RDI: 0000000000000003
+RBP: 0000000000000003 R08: 0000000000000000 R09: 000000000049887d
+R10: 00000000004af010 R11: 0000000000000202 R12: 00000000004af010
+R13: 0000000000000000 R14: 00007ffd4b5b7f40 R15: 0000000000000000
+---[ end trace 171b4a8b422f150c ]---
+error when try to kmalloc 8388608 bytes
+
+test allocation/deallocation time for kzalloc
+bytes       | alloc time, ns | free time, ns()
+----------------------------------------------
+           1|        53169   |      3673   |
+           2|         5109   |      1940   |
+           4|         4639   |      1842   |
+           8|         6490   |      1637   |
+          16|         8322   |      3414   |
+          32|         5430   |      2823   |
+          64|         9849   |      2600   |
+         128|         5536   |      1919   |
+         256|        10229   |      3414   |
+         512|         6788   |      2762   |
+        1024|         9220   |      3214   |
+        2048|        10058   |      4441   |
+        4096|         9728   |      4282   |
+        8192|         8304   |      1940   |
+       16384|        43277   |      8024   |
+       32768|        35652   |      7424   |
+       65536|        32117   |      9140   |
+      131072|        52797   |      7799   |
+      262144|        89841   |      7177   |
+      524288|       180053   |     12020   |
+     1048576|       372544   |     18624   |
+     2097152|       818310   |     15273   |
+     4194304|      1260079   |     24795   |
+error when try to kzalloc 8388608 bytes
+
+test allocation/deallocation time for vmalloc
+bytes       | alloc time, ns | free time, ns()
+----------------------------------------------
+           1|     40329518   |     56959   |
+           2|      4464714   |     29388   |
+           4|      3608127   |     20438   |
+           8|      4781494   |     43388   |
+          16|      4351806   |     29556   |
+          32|      3566740   |     20636   |
+          64|      6821219   |     50961   |
+         128|      4379217   |     29609   |
+         256|      4553730   |     35398   |
+         512|        95164   |     28552   |
+        1024|      5215513   |     42767   |
+        2048|      4735447   |     31940   |
+        4096|        60184   |     22710   |
+        8192|      4956627   |     29565   |
+       16384|      5185363   |     78660   |
+       32768|      4661881   |     37353   |
+       65536|      4536834   |    148213   |
+      131072|        57499   |     26579   |
+      262144|      5071812   |     61561   |
+      524288|      4797286   |     82061   |
+     1048576|      4673046   |    136438   |
+     2097152|      4769630   |    277836   |
+     4194304|      5164994   |    526637   |
+     8388608|      6332352   |   1045094   |
+    16777216|      7472619   |   2024645   |
+    33554432|     27211420   |   4282527   |
+    67108864|     22068573   |  10768395   |
+insmod: vmalloc: allocation failure: 134217728 bytes, mode:0xcc0(GFP_KERNEL), nodemask=(null)
+CPU: 0 PID: 115 Comm: insmod Tainted: G        W  O      5.10.7 #1
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Call Trace:
+ dump_stack+0x5e/0x74
+ warn_alloc.cold+0x69/0xcd
+ ? vprintk_emit+0xa0/0x170
+ __vmalloc_node_range+0x196/0x240
+ __vmalloc_node+0x42/0x60
+ ? kmodule_init+0x1c4/0x1f0 [kmodul_memtest]
+ vmalloc+0x1c/0x20
+ kmodule_init+0x1c4/0x1f0 [kmodul_memtest]
+ ? get_order+0x20/0x20 [kmodul_memtest]
+ do_one_initcall+0x3c/0x160
+ ? __vunmap+0x1bb/0x220
+ ? kmem_cache_alloc+0x20/0x140
+ do_init_module+0x58/0x220
+ load_module+0x211b/0x2470
+ __do_sys_finit_module+0xa4/0xd0
+ ? __do_sys_finit_module+0xa4/0xd0
+ __x64_sys_finit_module+0x15/0x20
+ do_syscall_64+0x38/0x50
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
+RIP: 0033:0x7f98db522d07
+Code: 48 89 57 30 48 8b 04 24 48 89 47 38 e9 f5 9f 02 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 0f 83 39 fd ff ff c3 48 c7 c6 01 00 00 00 e9 a1
+RSP: 002b:00007ffd4b5b7808 EFLAGS: 00000202 ORIG_RAX: 0000000000000139
+RAX: ffffffffffffffda RBX: 0000000000000060 RCX: 00007f98db522d07
+RDX: 0000000000000000 RSI: 00000000004af010 RDI: 0000000000000003
+RBP: 0000000000000003 R08: 0000000000000000 R09: 000000000049887d
+R10: 00000000004af010 R11: 0000000000000202 R12: 00000000004af010
+R13: 0000000000000000 R14: 00007ffd4b5b7f40 R15: 0000000000000000
+Mem-Info:
+active_anon:16 inactive_anon:145 isolated_anon:0
+ active_file:422 inactive_file:48 isolated_file:0
+ unevictable:0 dirty:3 writeback:0
+ slab_reclaimable:149 slab_unreclaimable:1334
+ mapped:315 shmem:18 pagetables:53 bounce:0
+ free:24081 free_pcp:16 free_cma:0
+Node 0 active_anon:64kB inactive_anon:580kB active_file:1688kB inactive_file:192kB unevictable:0kB isolated(anon):0kB isolated(file):0kB mapped:1260kB dirty:12kB writeback:0kB shmem:72kB writeback_tmp:0kB kernel_stack:656kB all_unreclaimable? no
+DMA free:15908kB min:188kB low:232kB high:276kB reserved_highatomic:0KB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB present:15992kB managed:15908kB mlocked:0kB pagetables:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+lowmem_reserve[]: 0 93 93 93
+DMA32 free:80416kB min:1144kB low:1428kB high:1712kB reserved_highatomic:0KB active_anon:64kB inactive_anon:580kB active_file:1688kB inactive_file:192kB unevictable:0kB writepending:12kB present:114548kB managed:98928kB mlocked:0kB pagetables:212kB bounce:0kB free_pcp:64kB local_pcp:64kB free_cma:0kB
+lowmem_reserve[]: 0 0 0 0
+DMA: 1*4kB (U) 0*8kB 0*16kB 1*32kB (U) 2*64kB (U) 1*128kB (U) 1*256kB (U) 0*512kB 1*1024kB (U) 1*2048kB (U) 3*4096kB (M) = 15908kB
+DMA32: 10*4kB (UME) 11*8kB (UME) 8*16kB (UM) 7*32kB (UME) 5*64kB (U) 8*128kB (UME) 7*256kB (UE) 10*512kB (UM) 12*1024kB (UME) 7*2048kB (UME) 11*4096kB (U) = 80416kB
+488 total pagecache pages
+0 pages in swap cache
+Swap cache stats: add 0, delete 0, find 0/0
+Free swap  = 0kB
+Total swap = 0kB
+32635 pages RAM
+0 pages HighMem/MovableOnly
+3926 pages reserved
+error when try to vmalloc 134217728 bytes
+
+test allocation/deallocation time for alloc_pages_exact
+bytes       | alloc time, ns | free time, ns()
+----------------------------------------------
+           1|        79262   |     86030   |
+           2|         7985   |      3321   |
+           4|         5916   |      2983   |
+           8|         5783   |      2785   |
+          16|         5861   |      2756   |
+          32|        10367   |      4363   |
+          64|        11829   |      5793   |
+         128|        10486   |      3754   |
+         256|         7848   |      3599   |
+         512|        11500   |      5050   |
+        1024|         7510   |      3502   |
+        2048|         7191   |      3924   |
+        4096|        17716   |      3200   |
+        8192|        12369   |     43491   |
+       16384|        19527   |      7663   |
+       32768|         9523   |      9904   |
+       65536|        10511   |     13996   |
+      131072|        11910   |     21643   |
+      262144|        10660   |     33694   |
+      524288|        30376   |    108947   |
+     1048576|        16992   |    117927   |
+     2097152|        22283   |    226539   |
+     4194304|        40589   |    572981   |
+error when try to alloc_pages_exact 8388608 bytes
+init... kmodule
+
