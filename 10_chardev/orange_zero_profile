@@ -5,6 +5,7 @@ cxx_compiler=g++
 
 [env]
 CONAN_CMAKE_FIND_ROOT_PATH=$standalone_toolchain/$target_host
+CONAN_CMAKE_TOOLCHAIN_FILE=$standalone_toolchain/share/buildroot/toolchainfile.cmake
 CONAN_CMAKE_SYSROOT=$standalone_toolchain
 PATH=[$standalone_toolchain/bin]
 CHOST=$target_host
