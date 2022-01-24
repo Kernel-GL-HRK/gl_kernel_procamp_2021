@@ -1,0 +1,14 @@
+string_storage: loading out-of-tree module taints kernel.
+[STR_STORAGE] String hello1
+ stored
+[STR_STORAGE] String hello2
+ stored
+[STR_STORAGE] String hello3
+ stored
+[STR_STORAGE] String hello4
+ stored
+[STR_STORAGE] String storage contains:
+hello1
+hello2
+hello3
+hello4
