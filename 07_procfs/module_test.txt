@@ -1,0 +1,22 @@
+$ sh 07_module_test.sh 
+[  310.840684] ==BASIC_STRUCT==:Called list_store with count:7
+[  310.845063] ==BASIC_STRUCT==:Called list_show with copied pointer_offset:7
+[  310.845773] ==BASIC_STRUCT==:Called list_store with count:44
+[  310.845917] ==BASIC_STRUCT==:Called list_store with count:13
+[  310.850309] ==BASIC_STRUCT==:Called list_show with copied pointer_offset:64
+[  310.874785] ==BASIC_STRUCT==:Module unloaded
+123456
+123456
+1234567890263321564654654654679874964321356
+Hello world!
+Module author: Valentyn Korniienko <valentyn.korniienko1@nure.ua>
+Write requests: 3
+Read requests: 2
+[  340.970209] ==BASIC_STRUCT==:Module ready
+[  340.971201] ==BASIC_STRUCT==:Called list_store with count:7
+[  340.975731] ==BASIC_STRUCT==:Called list_show with copied pointer_offset:7
+[  340.976451] ==BASIC_STRUCT==:Called list_store with count:44
+[  340.976597] ==BASIC_STRUCT==:Called list_store with count:13
+[  340.990634] ==BASIC_STRUCT==:Called list_show with copied pointer_offset:64
+[  341.006856] ==BASIC_STRUCT==:Module unloaded
+$ 

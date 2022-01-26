@@ -8,3 +8,9 @@
 * Build image for orange pi zero
 * Attach console output from your development board
 
+
+Reference links:
+https://elixir.bootlin.com/linux/latest/source/samples/kobject/kobject-example.c#L131
+https://elixir.bootlin.com/linux/latest/source/drivers/char/ds1620.c#L396
+https://elixir.bootlin.com/linux/latest/source/drivers/staging/rtl8192u/r8192U_core.c#L602
+https://elixir.bootlin.com/linux/latest/source/drivers/macintosh/via-pmu.c#L555
