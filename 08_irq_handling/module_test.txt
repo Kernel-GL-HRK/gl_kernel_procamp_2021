@@ -1,0 +1,28 @@
+$ insmod led_mod_irq.ko 
+[  909.472442] led_mod_irq: gpio_irq_init: GPIO Init
+[  909.477269] led_mod_irq: button_gpio_init: Init GPIO6 OK
+[  909.482585] led_mod_irq: button_gpio_init: Got button value: 0
+$ [  911.090843] led_mod_irq: button_module_irq_handler: Inside interrupt handler, button value:1, prev_value:0
+[  911.100507] led_mod_irq: button_module_irq_handler: Scheduled delayed work
+[  911.163376] led_mod_irq: button_module_irq_handler: Inside interrupt handler, button value:0, prev_value:1
+[  911.173025] led_mod_irq: button_module_irq_handler: Canceled delayed work because of the button_value==0
+[  912.948822] led_mod_irq: button_module_irq_handler: Inside interrupt handler, button value:1, prev_value:0
+[  912.958474] led_mod_irq: button_module_irq_handler: Scheduled delayed work
+[  913.356733] led_mod_irq: check_green_delayed_handler: Delayed work handler
+[  913.363614] led_mod_irq: check_green_delayed_handler: Delayed work handler:Disabled green led
+[  913.795551] led_mod_irq: button_module_irq_handler: Inside interrupt handler, button value:1, prev_value:1
+[  913.805224] led_mod_irq: button_module_irq_handler: Inside interrupt handler, button value:0, prev_value:1
+[  913.814869] led_mod_irq: button_module_irq_handler: Canceled delayed work because of the button_value==0
+[  914.892841] led_mod_irq: button_module_irq_handler: Inside interrupt handler, button value:1, prev_value:0
+[  914.902491] led_mod_irq: button_module_irq_handler: Scheduled delayed work
+[  915.296738] led_mod_irq: check_green_delayed_handler: Delayed work handler
+[  915.303623] led_mod_irq: check_green_delayed_handler: Delayed work handler:Disabled green led
+[  915.742357] led_mod_irq: button_module_irq_handler: Inside interrupt handler, button value:0, prev_value:1
+[  915.752008] led_mod_irq: button_module_irq_handler: Canceled delayed work because of the button_value==0
+[  916.695663] led_mod_irq: button_module_irq_handler: Inside interrupt handler, button value:1, prev_value:0
+[  916.705315] led_mod_irq: button_module_irq_handler: Scheduled delayed work
+[  916.815188] led_mod_irq: button_module_irq_handler: Inside interrupt handler, button value:0, prev_value:1
+[  916.824835] led_mod_irq: button_module_irq_handler: Canceled delayed work because of the button_value==0
+rmmod led_mod_irq
+[  923.244082] led_mod_irq: button_gpio_deinit: Deinit GPIO6
+$ 
