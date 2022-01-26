@@ -10,8 +10,6 @@
 #define MODULE_AUTHOR_STRING                                                   \
 	"Valentyn Korniienko <valentyn.korniienko1@nure.ua>"
 
-// Useful link:
-// https://elixir.bootlin.com/linux/latest/source/samples/kobject/kobject-example.c#L131
 
 typedef struct string_list_item {
 	struct list_head list;
@@ -35,10 +33,6 @@ static proc_entries_data_t proc_entries_data_instance = {
 };
 
 static struct proc_dir_entry *proc_entry_module_root;
-
-//https://elixir.bootlin.com/linux/latest/source/drivers/char/ds1620.c#L396
-//https://elixir.bootlin.com/linux/latest/source/drivers/staging/rtl8192u/r8192U_core.c#L602
-//https://elixir.bootlin.com/linux/latest/source/drivers/macintosh/via-pmu.c#L555
 
 static int procfs_module_show_author(struct seq_file *m, void *v)
 {
