@@ -1,0 +1,90 @@
+MALLOC LOG
+
+13663 ns for allocating and 342 ns for freeing 2 bytes
+198 ns for allocating and 201 ns for freeing 4 bytes
+202 ns for allocating and 153 ns for freeing 8 bytes
+131 ns for allocating and 85 ns for freeing 16 bytes
+555 ns for allocating and 113 ns for freeing 32 bytes
+204 ns for allocating and 103 ns for freeing 64 bytes
+152 ns for allocating and 119 ns for freeing 128 bytes
+207 ns for allocating and 137 ns for freeing 256 bytes
+324 ns for allocating and 131 ns for freeing 512 bytes
+256 ns for allocating and 105 ns for freeing 1024 bytes
+3635 ns for allocating and 421 ns for freeing 2048 bytes
+412 ns for allocating and 226 ns for freeing 4096 bytes
+3031 ns for allocating and 207 ns for freeing 8192 bytes
+3012 ns for allocating and 167 ns for freeing 16384 bytes
+1993 ns for allocating and 105 ns for freeing 32768 bytes
+1767 ns for allocating and 65 ns for freeing 65536 bytes
+5559 ns for allocating and 8167 ns for freeing 131072 bytes
+4142 ns for allocating and 3980 ns for freeing 262144 bytes
+3663 ns for allocating and 3715 ns for freeing 524288 bytes
+3607 ns for allocating and 3727 ns for freeing 1048576 bytes
+4402 ns for allocating and 5361 ns for freeing 2097152 bytes
+4139 ns for allocating and 4799 ns for freeing 4194304 bytes
+4234 ns for allocating and 4604 ns for freeing 8388608 bytes
+4070 ns for allocating and 4590 ns for freeing 16777216 bytes
+4067 ns for allocating and 4663 ns for freeing 33554432 bytes
+4120 ns for allocating and 4870 ns for freeing 67108864 bytes
+4092 ns for allocating and 5355 ns for freeing 134217728 bytes
+4134 ns for allocating and 6267 ns for freeing 268435456 bytes
+4235 ns for allocating and 8276 ns for freeing 536870912 bytes
+4742 ns for allocating and 12561 ns for freeing 1073741824 bytes
+
+CALLOC LOG
+
+9395 ns for allocating and 289 ns for freeing 2 bytes
+276 ns for allocating and 117 ns for freeing 4 bytes
+120 ns for allocating and 57 ns for freeing 8 bytes
+103 ns for allocating and 40 ns for freeing 16 bytes
+245 ns for allocating and 45 ns for freeing 32 bytes
+115 ns for allocating and 43 ns for freeing 64 bytes
+157 ns for allocating and 47 ns for freeing 128 bytes
+162 ns for allocating and 45 ns for freeing 256 bytes
+2440 ns for allocating and 202 ns for freeing 512 bytes
+231 ns for allocating and 71 ns for freeing 1024 bytes
+2080 ns for allocating and 86 ns for freeing 2048 bytes
+3931 ns for allocating and 85 ns for freeing 4096 bytes
+8086 ns for allocating and 82 ns for freeing 8192 bytes
+17473 ns for allocating and 91 ns for freeing 16384 bytes
+5765 ns for allocating and 7827 ns for freeing 32768 bytes
+4746 ns for allocating and 4937 ns for freeing 65536 bytes
+4285 ns for allocating and 4518 ns for freeing 131072 bytes
+4228 ns for allocating and 4453 ns for freeing 262144 bytes
+4185 ns for allocating and 4867 ns for freeing 524288 bytes
+4099 ns for allocating and 4851 ns for freeing 1048576 bytes
+4048 ns for allocating and 4827 ns for freeing 2097152 bytes
+4076 ns for allocating and 5000 ns for freeing 4194304 bytes
+4056 ns for allocating and 4967 ns for freeing 8388608 bytes
+4051 ns for allocating and 5223 ns for freeing 16777216 bytes
+4049 ns for allocating and 5688 ns for freeing 33554432 bytes
+4059 ns for allocating and 6665 ns for freeing 67108864 bytes
+4803 ns for allocating and 9030 ns for freeing 134217728 bytes
+4491 ns for allocating and 12478 ns for freeing 268435456 bytes
+4541 ns for allocating and 12614 ns for freeing 536870912 bytes
+4463 ns for allocating and 12595 ns for freeing 1073741824 bytes
+
+ALLOCA LOG
+
+140 ns for allocating 2 bytes
+69 ns for allocating 4 bytes
+48 ns for allocating 8 bytes
+46 ns for allocating 16 bytes
+46 ns for allocating 32 bytes
+46 ns for allocating 64 bytes
+46 ns for allocating 128 bytes
+45 ns for allocating 256 bytes
+46 ns for allocating 512 bytes
+47 ns for allocating 1024 bytes
+47 ns for allocating 2048 bytes
+85 ns for allocating 4096 bytes
+1740 ns for allocating 8192 bytes
+4655 ns for allocating 16384 bytes
+12712 ns for allocating 32768 bytes
+24983 ns for allocating 65536 bytes
+54949 ns for allocating 131072 bytes
+127214 ns for allocating 262144 bytes
+234575 ns for allocating 524288 bytes
+532645 ns for allocating 1048576 bytes
+1323547 ns for allocating 2097152 bytes
+alloca frees automatically
