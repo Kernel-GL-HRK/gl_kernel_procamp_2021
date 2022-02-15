@@ -1,0 +1,139 @@
+KMALLOC LOG
+
+[ 2037.229652] mem_module: Module loaded
+[ 2037.229660] mem_module: 170 ns for allocating and 162 ns for freeing 2 bytes
+[ 2037.229663] mem_module: 95 ns for allocating and 69 ns for freeing 4 bytes
+[ 2037.229665] mem_module: 90 ns for allocating and 68 ns for freeing 8 bytes
+[ 2037.229666] mem_module: 90 ns for allocating and 146 ns for freeing 16 bytes
+[ 2037.229668] mem_module: 87 ns for allocating and 291 ns for freeing 32 bytes
+[ 2037.229669] mem_module: 87 ns for allocating and 71 ns for freeing 64 bytes
+[ 2037.229671] mem_module: 88 ns for allocating and 167 ns for freeing 128 bytes
+[ 2037.229673] mem_module: 491 ns for allocating and 672 ns for freeing 256 bytes
+[ 2037.229675] mem_module: 108 ns for allocating and 66 ns for freeing 512 bytes
+[ 2037.229677] mem_module: 127 ns for allocating and 402 ns for freeing 1024 bytes
+[ 2037.229679] mem_module: 924 ns for allocating and 511 ns for freeing 2048 bytes
+[ 2037.229682] mem_module: 592 ns for allocating and 476 ns for freeing 4096 bytes
+[ 2037.229685] mem_module: 1165 ns for allocating and 500 ns for freeing 8192 bytes
+[ 2037.229699] mem_module: 8937 ns for allocating and 2796 ns for freeing 16384 bytes
+[ 2037.229714] mem_module: 12802 ns for allocating and 523 ns for freeing 32768 bytes
+[ 2037.229748] mem_module: 30288 ns for allocating and 573 ns for freeing 65536 bytes
+[ 2037.229816] mem_module: 65786 ns for allocating and 964 ns for freeing 131072 bytes
+[ 2037.229887] mem_module: 66955 ns for allocating and 685 ns for freeing 262144 bytes
+[ 2037.230051] mem_module: 159467 ns for allocating and 2582 ns for freeing 524288 bytes
+[ 2037.230291] mem_module: 235663 ns for allocating and 1753 ns for freeing 1048576 bytes
+[ 2037.230713] mem_module: 409711 ns for allocating and 4419 ns for freeing 2097152 bytes
+[ 2037.231253] mem_module: 525535 ns for allocating and 5218 ns for freeing 4194304 bytes
+[ 2037.231270] mem_module: 10871 ns for allocating and 49 ns for freeing 8388608 bytes
+[ 2037.231274] mem_module: 2625 ns for allocating and 39 ns for freeing 16777216 bytes
+[ 2037.231278] mem_module: 2603 ns for allocating and 39 ns for freeing 33554432 bytes
+[ 2037.231282] mem_module: 2598 ns for allocating and 37 ns for freeing 67108864 bytes
+[ 2037.231286] mem_module: 2604 ns for allocating and 40 ns for freeing 134217728 bytes
+[ 2037.231290] mem_module: 2606 ns for allocating and 41 ns for freeing 268435456 bytes
+[ 2037.231294] mem_module: 2605 ns for allocating and 38 ns for freeing 536870912 bytes
+[ 2037.231297] mem_module: 2606 ns for allocating and 39 ns for freeing 1073741824 bytes
+[ 2037.242874] mem_module: Module exited
+
+KZALLOC LOG
+
+[ 2037.303621] mem_module: Module loaded
+[ 2037.303627] mem_module: 146 ns for allocating and 165 ns for freeing 2 bytes
+[ 2037.303630] mem_module: 84 ns for allocating and 69 ns for freeing 4 bytes
+[ 2037.303632] mem_module: 87 ns for allocating and 67 ns for freeing 8 bytes
+[ 2037.303633] mem_module: 85 ns for allocating and 210 ns for freeing 16 bytes
+[ 2037.303635] mem_module: 86 ns for allocating and 163 ns for freeing 32 bytes
+[ 2037.303636] mem_module: 87 ns for allocating and 66 ns for freeing 64 bytes
+[ 2037.303637] mem_module: 102 ns for allocating and 130 ns for freeing 128 bytes
+[ 2037.303639] mem_module: 209 ns for allocating and 126 ns for freeing 256 bytes
+[ 2037.303640] mem_module: 90 ns for allocating and 86 ns for freeing 512 bytes
+[ 2037.303642] mem_module: 135 ns for allocating and 314 ns for freeing 1024 bytes
+[ 2037.303644] mem_module: 648 ns for allocating and 147 ns for freeing 2048 bytes
+[ 2037.303646] mem_module: 258 ns for allocating and 105 ns for freeing 4096 bytes
+[ 2037.303648] mem_module: 952 ns for allocating and 176 ns for freeing 8192 bytes
+[ 2037.303653] mem_module: 2451 ns for allocating and 1185 ns for freeing 16384 bytes
+[ 2037.303657] mem_module: 2466 ns for allocating and 351 ns for freeing 32768 bytes
+[ 2037.303664] mem_module: 4786 ns for allocating and 295 ns for freeing 65536 bytes
+[ 2037.303674] mem_module: 8614 ns for allocating and 351 ns for freeing 131072 bytes
+[ 2037.303692] mem_module: 16110 ns for allocating and 446 ns for freeing 262144 bytes
+[ 2037.303727] mem_module: 33744 ns for allocating and 604 ns for freeing 524288 bytes
+[ 2037.303807] mem_module: 75956 ns for allocating and 1865 ns for freeing 1048576 bytes
+[ 2037.304118] mem_module: 304875 ns for allocating and 4066 ns for freeing 2097152 bytes
+[ 2037.304585] mem_module: 453186 ns for allocating and 4646 ns for freeing 4194304 bytes
+[ 2037.304600] mem_module: 10027 ns for allocating and 48 ns for freeing 8388608 bytes
+[ 2037.304604] mem_module: 2638 ns for allocating and 39 ns for freeing 16777216 bytes
+[ 2037.304608] mem_module: 2601 ns for allocating and 38 ns for freeing 33554432 bytes
+[ 2037.304612] mem_module: 2601 ns for allocating and 39 ns for freeing 67108864 bytes
+[ 2037.304616] mem_module: 2602 ns for allocating and 39 ns for freeing 134217728 bytes
+[ 2037.304620] mem_module: 2601 ns for allocating and 39 ns for freeing 268435456 bytes
+[ 2037.304624] mem_module: 2601 ns for allocating and 39 ns for freeing 536870912 bytes
+[ 2037.304627] mem_module: 2598 ns for allocating and 39 ns for freeing 1073741824 bytes
+[ 2037.314726] mem_module: Module exited
+
+VMALLOC LOG
+
+[ 2037.365291] mem_module: Module loaded
+[ 2037.365300] mem_module: 2886 ns for allocating and 1036 ns for freeing 2 bytes
+[ 2037.365305] mem_module: 1273 ns for allocating and 731 ns for freeing 4 bytes
+[ 2037.365308] mem_module: 804 ns for allocating and 549 ns for freeing 8 bytes
+[ 2037.365311] mem_module: 1098 ns for allocating and 627 ns for freeing 16 bytes
+[ 2037.365313] mem_module: 656 ns for allocating and 518 ns for freeing 32 bytes
+[ 2037.365316] mem_module: 950 ns for allocating and 375 ns for freeing 64 bytes
+[ 2037.365319] mem_module: 1280 ns for allocating and 534 ns for freeing 128 bytes
+[ 2037.365321] mem_module: 672 ns for allocating and 455 ns for freeing 256 bytes
+[ 2037.365324] mem_module: 732 ns for allocating and 387 ns for freeing 512 bytes
+[ 2037.365327] mem_module: 1210 ns for allocating and 568 ns for freeing 1024 bytes
+[ 2037.365329] mem_module: 602 ns for allocating and 435 ns for freeing 2048 bytes
+[ 2037.365331] mem_module: 932 ns for allocating and 379 ns for freeing 4096 bytes
+[ 2037.365335] mem_module: 1855 ns for allocating and 736 ns for freeing 8192 bytes
+[ 2037.365340] mem_module: 2415 ns for allocating and 887 ns for freeing 16384 bytes
+[ 2037.365345] mem_module: 3346 ns for allocating and 952 ns for freeing 32768 bytes
+[ 2037.365352] mem_module: 4023 ns for allocating and 1371 ns for freeing 65536 bytes
+[ 2037.365364] mem_module: 8594 ns for allocating and 2296 ns for freeing 131072 bytes
+[ 2037.365389] mem_module: 19808 ns for allocating and 3469 ns for freeing 262144 bytes
+[ 2037.365435] mem_module: 38037 ns for allocating and 6495 ns for freeing 524288 bytes
+[ 2037.365527] mem_module: 78356 ns for allocating and 12273 ns for freeing 1048576 bytes
+[ 2037.365739] mem_module: 162886 ns for allocating and 47309 ns for freeing 2097152 bytes
+[ 2037.366276] mem_module: 414061 ns for allocating and 118677 ns for freeing 4194304 bytes
+[ 2037.368109] mem_module: 1348628 ns for allocating and 476997 ns for freeing 8388608 bytes
+[ 2037.371371] mem_module: 2729563 ns for allocating and 526859 ns for freeing 16777216 bytes
+[ 2037.376066] mem_module: 3733889 ns for allocating and 954675 ns for freeing 33554432 bytes
+[ 2037.387048] mem_module: 8675099 ns for allocating and 2301060 ns for freeing 67108864 bytes
+[ 2037.405749] mem_module: 15686102 ns for allocating and 3002371 ns for freeing 134217728 bytes
+[ 2037.441056] mem_module: 29404463 ns for allocating and 5895134 ns for freeing 268435456 bytes
+[ 2037.511781] mem_module: 59607044 ns for allocating and 11109779 ns for freeing 536870912 bytes
+[ 2037.648877] mem_module: 115195662 ns for allocating and 21891267 ns for freeing 1073741824 bytes
+[ 2037.658644] mem_module: Module exited
+
+GET_FREE_PAGES LOG
+
+[ 2037.725419] mem_module: Module loaded
+[ 2037.725426] mem_module: 1441 ns for allocating and 1107 ns for freeing 1 pages
+[ 2037.725431] mem_module: 1330 ns for allocating and 248 ns for freeing 2 pages
+[ 2037.725435] mem_module: 2247 ns for allocating and 199 ns for freeing 3 pages
+[ 2037.725441] mem_module: 4181 ns for allocating and 718 ns for freeing 4 pages
+[ 2037.725452] mem_module: 8415 ns for allocating and 351 ns for freeing 5 pages
+[ 2037.725470] mem_module: 16933 ns for allocating and 385 ns for freeing 6 pages
+[ 2037.725507] mem_module: 34047 ns for allocating and 765 ns for freeing 7 pages
+[ 2037.725588] mem_module: 77452 ns for allocating and 2399 ns for freeing 8 pages
+[ 2037.725785] mem_module: 187990 ns for allocating and 5860 ns for freeing 9 pages
+[ 2037.726208] mem_module: 404049 ns for allocating and 12791 ns for freeing 10 pages
+[ 2037.726226] mem_module: 11925 ns for allocating and 53 ns for freeing 11 pages
+[ 2037.726230] mem_module: 2723 ns for allocating and 47 ns for freeing 12 pages
+[ 2037.726234] mem_module: 2712 ns for allocating and 36 ns for freeing 13 pages
+[ 2037.726238] mem_module: 2708 ns for allocating and 37 ns for freeing 14 pages
+[ 2037.726242] mem_module: 2710 ns for allocating and 36 ns for freeing 15 pages
+[ 2037.726246] mem_module: 2711 ns for allocating and 37 ns for freeing 16 pages
+[ 2037.726250] mem_module: 2718 ns for allocating and 36 ns for freeing 17 pages
+[ 2037.726254] mem_module: 2715 ns for allocating and 37 ns for freeing 18 pages
+[ 2037.726258] mem_module: 2716 ns for allocating and 37 ns for freeing 19 pages
+[ 2037.726262] mem_module: 2715 ns for allocating and 37 ns for freeing 20 pages
+[ 2037.726266] mem_module: 2714 ns for allocating and 36 ns for freeing 21 pages
+[ 2037.726270] mem_module: 2706 ns for allocating and 37 ns for freeing 22 pages
+[ 2037.726274] mem_module: 2712 ns for allocating and 37 ns for freeing 23 pages
+[ 2037.726278] mem_module: 2704 ns for allocating and 37 ns for freeing 24 pages
+[ 2037.726282] mem_module: 2709 ns for allocating and 37 ns for freeing 25 pages
+[ 2037.726286] mem_module: 2706 ns for allocating and 37 ns for freeing 26 pages
+[ 2037.726289] mem_module: 2707 ns for allocating and 36 ns for freeing 27 pages
+[ 2037.726293] mem_module: 2710 ns for allocating and 37 ns for freeing 28 pages
+[ 2037.726297] mem_module: 2711 ns for allocating and 37 ns for freeing 29 pages
+[ 2037.726301] mem_module: 2708 ns for allocating and 37 ns for freeing 30 pages
+[ 2037.736410] mem_module: Module exited
