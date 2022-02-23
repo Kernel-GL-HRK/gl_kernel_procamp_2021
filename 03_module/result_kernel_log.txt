@@ -1,0 +1,34 @@
+Welcome to Buildroot
+buildroot login: user
+Password: 
+$ pwd
+/home/user
+$ ls
+mymodule.ko
+$ su
+$ insmod mymodule.ko
+mymodule: Hello world!
+mymodule: a = 0
+mymodule: b = 0
+mymodule: a + b = 0
+$ rmmod mymodule
+mymodule: Goodbye, world!
+mymodule: a - b = 0
+$ insmod mymodule.ko a=2
+mymodule: Hello world!
+mymodule: a = 2
+mymodule: b = 0
+mymodule: a + b = 2
+$ rmmod mymodule
+mymodule: Goodbye, world!
+mymodule: a - b = 2
+$ insmod mymodule.ko a=7 b=4
+mymodule: Hello world!
+mymodule: a = 7
+mymodule: b = 4
+mymodule: a + b = 11
+$ rmmod mymodule
+mymodule: Goodbye, world!
+mymodule: a - b = 3
+$ 
+
