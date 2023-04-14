@@ -1,0 +1,18 @@
+# insmod procfs_test.ko
+# echo "hello world" > /sys/kernel/str_storage/list 
+# cat /sys/kernel/str_storage/list 
+hello world
+# echo "hello world2" > /sys/kernel/str_storage/list 
+# echo "hello world3" > /sys/kernel/str_storage/list 
+# cat /proc/procfs_test/module_author 
+[  367.316089] [PROCFS_TEST] Read 35 bytes
+Sergey D. <serj.dub1na@gmail.com>
+[  367.320050] [PROCFS_TEST] Read finished
+# cat /proc/procfs_test/rd_cnt 
+[  372.664887] [PROCFS_TEST] Read 29 bytes
+You read sysfs file 1 times
+[  372.668855] [PROCFS_TEST] Read finished
+# cat /proc/procfs_test/wr_cnt 
+[  377.365926] [PROCFS_TEST] Read 30 bytes
+You wrote sysfs file 3 times
+[  377.369891] [PROCFS_TEST] Read finished
