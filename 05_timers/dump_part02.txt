@@ -1,0 +1,10 @@
+[73349.490525] example_module loaded
+[73349.491385] module: relative_time in cycles: 20721542137874
+[73349.491386] module: prev absolute time in sec: 0.0
+[73349.491775] module: relative_time in cycles: 1009286
+[73349.491776] module: prev absolute time in sec: 73349.150233633
+[73349.492193] module: relative_time in cycles: 1084386
+[73349.492194] module: prev absolute time in sec: 73349.150622979
+[73349.492585] module: relative_time in cycles: 1015782
+[73349.492586] module: prev absolute time in sec: 73349.151041185
+[73349.496937] example_module exited

@@ -1,0 +1,8 @@
+CLOCK_REALTIME:
+		 1638704330.345081034	 resolution:          0.000000001	( 18966 days + 11h 38m 50s )
+CLOCK_TAI:
+		 1638704330.345128682	 resolution:          0.000000001	( 18966 days + 11h 38m 50s )
+CLOCK_MONOTONIC:
+		      56720.415528116	 resolution:          0.000000001	( 0 days + 15h 45m 20s )
+CLOCK_BOOTTIME:
+		     256242.220388184	 resolution:          0.000000001	( 2 days + 23h 10m 42s )

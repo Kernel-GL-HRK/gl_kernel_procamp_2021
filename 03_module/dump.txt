@@ -1,0 +1,6 @@
+sudo insmod test_module.ko val1=5 val2=3
+sudo rmmod test_module
+
+
+[943925.406406] module: (val1: 5 + val2: 3) = 8
+[943925.418197] module: (val1: 5 - val2: 3) = 2

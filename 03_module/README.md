@@ -12,4 +12,3 @@ The task results should contain:
 - The module code
 - The Makefile
 - Dump of the kernel logs from the target system 
-
